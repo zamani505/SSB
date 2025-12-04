@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SMSModelStoreContainer">
+    <EntitySet Name="Bulk_Request" EntityType="SMSModel.Store.Bulk_Request" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bulks" EntityType="SMSModel.Store.Bulks" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OperatorTarrifRate" EntityType="SMSModel.Store.OperatorTarrifRate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Customers" EntityType="SMSModel.Store.Tbl_Customers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tbl_Extensible" EntityType="SMSModel.Store.tbl_Extensible" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_LineNumber" EntityType="SMSModel.Store.Tbl_LineNumber" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Payment" EntityType="SMSModel.Store.Tbl_Payment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_RecieveSms" EntityType="SMSModel.Store.Tbl_RecieveSms" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_SentSMS" EntityType="SMSModel.Store.Tbl_SentSMS" store:Type="Tables" store:Schema="dbo" store:Name="Tbl_SentSMS">
+      <DefiningQuery>SELECT 
+      [Tbl_SentSMS].[MagfaSmsId] AS [MagfaSmsId], 
+      [Tbl_SentSMS].[ISMSText] AS [ISMSText], 
+      [Tbl_SentSMS].[ISendingDate] AS [ISendingDate], 
+      [Tbl_SentSMS].[ISendingTime] AS [ISendingTime], 
+      [Tbl_SentSMS].[ISenderNumber] AS [ISenderNumber], 
+      [Tbl_SentSMS].[IReciverNumber] AS [IReciverNumber], 
+      [Tbl_SentSMS].[ISMSStatuse] AS [ISMSStatuse], 
+      [Tbl_SentSMS].[IUsrId] AS [IUsrId], 
+      [Tbl_SentSMS].[ISMSStatusCode] AS [ISMSStatusCode], 
+      [Tbl_SentSMS].[Priority] AS [Priority], 
+      [Tbl_SentSMS].[PriorityStatus] AS [PriorityStatus], 
+      [Tbl_SentSMS].[Id] AS [Id], 
+      [Tbl_SentSMS].[OperatorId] AS [OperatorId]
+      FROM [dbo].[Tbl_SentSMS] AS [Tbl_SentSMS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_UserAccount" EntityType="SMSModel.Store.Tbl_UserAccount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_UserAccountRole" EntityType="SMSModel.Store.Tbl_UserAccountRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_UsrCredit" EntityType="SMSModel.Store.Tbl_UsrCredit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="View_GetUsrInfo" EntityType="SMSModel.Store.View_GetUsrInfo" store:Type="Views" store:Schema="dbo" store:Name="View_GetUsrInfo">
+      <DefiningQuery>SELECT 
+      [View_GetUsrInfo].[IUsrId] AS [IUsrId], 
+      [View_GetUsrInfo].[AcsRoleEnName] AS [AcsRoleEnName], 
+      [View_GetUsrInfo].[AcsRoleFaName] AS [AcsRoleFaName], 
+      [View_GetUsrInfo].[ILineNumber] AS [ILineNumber], 
+      [View_GetUsrInfo].[ILineModuleNumber] AS [ILineModuleNumber], 
+      [View_GetUsrInfo].[IUsrISAdmin] AS [IUsrISAdmin], 
+      [View_GetUsrInfo].[IUsrIName] AS [IUsrIName], 
+      [View_GetUsrInfo].[IUsrPaswrd] AS [IUsrPaswrd], 
+      [View_GetUsrInfo].[IUsrActive] AS [IUsrActive], 
+      [View_GetUsrInfo].[AscRoleCode] AS [AscRoleCode], 
+      [View_GetUsrInfo].[ICName] AS [ICName], 
+      [View_GetUsrInfo].[ICLName] AS [ICLName], 
+      [View_GetUsrInfo].[IUsrAccExpireDate] AS [IUsrAccExpireDate]
+      FROM [dbo].[View_GetUsrInfo] AS [View_GetUsrInfo]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Tbl_SentSMS" EntityType="SMSModel.Store.View_Tbl_SentSMS" store:Type="Views" store:Schema="dbo" store:Name="View_Tbl_SentSMS">
+      <DefiningQuery>SELECT 
+      [View_Tbl_SentSMS].[MagfaSmsId] AS [MagfaSmsId], 
+      [View_Tbl_SentSMS].[ISMSText] AS [ISMSText], 
+      [View_Tbl_SentSMS].[ISendingDate] AS [ISendingDate], 
+      [View_Tbl_SentSMS].[ISendingTime] AS [ISendingTime], 
+      [View_Tbl_SentSMS].[ISenderNumber] AS [ISenderNumber], 
+      [View_Tbl_SentSMS].[IReciverNumber] AS [IReciverNumber], 
+      [View_Tbl_SentSMS].[ISMSStatuse] AS [ISMSStatuse], 
+      [View_Tbl_SentSMS].[IUsrId] AS [IUsrId], 
+      [View_Tbl_SentSMS].[ISMSStatusCode] AS [ISMSStatusCode], 
+      [View_Tbl_SentSMS].[Priority] AS [Priority], 
+      [View_Tbl_SentSMS].[PriorityStatus] AS [PriorityStatus], 
+      [View_Tbl_SentSMS].[Id] AS [Id], 
+      [View_Tbl_SentSMS].[OperatorId] AS [OperatorId]
+      FROM [dbo].[View_Tbl_SentSMS] AS [View_Tbl_SentSMS]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Bulk_Request_Bulks1" Association="SMSModel.Store.FK_Bulk_Request_Bulks1">
+      <End Role="Bulks" EntitySet="Bulks" />
+      <End Role="Bulk_Request" EntitySet="Bulk_Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bulks_Tbl_LineNumber" Association="SMSModel.Store.FK_Bulks_Tbl_LineNumber">
+      <End Role="Tbl_LineNumber" EntitySet="Tbl_LineNumber" />
+      <End Role="Bulks" EntitySet="Bulks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bulks_Tbl_UserAccount1" Association="SMSModel.Store.FK_Bulks_Tbl_UserAccount1">
+      <End Role="Tbl_UserAccount" EntitySet="Tbl_UserAccount" />
+      <End Role="Bulks" EntitySet="Bulks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_LineNumber_Tbl_UserAccount" Association="SMSModel.Store.FK_Tbl_LineNumber_Tbl_UserAccount">
+      <End Role="Tbl_UserAccount" EntitySet="Tbl_UserAccount" />
+      <End Role="Tbl_LineNumber" EntitySet="Tbl_LineNumber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_UserAccount_Tbl_Customers" Association="SMSModel.Store.FK_Tbl_UserAccount_Tbl_Customers">
+      <End Role="Tbl_Customers" EntitySet="Tbl_Customers" />
+      <End Role="Tbl_UserAccount" EntitySet="Tbl_UserAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_UsrCredit_Tbl_Payment" Association="SMSModel.Store.FK_Tbl_UsrCredit_Tbl_Payment">
+      <End Role="Tbl_Payment" EntitySet="Tbl_Payment" />
+      <End Role="Tbl_UsrCredit" EntitySet="Tbl_UsrCredit" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bulk_Request">
+    <Key>
+      <PropertyRef Name="BulkRequestId" />
+    </Key>
+    <Property Name="BulkRequestId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="StartIndex" Type="int" />
+    <Property Name="RequestCount" Type="int" />
+    <Property Name="BulkId" Type="int" />
+    <Property Name="BulkValue" Type="nvarchar" MaxLength="50" />
+    <Property Name="ValueType" Type="int" />
+    <Property Name="ValueOperation" Type="int" />
+    <Property Name="PhoneType" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bulks">
+    <Key>
+      <PropertyRef Name="BulkId" />
+    </Key>
+    <Property Name="BulkId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LineNumberCode" Type="int" />
+    <Property Name="BulkText" Type="nvarchar" MaxLength="1000" />
+    <Property Name="SendDate" Type="datetime" />
+    <Property Name="SendingType" Type="tinyint" />
+    <Property Name="IsPersian" Type="bit" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="AdminNote" Type="nvarchar" MaxLength="200" />
+    <Property Name="TotalPrice" Type="int" />
+    <Property Name="RequestDate" Type="datetime" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="100" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ModifyBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="Notation" Type="varchar" MaxLength="15" />
+    <Property Name="ReturnCredit" Type="bit" />
+  </EntityType>
+  <EntityType Name="OperatorTarrifRate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LineStartWith" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Rate" Type="float" Nullable="false" />
+    <Property Name="OperatorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Customers">
+    <Key>
+      <PropertyRef Name="ICCode" />
+    </Key>
+    <Property Name="ICCode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ICParentID" Type="int" />
+    <Property Name="IProviencyCode" Type="int" />
+    <Property Name="ICityCode" Type="int" />
+    <Property Name="IActTypeCode" Type="int" />
+    <Property Name="ICName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ICLName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ICTel" Type="nvarchar" MaxLength="15" />
+    <Property Name="ICMobile" Type="nvarchar" MaxLength="15" />
+    <Property Name="ICFax" Type="nvarchar" MaxLength="15" />
+    <Property Name="ICEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="ICWebSite" Type="nvarchar" MaxLength="100" />
+    <Property Name="ICPrsAdrs" Type="nvarchar" MaxLength="500" />
+    <Property Name="ICZipeCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="ICCoName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ICCoType" Type="bit" />
+    <Property Name="ICCoActivity" Type="nvarchar" MaxLength="50" />
+    <Property Name="ICDescrtiption" Type="nvarchar" MaxLength="50" />
+    <Property Name="ICPrsNumber" Type="varchar" MaxLength="15" />
+    <Property Name="ICMeliCartPic" Type="nvarchar" MaxLength="200" />
+    <Property Name="ICPrsNumberPic" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="tbl_Extensible">
+    <Key>
+      <PropertyRef Name="IUsrId" />
+    </Key>
+    <Property Name="IUsrId" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ServerURL" Type="nvarchar" MaxLength="1500" />
+    <Property Name="UsageType" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserQuantity" Type="int" />
+    <Property Name="TotalSupply" Type="bigint" />
+    <Property Name="CurrentSupply" Type="bigint" />
+    <Property Name="SupportExpert" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesExpert" Type="nvarchar" MaxLength="50" />
+    <Property Name="FixFaPrice" Type="int" />
+    <Property Name="FixEnPrice" Type="int" />
+    <Property Name="RecieveServerURL" Type="nvarchar" MaxLength="1500" />
+    <Property Name="HasBankAccount" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tbl_LineNumber">
+    <Key>
+      <PropertyRef Name="ILineNumberCode" />
+    </Key>
+    <Property Name="ILineNumberCode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IUsrId" Type="nvarchar" MaxLength="100" />
+    <Property Name="ILineNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ILineModuleNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ILineServiceType" Type="nvarchar" MaxLength="50" />
+    <Property Name="ILineKeyWord" Type="nvarchar" MaxLength="50" />
+    <Property Name="ILineStatuse" Type="nvarchar" MaxLength="50" />
+    <Property Name="ILineLastModify" Type="nvarchar" MaxLength="50" />
+    <Property Name="ILineDuration" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Payment">
+    <Key>
+      <PropertyRef Name="PaymentCode" />
+    </Key>
+    <Property Name="PaymentCode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IUsrId" Type="nvarchar" MaxLength="100" />
+    <Property Name="PayTypeCode" Type="int" />
+    <Property Name="PayCommentCode" Type="int" />
+    <Property Name="PaymentAmount" Type="int" />
+    <Property Name="PaymentDiscount" Type="tinyint" />
+    <Property Name="PayDisComment" Type="nvarchar" MaxLength="100" />
+    <Property Name="PaySerial" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="PayExpiredDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="PayFlag" Type="bit" />
+    <Property Name="PayDate" Type="datetime" />
+    <Property Name="TransactionNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="BankId" Type="int" />
+    <Property Name="InvoiceNumber" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Tbl_RecieveSms">
+    <Key>
+      <PropertyRef Name="RecieveSMSId" />
+    </Key>
+    <Property Name="RcvSmsText" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RcvsmsKeyWord" Type="nvarchar" MaxLength="50" />
+    <Property Name="RcvSmsfrom" Type="nvarchar" MaxLength="20" />
+    <Property Name="RcvSmsTo" Type="nvarchar" MaxLength="20" />
+    <Property Name="RcvSmsInteredDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="RcvSmsUDH" Type="nvarchar" MaxLength="50" />
+    <Property Name="RcvsmsCharSet" Type="nvarchar" MaxLength="50" />
+    <Property Name="rcvSmsSmsC" Type="nvarchar" MaxLength="50" />
+    <Property Name="RcvSmsStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="RcvSmsMessageID" Type="nvarchar" MaxLength="50" />
+    <Property Name="RcvSmsRuleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="RcvSmsDeliveredTime" Type="nvarchar" MaxLength="9" />
+    <Property Name="RcvSmsReeded" Type="bit" />
+    <Property Name="UsrId" Type="nvarchar" MaxLength="100" />
+    <Property Name="RecieveSMSId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="OperatorId" Type="int" />
+    <Property Name="RecieveDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_Accounting_v6.4.dbo.Tbl_SentSMS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Tbl_SentSMS">
+    <Key>
+      <PropertyRef Name="MagfaSmsId" />
+      <PropertyRef Name="ISMSText" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="OperatorId" />
+    </Key>
+    <Property Name="MagfaSmsId" Type="bigint" Nullable="false" />
+    <Property Name="ISMSText" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="ISendingDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="ISendingTime" Type="nvarchar" MaxLength="9" />
+    <Property Name="ISenderNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="IReciverNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="ISMSStatuse" Type="nvarchar" MaxLength="50" />
+    <Property Name="IUsrId" Type="nvarchar" MaxLength="100" />
+    <Property Name="ISMSStatusCode" Type="int" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="PriorityStatus" Type="int" />
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OperatorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_UserAccount">
+    <Key>
+      <PropertyRef Name="IUsrId" />
+    </Key>
+    <Property Name="IUsrAccCode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IUserParentID" Type="int" />
+    <Property Name="IUsrManagerId" Type="nvarchar" MaxLength="100" />
+    <Property Name="IUsrCCode" Type="int" Nullable="false" />
+    <Property Name="AscRoleCode" Type="int" Nullable="false" />
+    <Property Name="IUsrId" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="IUsrPaswrd" Type="nvarchar" MaxLength="20" />
+    <Property Name="IUsrActive" Type="bit" />
+    <Property Name="IUsrSpesial" Type="bit" />
+    <Property Name="IUsrISAdmin" Type="bit" />
+    <Property Name="IUsrIName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IUsrAccCreatDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="IUsrAccExpireDate" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Tbl_UserAccountRole">
+    <Key>
+      <PropertyRef Name="AcsRoleCode" />
+    </Key>
+    <Property Name="AcsRoleCode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AcsRoleParentId" Type="int" />
+    <Property Name="AcsRoleEnName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AcsRoleFaName" Type="nvarchar" MaxLength="100" />
+    <Property Name="AcsRolePrice" Type="int" />
+    <Property Name="AcsRoleDateFrom" Type="nvarchar" MaxLength="10" />
+    <Property Name="AcsRoleDateTo" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Tbl_UsrCredit">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="int" Nullable="false" />
+    <Property Name="IUsrId" Type="nvarchar" MaxLength="100" />
+    <Property Name="ICreditAmount" Type="int" />
+    <Property Name="ISMSFaPrice" Type="int" />
+    <Property Name="ISMSEnPrice" Type="int" />
+    <Property Name="IRcvSmsPrice" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_Accounting_v6.4.dbo.View_GetUsrInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="View_GetUsrInfo">
+    <Key>
+      <PropertyRef Name="IUsrId" />
+      <PropertyRef Name="AscRoleCode" />
+    </Key>
+    <Property Name="IUsrId" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="AcsRoleEnName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AcsRoleFaName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ILineNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="ILineModuleNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="IUsrISAdmin" Type="bit" />
+    <Property Name="IUsrIName" Type="nvarchar" MaxLength="20" />
+    <Property Name="IUsrPaswrd" Type="nvarchar" MaxLength="20" />
+    <Property Name="IUsrActive" Type="bit" />
+    <Property Name="AscRoleCode" Type="int" Nullable="false" />
+    <Property Name="ICName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ICLName" Type="nvarchar" MaxLength="100" />
+    <Property Name="IUsrAccExpireDate" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_Accounting_v6.4.dbo.View_Tbl_SentSMS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="View_Tbl_SentSMS">
+    <Key>
+      <PropertyRef Name="MagfaSmsId" />
+      <PropertyRef Name="ISMSText" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="OperatorId" />
+    </Key>
+    <Property Name="MagfaSmsId" Type="bigint" Nullable="false" />
+    <Property Name="ISMSText" Type="nvarchar" Nullable="false" MaxLength="1000" />
+    <Property Name="ISendingDate" Type="nvarchar" MaxLength="10" />
+    <Property Name="ISendingTime" Type="nvarchar" MaxLength="9" />
+    <Property Name="ISenderNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="IReciverNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="ISMSStatuse" Type="nvarchar" MaxLength="50" />
+    <Property Name="IUsrId" Type="nvarchar" MaxLength="100" />
+    <Property Name="ISMSStatusCode" Type="int" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="PriorityStatus" Type="int" />
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OperatorId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Bulk_Request_Bulks1">
+    <End Role="Bulks" Type="SMSModel.Store.Bulks" Multiplicity="0..1" />
+    <End Role="Bulk_Request" Type="SMSModel.Store.Bulk_Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bulks">
+        <PropertyRef Name="BulkId" />
+      </Principal>
+      <Dependent Role="Bulk_Request">
+        <PropertyRef Name="BulkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bulks_Tbl_LineNumber">
+    <End Role="Tbl_LineNumber" Type="SMSModel.Store.Tbl_LineNumber" Multiplicity="0..1" />
+    <End Role="Bulks" Type="SMSModel.Store.Bulks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_LineNumber">
+        <PropertyRef Name="ILineNumberCode" />
+      </Principal>
+      <Dependent Role="Bulks">
+        <PropertyRef Name="LineNumberCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bulks_Tbl_UserAccount1">
+    <End Role="Tbl_UserAccount" Type="SMSModel.Store.Tbl_UserAccount" Multiplicity="0..1" />
+    <End Role="Bulks" Type="SMSModel.Store.Bulks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_UserAccount">
+        <PropertyRef Name="IUsrId" />
+      </Principal>
+      <Dependent Role="Bulks">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_LineNumber_Tbl_UserAccount">
+    <End Role="Tbl_UserAccount" Type="SMSModel.Store.Tbl_UserAccount" Multiplicity="0..1" />
+    <End Role="Tbl_LineNumber" Type="SMSModel.Store.Tbl_LineNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_UserAccount">
+        <PropertyRef Name="IUsrId" />
+      </Principal>
+      <Dependent Role="Tbl_LineNumber">
+        <PropertyRef Name="IUsrId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_UserAccount_Tbl_Customers">
+    <End Role="Tbl_Customers" Type="SMSModel.Store.Tbl_Customers" Multiplicity="1" />
+    <End Role="Tbl_UserAccount" Type="SMSModel.Store.Tbl_UserAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Customers">
+        <PropertyRef Name="ICCode" />
+      </Principal>
+      <Dependent Role="Tbl_UserAccount">
+        <PropertyRef Name="IUsrCCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_UsrCredit_Tbl_Payment">
+    <End Role="Tbl_Payment" Type="SMSModel.Store.Tbl_Payment" Multiplicity="1" />
+    <End Role="Tbl_UsrCredit" Type="SMSModel.Store.Tbl_UsrCredit" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Payment">
+        <PropertyRef Name="PaymentCode" />
+      </Principal>
+      <Dependent Role="Tbl_UsrCredit">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SpTbl_OnlineUsrCredit_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IUsrId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PayTypeCode" Type="int" Mode="In" />
+    <Parameter Name="PaymentAmount" Type="int" Mode="In" />
+    <Parameter Name="PaymentDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="PayFlag" Type="bit" Mode="In" />
+    <Parameter Name="ISMSFaPrice" Type="int" Mode="In" />
+    <Parameter Name="ISMSEnPrice" Type="int" Mode="In" />
+    <Parameter Name="IRcvSmsPrice" Type="int" Mode="In" />
+    <Parameter Name="PayDate" Type="datetime" Mode="In" />
+    <Parameter Name="TransactionNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="BankId" Type="int" Mode="In" />
+    <Parameter Name="InvoiceNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SpTbl_RecieveSms_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RcvSmsTo" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateFrom" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateTo" Type="nvarchar" Mode="In" />
+    <Parameter Name="TimeFrom" Type="nvarchar" Mode="In" />
+    <Parameter Name="TimeTo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Today" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SpTbl_RecieveSms_SelectFromId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RcvSmsTo" Type="nvarchar" Mode="In" />
+    <Parameter Name="SmsId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SpTbl_RecieveUnreadedSms_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RcvSmsTo" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateFrom" Type="nvarchar" Mode="In" />
+    <Parameter Name="DateTo" Type="nvarchar" Mode="In" />
+    <Parameter Name="TimeFrom" Type="nvarchar" Mode="In" />
+    <Parameter Name="TimeTo" Type="nvarchar" Mode="In" />
+    <Parameter Name="UsrId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Today" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SpTbl_UsrCredit_SelectTotalCredit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UsrId" Type="nvarchar" Mode="In" />
+    <Parameter Name="Today" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SpTbl_Usrcredit_UpdateCredit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UsrId" Type="nvarchar" Mode="In" />
+    <Parameter Name="FaSmsCount" Type="int" Mode="In" />
+    <Parameter Name="EnSmsCount" Type="int" Mode="In" />
+    <Parameter Name="Today" Type="nvarchar" Mode="In" />
+    <Parameter Name="Rate" Type="float" Mode="In" />
+    <Parameter Name="TrActionType" Type="tinyint" Mode="In" />
+  </Function>
+</Schema>

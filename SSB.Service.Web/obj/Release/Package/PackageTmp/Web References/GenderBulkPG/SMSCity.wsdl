@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://rahyabbulk.ir/smsbulk" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://rahyabbulk.ir/smsbulk" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://rahyabbulk.ir/smsbulk">
+      <s:element name="Province">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProvinceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ProvinceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="City">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Province_ID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CellCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Province_ID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="City_ID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrePaid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Women" type="s:long" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromBirthYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToBirthYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PreNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CellCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CellCountResult" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrePaid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Women" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doSendCityBulk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShortCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SendDateTime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FromRow" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="SMSCount" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="SortNumber" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrePaid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Province" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="City" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Prefix" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Gender" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FromBirthYear" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToBirthYear" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doSendCityBulkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="doSendCityBulkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doGetDelivery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReturnID" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doGetDeliveryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="doGetDeliveryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doGetDelivery2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReturnID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="SentCount" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="DeliveredCount" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doGetDelivery2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="doGetDelivery2Result" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="SentCount" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="DeliveredCount" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doApprove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ReturnID" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="Approve" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doApproveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="doApproveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ProvinceSoapIn">
+    <wsdl:part name="parameters" element="tns:Province" />
+  </wsdl:message>
+  <wsdl:message name="ProvinceSoapOut">
+    <wsdl:part name="parameters" element="tns:ProvinceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CitySoapIn">
+    <wsdl:part name="parameters" element="tns:City" />
+  </wsdl:message>
+  <wsdl:message name="CitySoapOut">
+    <wsdl:part name="parameters" element="tns:CityResponse" />
+  </wsdl:message>
+  <wsdl:message name="CellCountSoapIn">
+    <wsdl:part name="parameters" element="tns:CellCount" />
+  </wsdl:message>
+  <wsdl:message name="CellCountSoapOut">
+    <wsdl:part name="parameters" element="tns:CellCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="doSendCityBulkSoapIn">
+    <wsdl:part name="parameters" element="tns:doSendCityBulk" />
+  </wsdl:message>
+  <wsdl:message name="doSendCityBulkSoapOut">
+    <wsdl:part name="parameters" element="tns:doSendCityBulkResponse" />
+  </wsdl:message>
+  <wsdl:message name="doGetDeliverySoapIn">
+    <wsdl:part name="parameters" element="tns:doGetDelivery" />
+  </wsdl:message>
+  <wsdl:message name="doGetDeliverySoapOut">
+    <wsdl:part name="parameters" element="tns:doGetDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="doGetDelivery2SoapIn">
+    <wsdl:part name="parameters" element="tns:doGetDelivery2" />
+  </wsdl:message>
+  <wsdl:message name="doGetDelivery2SoapOut">
+    <wsdl:part name="parameters" element="tns:doGetDelivery2Response" />
+  </wsdl:message>
+  <wsdl:message name="doApproveSoapIn">
+    <wsdl:part name="parameters" element="tns:doApprove" />
+  </wsdl:message>
+  <wsdl:message name="doApproveSoapOut">
+    <wsdl:part name="parameters" element="tns:doApproveResponse" />
+  </wsdl:message>
+  <wsdl:portType name="smscitySoap">
+    <wsdl:operation name="Province">
+      <wsdl:input message="tns:ProvinceSoapIn" />
+      <wsdl:output message="tns:ProvinceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="City">
+      <wsdl:input message="tns:CitySoapIn" />
+      <wsdl:output message="tns:CitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CellCount">
+      <wsdl:input message="tns:CellCountSoapIn" />
+      <wsdl:output message="tns:CellCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="doSendCityBulk">
+      <wsdl:input message="tns:doSendCityBulkSoapIn" />
+      <wsdl:output message="tns:doSendCityBulkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="doGetDelivery">
+      <wsdl:input message="tns:doGetDeliverySoapIn" />
+      <wsdl:output message="tns:doGetDeliverySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="doGetDelivery2">
+      <wsdl:input message="tns:doGetDelivery2SoapIn" />
+      <wsdl:output message="tns:doGetDelivery2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="doApprove">
+      <wsdl:input message="tns:doApproveSoapIn" />
+      <wsdl:output message="tns:doApproveSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="smscitySoap" type="tns:smscitySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Province">
+      <soap:operation soapAction="http://rahyabbulk.ir/smsbulk/Province" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="City">
+      <soap:operation soapAction="http://rahyabbulk.ir/smsbulk/City" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CellCount">
+      <soap:operation soapAction="http://rahyabbulk.ir/smsbulk/CellCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doSendCityBulk">
+      <soap:operation soapAction="http://rahyabbulk.ir/smsbulk/doSendCityBulk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doGetDelivery">
+      <soap:operation soapAction="http://rahyabbulk.ir/smsbulk/doGetDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doGetDelivery2">
+      <soap:operation soapAction="http://rahyabbulk.ir/smsbulk/doGetDelivery2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doApprove">
+      <soap:operation soapAction="http://rahyabbulk.ir/smsbulk/doApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="smscitySoap12" type="tns:smscitySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Province">
+      <soap12:operation soapAction="http://rahyabbulk.ir/smsbulk/Province" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="City">
+      <soap12:operation soapAction="http://rahyabbulk.ir/smsbulk/City" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CellCount">
+      <soap12:operation soapAction="http://rahyabbulk.ir/smsbulk/CellCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doSendCityBulk">
+      <soap12:operation soapAction="http://rahyabbulk.ir/smsbulk/doSendCityBulk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doGetDelivery">
+      <soap12:operation soapAction="http://rahyabbulk.ir/smsbulk/doGetDelivery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doGetDelivery2">
+      <soap12:operation soapAction="http://rahyabbulk.ir/smsbulk/doGetDelivery2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doApprove">
+      <soap12:operation soapAction="http://rahyabbulk.ir/smsbulk/doApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="smscity">
+    <wsdl:port name="smscitySoap" binding="tns:smscitySoap">
+      <soap:address location="http://rahyabbulk.ir:8020/WebService/SMSCity.asmx" />
+    </wsdl:port>
+    <wsdl:port name="smscitySoap12" binding="tns:smscitySoap12">
+      <soap12:address location="http://rahyabbulk.ir:8020/WebService/SMSCity.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

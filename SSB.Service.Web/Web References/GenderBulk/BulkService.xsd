@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservice.bulk.armaghan.net/" targetNamespace="http://webservice.bulk.armaghan.net/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="bulkStatus" type="tns:bulkStatus" />
+  <xs:element name="confirmBulkRequest" type="tns:confirmBulkRequest" />
+  <xs:element name="confirmBulkRequestResponse" type="tns:confirmBulkRequestResponse" />
+  <xs:element name="getBulkStatus" type="tns:getBulkStatus" />
+  <xs:element name="getBulkStatusResponse" type="tns:getBulkStatusResponse" />
+  <xs:element name="getCitiesOfProvince" type="tns:getCitiesOfProvince" />
+  <xs:element name="getCitiesOfProvinceForExtendedBulk" type="tns:getCitiesOfProvinceForExtendedBulk" />
+  <xs:element name="getCitiesOfProvinceForExtendedBulkResponse" type="tns:getCitiesOfProvinceForExtendedBulkResponse" />
+  <xs:element name="getCitiesOfProvinceResponse" type="tns:getCitiesOfProvinceResponse" />
+  <xs:element name="getCountByCity" type="tns:getCountByCity" />
+  <xs:element name="getCountByCityResponse" type="tns:getCountByCityResponse" />
+  <xs:element name="getCountByPostalCode" type="tns:getCountByPostalCode" />
+  <xs:element name="getCountByPostalCodeResponse" type="tns:getCountByPostalCodeResponse" />
+  <xs:element name="getCountByPrefix" type="tns:getCountByPrefix" />
+  <xs:element name="getCountByPrefixResponse" type="tns:getCountByPrefixResponse" />
+  <xs:element name="getCountByProvince" type="tns:getCountByProvince" />
+  <xs:element name="getCountByProvinceResponse" type="tns:getCountByProvinceResponse" />
+  <xs:element name="getCountForExtendedBulk" type="tns:getCountForExtendedBulk" />
+  <xs:element name="getCountForExtendedBulkResponse" type="tns:getCountForExtendedBulkResponse" />
+  <xs:element name="getProvinces" type="tns:getProvinces" />
+  <xs:element name="getProvincesForExtendedBulk" type="tns:getProvincesForExtendedBulk" />
+  <xs:element name="getProvincesForExtendedBulkResponse" type="tns:getProvincesForExtendedBulkResponse" />
+  <xs:element name="getProvincesResponse" type="tns:getProvincesResponse" />
+  <xs:element name="getRequestPrice" type="tns:getRequestPrice" />
+  <xs:element name="getRequestPriceResponse" type="tns:getRequestPriceResponse" />
+  <xs:element name="getUserInfo" type="tns:getUserInfo" />
+  <xs:element name="getUserInfoResponse" type="tns:getUserInfoResponse" />
+  <xs:element name="isDuplicateRequest" type="tns:isDuplicateRequest" />
+  <xs:element name="isDuplicateRequestResponse" type="tns:isDuplicateRequestResponse" />
+  <xs:element name="requestBulkByCity" type="tns:requestBulkByCity" />
+  <xs:element name="requestBulkByCityResponse" type="tns:requestBulkByCityResponse" />
+  <xs:element name="requestBulkByPostalCode" type="tns:requestBulkByPostalCode" />
+  <xs:element name="requestBulkByPostalCodeResponse" type="tns:requestBulkByPostalCodeResponse" />
+  <xs:element name="requestBulkByPrefix" type="tns:requestBulkByPrefix" />
+  <xs:element name="requestBulkByPrefixResponse" type="tns:requestBulkByPrefixResponse" />
+  <xs:element name="requestBulkByProvince" type="tns:requestBulkByProvince" />
+  <xs:element name="requestBulkByProvinceResponse" type="tns:requestBulkByProvinceResponse" />
+  <xs:element name="requestExtendedBulk" type="tns:requestExtendedBulk" />
+  <xs:element name="requestExtendedBulkResponse" type="tns:requestExtendedBulkResponse" />
+  <xs:complexType name="getCitiesOfProvince">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="provinceCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCitiesOfProvinceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cities" nillable="true" type="tns:city" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="city">
+    <xs:sequence>
+      <xs:element name="code" type="xs:int" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestBulkByCity">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="userSuppliedId" type="xs:long" />
+      <xs:element name="originator" type="xs:string" />
+      <xs:element name="content" type="xs:string" />
+      <xs:element name="cityCode" type="xs:int" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element minOccurs="0" name="prefix" type="xs:string" />
+      <xs:element name="datetime" type="xs:string" />
+      <xs:element name="startIndex" type="xs:int" />
+      <xs:element name="count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestBulkByCityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="referenceId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestBulkByProvince">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="userSuppliedId" type="xs:long" />
+      <xs:element name="originator" type="xs:string" />
+      <xs:element name="content" type="xs:string" />
+      <xs:element name="provinceCode" type="xs:int" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element minOccurs="0" name="prefix" type="xs:string" />
+      <xs:element name="datetime" type="xs:string" />
+      <xs:element name="startIndex" type="xs:int" />
+      <xs:element name="count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestBulkByProvinceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="referenceId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountForExtendedBulk">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="provinceCode" type="xs:int" />
+      <xs:element name="cityCode" type="xs:int" />
+      <xs:element minOccurs="0" name="prefix" nillable="true" type="xs:string" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element name="gender" type="xs:int" />
+      <xs:element name="startAge" type="xs:int" />
+      <xs:element name="endAge" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountForExtendedBulkResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountByCity">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="cityCode" type="xs:int" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element minOccurs="0" name="prefix" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountByCityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmBulkRequest">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element maxOccurs="unbounded" name="referenceId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmBulkRequestResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="result" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProvincesForExtendedBulk">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProvincesForExtendedBulkResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="provinces" nillable="true" type="tns:province" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="province">
+    <xs:sequence>
+      <xs:element name="code" type="xs:int" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="isDuplicateRequest">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="userSuppliedId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="isDuplicateRequestResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="referenceId" type="xs:long" />
+      <xs:element minOccurs="0" name="isConfirmed" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountByPrefix">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element name="prefix" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountByPrefixResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProvinces">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProvincesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="provinces" nillable="true" type="tns:province" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUserInfo">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUserInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="user" type="tns:user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="credit" type="xs:double" />
+      <xs:element name="expirationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IPs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="numbers" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getRequestPrice">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="referenceId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getRequestPriceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" name="price" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestBulkByPrefix">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="userSuppliedId" type="xs:long" />
+      <xs:element name="originator" type="xs:string" />
+      <xs:element name="content" type="xs:string" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element name="prefix" type="xs:string" />
+      <xs:element name="datetime" type="xs:string" />
+      <xs:element name="startIndex" type="xs:int" />
+      <xs:element name="count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestBulkByPrefixResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="referenceId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountByPostalCode">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="postalCode" type="xs:string" />
+      <xs:element minOccurs="0" name="prefix" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountByPostalCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountByProvince">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="provinceCode" type="xs:int" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element minOccurs="0" name="prefix" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCountByProvinceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestBulkByPostalCode">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="userSuppliedId" type="xs:long" />
+      <xs:element name="originator" type="xs:string" />
+      <xs:element name="content" type="xs:string" />
+      <xs:element name="postalCode" type="xs:string" />
+      <xs:element minOccurs="0" name="prefix" nillable="true" type="xs:string" />
+      <xs:element name="datetime" type="xs:string" />
+      <xs:element name="startIndex" type="xs:int" />
+      <xs:element name="count" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestBulkByPostalCodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="referenceId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestExtendedBulk">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="provinceCode" type="xs:int" />
+      <xs:element name="cityCode" type="xs:int" />
+      <xs:element minOccurs="0" name="prefix" nillable="true" type="xs:string" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element name="gender" type="xs:int" />
+      <xs:element name="startAge" type="xs:int" />
+      <xs:element name="endAge" type="xs:int" />
+      <xs:element name="startIndex" type="xs:int" />
+      <xs:element name="count" type="xs:int" />
+      <xs:element name="content" type="xs:string" />
+      <xs:element name="originator" type="xs:string" />
+      <xs:element name="datetime" type="xs:string" />
+      <xs:element minOccurs="0" name="firstNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastNumber" nillable="true" type="xs:string" />
+      <xs:element name="orderNumbers" type="xs:boolean" />
+      <xs:element name="userSuppliedId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestExtendedBulkResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="referenceId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBulkStatus">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="referenceId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBulkStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:bulkStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="bulkStatus">
+    <xs:sequence>
+      <xs:element name="errorCode" type="xs:int" />
+      <xs:element name="totalRequest" type="xs:int" />
+      <xs:element name="totalSent" type="xs:int" />
+      <xs:element name="totalDelivered" type="xs:int" />
+      <xs:element name="bulkStatus" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCitiesOfProvinceForExtendedBulk">
+    <xs:sequence>
+      <xs:element name="username" type="xs:string" />
+      <xs:element name="password" type="xs:string" />
+      <xs:element name="provinceCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCitiesOfProvinceForExtendedBulkResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="errorCode" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cities" nillable="true" type="tns:city" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

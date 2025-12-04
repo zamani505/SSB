@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://webservice.bulk.armaghan.net/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="BulkService" targetNamespace="http://webservice.bulk.armaghan.net/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://ws.armaghan.net:8080/ws-bulk/BulkService?xsd=1" namespace="http://webservice.bulk.armaghan.net/" />
+    </xsd:schema>
+  </types>
+  <message name="getUserInfo">
+    <part name="parameters" element="tns:getUserInfo" />
+  </message>
+  <message name="getUserInfoResponse">
+    <part name="parameters" element="tns:getUserInfoResponse" />
+  </message>
+  <message name="isDuplicateRequest">
+    <part name="parameters" element="tns:isDuplicateRequest" />
+  </message>
+  <message name="isDuplicateRequestResponse">
+    <part name="parameters" element="tns:isDuplicateRequestResponse" />
+  </message>
+  <message name="getRequestPrice">
+    <part name="parameters" element="tns:getRequestPrice" />
+  </message>
+  <message name="getRequestPriceResponse">
+    <part name="parameters" element="tns:getRequestPriceResponse" />
+  </message>
+  <message name="getBulkStatus">
+    <part name="parameters" element="tns:getBulkStatus" />
+  </message>
+  <message name="getBulkStatusResponse">
+    <part name="parameters" element="tns:getBulkStatusResponse" />
+  </message>
+  <message name="confirmBulkRequest">
+    <part name="parameters" element="tns:confirmBulkRequest" />
+  </message>
+  <message name="confirmBulkRequestResponse">
+    <part name="parameters" element="tns:confirmBulkRequestResponse" />
+  </message>
+  <message name="requestBulkByPrefix">
+    <part name="parameters" element="tns:requestBulkByPrefix" />
+  </message>
+  <message name="requestBulkByPrefixResponse">
+    <part name="parameters" element="tns:requestBulkByPrefixResponse" />
+  </message>
+  <message name="requestBulkByPostalCode">
+    <part name="parameters" element="tns:requestBulkByPostalCode" />
+  </message>
+  <message name="requestBulkByPostalCodeResponse">
+    <part name="parameters" element="tns:requestBulkByPostalCodeResponse" />
+  </message>
+  <message name="requestBulkByCity">
+    <part name="parameters" element="tns:requestBulkByCity" />
+  </message>
+  <message name="requestBulkByCityResponse">
+    <part name="parameters" element="tns:requestBulkByCityResponse" />
+  </message>
+  <message name="requestBulkByProvince">
+    <part name="parameters" element="tns:requestBulkByProvince" />
+  </message>
+  <message name="requestBulkByProvinceResponse">
+    <part name="parameters" element="tns:requestBulkByProvinceResponse" />
+  </message>
+  <message name="getProvincesForExtendedBulk">
+    <part name="parameters" element="tns:getProvincesForExtendedBulk" />
+  </message>
+  <message name="getProvincesForExtendedBulkResponse">
+    <part name="parameters" element="tns:getProvincesForExtendedBulkResponse" />
+  </message>
+  <message name="getCitiesOfProvinceForExtendedBulk">
+    <part name="parameters" element="tns:getCitiesOfProvinceForExtendedBulk" />
+  </message>
+  <message name="getCitiesOfProvinceForExtendedBulkResponse">
+    <part name="parameters" element="tns:getCitiesOfProvinceForExtendedBulkResponse" />
+  </message>
+  <message name="getCountForExtendedBulk">
+    <part name="parameters" element="tns:getCountForExtendedBulk" />
+  </message>
+  <message name="getCountForExtendedBulkResponse">
+    <part name="parameters" element="tns:getCountForExtendedBulkResponse" />
+  </message>
+  <message name="requestExtendedBulk">
+    <part name="parameters" element="tns:requestExtendedBulk" />
+  </message>
+  <message name="requestExtendedBulkResponse">
+    <part name="parameters" element="tns:requestExtendedBulkResponse" />
+  </message>
+  <message name="getCitiesOfProvince">
+    <part name="parameters" element="tns:getCitiesOfProvince" />
+  </message>
+  <message name="getCitiesOfProvinceResponse">
+    <part name="parameters" element="tns:getCitiesOfProvinceResponse" />
+  </message>
+  <message name="getCountByProvince">
+    <part name="parameters" element="tns:getCountByProvince" />
+  </message>
+  <message name="getCountByProvinceResponse">
+    <part name="parameters" element="tns:getCountByProvinceResponse" />
+  </message>
+  <message name="getCountByCity">
+    <part name="parameters" element="tns:getCountByCity" />
+  </message>
+  <message name="getCountByCityResponse">
+    <part name="parameters" element="tns:getCountByCityResponse" />
+  </message>
+  <message name="getCountByPostalCode">
+    <part name="parameters" element="tns:getCountByPostalCode" />
+  </message>
+  <message name="getCountByPostalCodeResponse">
+    <part name="parameters" element="tns:getCountByPostalCodeResponse" />
+  </message>
+  <message name="getCountByPrefix">
+    <part name="parameters" element="tns:getCountByPrefix" />
+  </message>
+  <message name="getCountByPrefixResponse">
+    <part name="parameters" element="tns:getCountByPrefixResponse" />
+  </message>
+  <message name="getProvinces">
+    <part name="parameters" element="tns:getProvinces" />
+  </message>
+  <message name="getProvincesResponse">
+    <part name="parameters" element="tns:getProvincesResponse" />
+  </message>
+  <portType name="Bulk">
+    <operation name="getUserInfo">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getUserInfoRequest" message="tns:getUserInfo" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getUserInfoResponse" message="tns:getUserInfoResponse" />
+    </operation>
+    <operation name="isDuplicateRequest">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/isDuplicateRequestRequest" message="tns:isDuplicateRequest" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/isDuplicateRequestResponse" message="tns:isDuplicateRequestResponse" />
+    </operation>
+    <operation name="getRequestPrice">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getRequestPriceRequest" message="tns:getRequestPrice" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getRequestPriceResponse" message="tns:getRequestPriceResponse" />
+    </operation>
+    <operation name="getBulkStatus">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getBulkStatusRequest" message="tns:getBulkStatus" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getBulkStatusResponse" message="tns:getBulkStatusResponse" />
+    </operation>
+    <operation name="confirmBulkRequest">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/confirmBulkRequestRequest" message="tns:confirmBulkRequest" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/confirmBulkRequestResponse" message="tns:confirmBulkRequestResponse" />
+    </operation>
+    <operation name="requestBulkByPrefix">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/requestBulkByPrefixRequest" message="tns:requestBulkByPrefix" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/requestBulkByPrefixResponse" message="tns:requestBulkByPrefixResponse" />
+    </operation>
+    <operation name="requestBulkByPostalCode">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/requestBulkByPostalCodeRequest" message="tns:requestBulkByPostalCode" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/requestBulkByPostalCodeResponse" message="tns:requestBulkByPostalCodeResponse" />
+    </operation>
+    <operation name="requestBulkByCity">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/requestBulkByCityRequest" message="tns:requestBulkByCity" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/requestBulkByCityResponse" message="tns:requestBulkByCityResponse" />
+    </operation>
+    <operation name="requestBulkByProvince">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/requestBulkByProvinceRequest" message="tns:requestBulkByProvince" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/requestBulkByProvinceResponse" message="tns:requestBulkByProvinceResponse" />
+    </operation>
+    <operation name="getProvincesForExtendedBulk">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getProvincesForExtendedBulkRequest" message="tns:getProvincesForExtendedBulk" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getProvincesForExtendedBulkResponse" message="tns:getProvincesForExtendedBulkResponse" />
+    </operation>
+    <operation name="getCitiesOfProvinceForExtendedBulk">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCitiesOfProvinceForExtendedBulkRequest" message="tns:getCitiesOfProvinceForExtendedBulk" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCitiesOfProvinceForExtendedBulkResponse" message="tns:getCitiesOfProvinceForExtendedBulkResponse" />
+    </operation>
+    <operation name="getCountForExtendedBulk">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCountForExtendedBulkRequest" message="tns:getCountForExtendedBulk" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCountForExtendedBulkResponse" message="tns:getCountForExtendedBulkResponse" />
+    </operation>
+    <operation name="requestExtendedBulk">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/requestExtendedBulkRequest" message="tns:requestExtendedBulk" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/requestExtendedBulkResponse" message="tns:requestExtendedBulkResponse" />
+    </operation>
+    <operation name="getCitiesOfProvince">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCitiesOfProvinceRequest" message="tns:getCitiesOfProvince" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCitiesOfProvinceResponse" message="tns:getCitiesOfProvinceResponse" />
+    </operation>
+    <operation name="getCountByProvince">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCountByProvinceRequest" message="tns:getCountByProvince" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCountByProvinceResponse" message="tns:getCountByProvinceResponse" />
+    </operation>
+    <operation name="getCountByCity">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCountByCityRequest" message="tns:getCountByCity" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCountByCityResponse" message="tns:getCountByCityResponse" />
+    </operation>
+    <operation name="getCountByPostalCode">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCountByPostalCodeRequest" message="tns:getCountByPostalCode" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCountByPostalCodeResponse" message="tns:getCountByPostalCodeResponse" />
+    </operation>
+    <operation name="getCountByPrefix">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCountByPrefixRequest" message="tns:getCountByPrefix" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getCountByPrefixResponse" message="tns:getCountByPrefixResponse" />
+    </operation>
+    <operation name="getProvinces">
+      <input wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getProvincesRequest" message="tns:getProvinces" />
+      <output wsam:Action="http://webservice.bulk.armaghan.net/Bulk/getProvincesResponse" message="tns:getProvincesResponse" />
+    </operation>
+  </portType>
+  <binding name="BulkPortBinding" type="tns:Bulk">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getUserInfo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="isDuplicateRequest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getRequestPrice">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getBulkStatus">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="confirmBulkRequest">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="requestBulkByPrefix">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="requestBulkByPostalCode">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="requestBulkByCity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="requestBulkByProvince">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getProvincesForExtendedBulk">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCitiesOfProvinceForExtendedBulk">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCountForExtendedBulk">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="requestExtendedBulk">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCitiesOfProvince">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCountByProvince">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCountByCity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCountByPostalCode">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getCountByPrefix">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getProvinces">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="BulkService">
+    <port name="BulkPort" binding="tns:BulkPortBinding">
+      <soap:address location="http://ws.armaghan.net:8080/ws-bulk/BulkService" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\backup webservice\\SSB.Service.Web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\backup webservice\\ssb.service.web\\ssb.service.api\\controllers\\ssbsmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\controllers\\ssbsmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\backup webservice\\ssb.service.web\\ssb.service.api\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SSBSMSController.cs",
+              "DocumentMoniker": "D:\\backup webservice\\SSB.Service.Web\\SSB.Service.Api\\Controllers\\SSBSMSController.cs",
+              "RelativeDocumentMoniker": "SSB.Service.Api\\Controllers\\SSBSMSController.cs",
+              "ToolTip": "D:\\backup webservice\\SSB.Service.Web\\SSB.Service.Api\\Controllers\\SSBSMSController.cs",
+              "RelativeToolTip": "SSB.Service.Api\\Controllers\\SSBSMSController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T15:21:04.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\backup webservice\\SSB.Service.Web\\SSB.Service.Api\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "SSB.Service.Api\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\backup webservice\\SSB.Service.Web\\SSB.Service.Api\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "SSB.Service.Api\\App_Start\\RouteConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T15:29:19.441Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

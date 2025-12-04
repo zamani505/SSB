@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetPostalCityCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCityName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPostalCityCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetPostalCityCodeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MCI_PostalSend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGatewayUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGatewayPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGatewayCompany" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intSelectType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCityID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intAreaCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intRegionCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intFrom" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intTo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MCI_PostalSendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MCI_PostalSendResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlobalProvinceCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strProvinceName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlobalProvinceCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetGlobalProvinceCodeResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MCI_GlobalSend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGatewayUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGatewayPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGatewayCompany" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intSelectType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intProvinceID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCityName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="blnNumberType" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="intOnePreCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intThreeCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intFrom" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intTo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="intCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MCI_GlobalSendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MCI_GlobalSendResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatus_MCISend">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGatewayUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGatewayPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGatewayCompany" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intSPCSnedID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatus_MCISendResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatus_MCISendResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPostalCityCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPostalCityCode" />
+  </wsdl:message>
+  <wsdl:message name="GetPostalCityCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPostalCityCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="MCI_PostalSendSoapIn">
+    <wsdl:part name="parameters" element="tns:MCI_PostalSend" />
+  </wsdl:message>
+  <wsdl:message name="MCI_PostalSendSoapOut">
+    <wsdl:part name="parameters" element="tns:MCI_PostalSendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalProvinceCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGlobalProvinceCode" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalProvinceCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGlobalProvinceCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="MCI_GlobalSendSoapIn">
+    <wsdl:part name="parameters" element="tns:MCI_GlobalSend" />
+  </wsdl:message>
+  <wsdl:message name="MCI_GlobalSendSoapOut">
+    <wsdl:part name="parameters" element="tns:MCI_GlobalSendResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatus_MCISendSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatus_MCISend" />
+  </wsdl:message>
+  <wsdl:message name="GetStatus_MCISendSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatus_MCISendResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RahyabSPCSendServiceSoap">
+    <wsdl:operation name="GetPostalCityCode">
+      <wsdl:input message="tns:GetPostalCityCodeSoapIn" />
+      <wsdl:output message="tns:GetPostalCityCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MCI_PostalSend">
+      <wsdl:input message="tns:MCI_PostalSendSoapIn" />
+      <wsdl:output message="tns:MCI_PostalSendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalProvinceCode">
+      <wsdl:input message="tns:GetGlobalProvinceCodeSoapIn" />
+      <wsdl:output message="tns:GetGlobalProvinceCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MCI_GlobalSend">
+      <wsdl:input message="tns:MCI_GlobalSendSoapIn" />
+      <wsdl:output message="tns:MCI_GlobalSendSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus_MCISend">
+      <wsdl:input message="tns:GetStatus_MCISendSoapIn" />
+      <wsdl:output message="tns:GetStatus_MCISendSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RahyabSPCSendServiceSoap" type="tns:RahyabSPCSendServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPostalCityCode">
+      <soap:operation soapAction="http://tempuri.org/GetPostalCityCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MCI_PostalSend">
+      <soap:operation soapAction="http://tempuri.org/MCI_PostalSend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalProvinceCode">
+      <soap:operation soapAction="http://tempuri.org/GetGlobalProvinceCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MCI_GlobalSend">
+      <soap:operation soapAction="http://tempuri.org/MCI_GlobalSend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus_MCISend">
+      <soap:operation soapAction="http://tempuri.org/GetStatus_MCISend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RahyabSPCSendServiceSoap12" type="tns:RahyabSPCSendServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPostalCityCode">
+      <soap12:operation soapAction="http://tempuri.org/GetPostalCityCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MCI_PostalSend">
+      <soap12:operation soapAction="http://tempuri.org/MCI_PostalSend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalProvinceCode">
+      <soap12:operation soapAction="http://tempuri.org/GetGlobalProvinceCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MCI_GlobalSend">
+      <soap12:operation soapAction="http://tempuri.org/MCI_GlobalSend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus_MCISend">
+      <soap12:operation soapAction="http://tempuri.org/GetStatus_MCISend" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RahyabSPCSendService">
+    <wsdl:port name="RahyabSPCSendServiceSoap" binding="tns:RahyabSPCSendServiceSoap">
+      <soap:address location="http://panel.rahyab.ir/rahyabspcsendservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RahyabSPCSendServiceSoap12" binding="tns:RahyabSPCSendServiceSoap12">
+      <soap12:address location="http://panel.rahyab.ir/rahyabspcsendservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1059 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AcountingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AcountingModelStoreContainer">
+          <EntitySet Name="Bulk_Request" EntityType="AcountingModel.Store.Bulk_Request" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Bulks" EntityType="AcountingModel.Store.Bulks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CreditLog" EntityType="AcountingModel.Store.CreditLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReservedLineNumbers" EntityType="AcountingModel.Store.ReservedLineNumbers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbl_BulkSendingDefinition" EntityType="AcountingModel.Store.Tbl_BulkSendingDefinition" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbl_Customers" EntityType="AcountingModel.Store.Tbl_Customers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Extensible" EntityType="AcountingModel.Store.tbl_Extensible" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbl_LineNumber" EntityType="AcountingModel.Store.Tbl_LineNumber" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbl_UserAccount" EntityType="AcountingModel.Store.Tbl_UserAccount" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbl_UsrCredit" EntityType="AcountingModel.Store.Tbl_UsrCredit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ticket" EntityType="AcountingModel.Store.Ticket" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VASContent" EntityType="AcountingModel.Store.VASContent" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VASService" EntityType="AcountingModel.Store.VASService" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Bulk_Request_Bulks1" Association="AcountingModel.Store.FK_Bulk_Request_Bulks1">
+            <End Role="Bulks" EntitySet="Bulks" />
+            <End Role="Bulk_Request" EntitySet="Bulk_Request" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bulks_Tbl_LineNumber" Association="AcountingModel.Store.FK_Bulks_Tbl_LineNumber">
+            <End Role="Tbl_LineNumber" EntitySet="Tbl_LineNumber" />
+            <End Role="Bulks" EntitySet="Bulks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bulks_Tbl_UserAccount1" Association="AcountingModel.Store.FK_Bulks_Tbl_UserAccount1">
+            <End Role="Tbl_UserAccount" EntitySet="Tbl_UserAccount" />
+            <End Role="Bulks" EntitySet="Bulks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_LineNumber_Tbl_UserAccount" Association="AcountingModel.Store.FK_Tbl_LineNumber_Tbl_UserAccount">
+            <End Role="Tbl_UserAccount" EntitySet="Tbl_UserAccount" />
+            <End Role="Tbl_LineNumber" EntitySet="Tbl_LineNumber" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_UserAccount_Tbl_Customers" Association="AcountingModel.Store.FK_Tbl_UserAccount_Tbl_Customers">
+            <End Role="Tbl_Customers" EntitySet="Tbl_Customers" />
+            <End Role="Tbl_UserAccount" EntitySet="Tbl_UserAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VASContent_VASService" Association="AcountingModel.Store.FK_VASContent_VASService">
+            <End Role="VASService" EntitySet="VASService" />
+            <End Role="VASContent" EntitySet="VASContent" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Bulk_Request">
+          <Key>
+            <PropertyRef Name="BulkRequestId" />
+          </Key>
+          <Property Name="BulkRequestId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="StartIndex" Type="int" />
+          <Property Name="RequestCount" Type="int" />
+          <Property Name="BulkId" Type="int" />
+          <Property Name="BulkValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="ValueType" Type="int" />
+          <Property Name="ValueOperation" Type="int" />
+          <Property Name="PhoneType" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bulks">
+          <Key>
+            <PropertyRef Name="BulkId" />
+          </Key>
+          <Property Name="BulkId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LineNumberCode" Type="int" />
+          <Property Name="BulkText" Type="nvarchar" MaxLength="1000" />
+          <Property Name="SendDate" Type="datetime" />
+          <Property Name="SendingType" Type="tinyint" />
+          <Property Name="IsPersian" Type="bit" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="AdminNote" Type="nvarchar" MaxLength="200" />
+          <Property Name="TotalPrice" Type="int" />
+          <Property Name="RequestDate" Type="datetime" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ModifyBy" Type="nvarchar" MaxLength="100" />
+          <Property Name="Notation" Type="varchar" MaxLength="50" />
+          <Property Name="ReturnCredit" Type="bit" />
+        </EntityType>
+        <EntityType Name="CreditLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="bigint" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Action" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="FaPrice" Type="int" Nullable="false" />
+          <Property Name="EnPrice" Type="int" Nullable="false" />
+          <Property Name="PaymentId" Type="int" />
+          <Property Name="EnSmsCount" Type="int" />
+          <Property Name="FaSmsCount" Type="int" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TotalCredit" Type="int" />
+          <Property Name="TransactionType" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsIncrease" Type="bit" />
+        </EntityType>
+        <EntityType Name="ReservedLineNumbers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="LineNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="int" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Tbl_BulkSendingDefinition">
+          <Key>
+            <PropertyRef Name="IBulkSendingDefCode" />
+          </Key>
+          <Property Name="IBulkSendingDefCode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IBulkMinQuantiy" Type="int" />
+          <Property Name="IBulkMaxQuantity" Type="int" />
+          <Property Name="IBulkSMSFaPrice" Type="int" />
+          <Property Name="IBulkSMSEnPrice" Type="int" />
+          <Property Name="IRcvPrice" Type="int" />
+          <Property Name="IUserID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Customers">
+          <Key>
+            <PropertyRef Name="ICCode" />
+          </Key>
+          <Property Name="ICCode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ICParentID" Type="int" />
+          <Property Name="IProviencyCode" Type="int" />
+          <Property Name="ICityCode" Type="int" />
+          <Property Name="IActTypeCode" Type="int" />
+          <Property Name="ICName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ICLName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ICTel" Type="nvarchar" MaxLength="15" />
+          <Property Name="ICMobile" Type="nvarchar" MaxLength="15" />
+          <Property Name="ICFax" Type="nvarchar" MaxLength="15" />
+          <Property Name="ICEmail" Type="nvarchar" MaxLength="100" />
+          <Property Name="ICWebSite" Type="nvarchar" MaxLength="100" />
+          <Property Name="ICPrsAdrs" Type="nvarchar" MaxLength="500" />
+          <Property Name="ICZipeCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="ICCoName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ICCoType" Type="bit" />
+          <Property Name="ICCoActivity" Type="nvarchar" MaxLength="50" />
+          <Property Name="ICDescrtiption" Type="nvarchar" MaxLength="50" />
+          <Property Name="ICPrsNumber" Type="varchar" MaxLength="15" />
+          <Property Name="ICMeliCartPic" Type="nvarchar" MaxLength="200" />
+          <Property Name="ICPrsNumberPic" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="tbl_Extensible">
+          <Key>
+            <PropertyRef Name="IUsrId" />
+          </Key>
+          <Property Name="IUsrId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ServerURL" Type="nvarchar" MaxLength="1500" />
+          <Property Name="UsageType" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserQuantity" Type="int" />
+          <Property Name="TotalSupply" Type="bigint" />
+          <Property Name="CurrentSupply" Type="bigint" />
+          <Property Name="SupportExpert" Type="nvarchar" MaxLength="50" />
+          <Property Name="SalesExpert" Type="nvarchar" MaxLength="50" />
+          <Property Name="FixFaPrice" Type="int" />
+          <Property Name="FixEnPrice" Type="int" />
+          <Property Name="RecieveServerURL" Type="nvarchar" MaxLength="1500" />
+          <Property Name="HasBankAccount" Type="bit" />
+          <Property Name="ConnectionString" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Tbl_LineNumber">
+          <Key>
+            <PropertyRef Name="ILineNumberCode" />
+          </Key>
+          <Property Name="ILineNumberCode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IUsrId" Type="nvarchar" MaxLength="100" />
+          <Property Name="ILineNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ILineModuleNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ILineServiceType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ILineKeyWord" Type="nvarchar" MaxLength="50" />
+          <Property Name="ILineStatuse" Type="nvarchar" MaxLength="50" />
+          <Property Name="ILineLastModify" Type="nvarchar" MaxLength="50" />
+          <Property Name="ILineDuration" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_UserAccount">
+          <Key>
+            <PropertyRef Name="IUsrId" />
+          </Key>
+          <Property Name="IUsrAccCode" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IUserParentID" Type="int" />
+          <Property Name="IUsrManagerId" Type="nvarchar" MaxLength="100" />
+          <Property Name="IUsrCCode" Type="int" Nullable="false" />
+          <Property Name="AscRoleCode" Type="int" Nullable="false" />
+          <Property Name="IUsrId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="IUsrPaswrd" Type="nvarchar" MaxLength="20" />
+          <Property Name="IUsrActive" Type="bit" />
+          <Property Name="IUsrSpesial" Type="bit" />
+          <Property Name="IUsrISAdmin" Type="bit" />
+          <Property Name="IUsrIName" Type="nvarchar" MaxLength="20" />
+          <Property Name="IUsrAccCreatDate" Type="nvarchar" MaxLength="10" />
+          <Property Name="IUsrAccExpireDate" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Tbl_UsrCredit">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="int" Nullable="false" />
+          <Property Name="IUsrId" Type="nvarchar" MaxLength="100" />
+          <Property Name="ICreditAmount" Type="int" />
+          <Property Name="ISMSFaPrice" Type="int" />
+          <Property Name="ISMSEnPrice" Type="int" />
+          <Property Name="IRcvSmsPrice" Type="int" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="TicketId" />
+          </Key>
+          <Property Name="TicketId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Subject" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Body" Type="nvarchar" Nullable="false" />
+          <Property Name="ResponsibleRole" Type="int" Nullable="false" />
+          <Property Name="MessageFrom" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="TicketStatus" Type="tinyint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="AttachFile" Type="varbinary(max)" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PanelId" Type="int" Nullable="false" />
+          <Property Name="ManagerId" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MessageTo" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="VASContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="VASServiceId" Type="int" Nullable="false" />
+          <Property Name="SortIndex" Type="int" Nullable="false" />
+          <Property Name="IsNew" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ContentName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VASService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="PardisServiceId" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="IsPublished" Type="bit" />
+          <Property Name="Image" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="400" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="DefaultPerDay" Type="int" Nullable="false" />
+          <Property Name="DefaultTimePeriod" Type="int" />
+          <Property Name="LineNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ActiveKeyword" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeactiveKeyword" Type="nvarchar" MaxLength="50" />
+          <Property Name="SendType" Type="int" />
+          <Property Name="ChargType" Type="int" />
+          <Property Name="ServiceType" Type="int" />
+          <Property Name="FreeContentCount" Type="int" />
+          <Property Name="WelcomeMessage" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ResignMessage" Type="nvarchar" MaxLength="1000" />
+          <Property Name="DeactivateMessage" Type="nvarchar" MaxLength="1000" />
+          <Property Name="MCIServiceId" Type="nvarchar" MaxLength="50" />
+          <Property Name="TCOperator" Type="int" />
+          <Property Name="StartTime" Type="time" />
+          <Property Name="EndTime" Type="time" />
+          <Property Name="InternalPardisId" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Bulk_Request_Bulks1">
+          <End Role="Bulks" Type="AcountingModel.Store.Bulks" Multiplicity="0..1" />
+          <End Role="Bulk_Request" Type="AcountingModel.Store.Bulk_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bulks">
+              <PropertyRef Name="BulkId" />
+            </Principal>
+            <Dependent Role="Bulk_Request">
+              <PropertyRef Name="BulkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bulks_Tbl_LineNumber">
+          <End Role="Tbl_LineNumber" Type="AcountingModel.Store.Tbl_LineNumber" Multiplicity="0..1" />
+          <End Role="Bulks" Type="AcountingModel.Store.Bulks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_LineNumber">
+              <PropertyRef Name="ILineNumberCode" />
+            </Principal>
+            <Dependent Role="Bulks">
+              <PropertyRef Name="LineNumberCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bulks_Tbl_UserAccount1">
+          <End Role="Tbl_UserAccount" Type="AcountingModel.Store.Tbl_UserAccount" Multiplicity="0..1" />
+          <End Role="Bulks" Type="AcountingModel.Store.Bulks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_UserAccount">
+              <PropertyRef Name="IUsrId" />
+            </Principal>
+            <Dependent Role="Bulks">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_LineNumber_Tbl_UserAccount">
+          <End Role="Tbl_UserAccount" Type="AcountingModel.Store.Tbl_UserAccount" Multiplicity="0..1" />
+          <End Role="Tbl_LineNumber" Type="AcountingModel.Store.Tbl_LineNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_UserAccount">
+              <PropertyRef Name="IUsrId" />
+            </Principal>
+            <Dependent Role="Tbl_LineNumber">
+              <PropertyRef Name="IUsrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_UserAccount_Tbl_Customers">
+          <End Role="Tbl_Customers" Type="AcountingModel.Store.Tbl_Customers" Multiplicity="1" />
+          <End Role="Tbl_UserAccount" Type="AcountingModel.Store.Tbl_UserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Customers">
+              <PropertyRef Name="ICCode" />
+            </Principal>
+            <Dependent Role="Tbl_UserAccount">
+              <PropertyRef Name="IUsrCCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VASContent_VASService">
+          <End Role="VASService" Type="AcountingModel.Store.VASService" Multiplicity="1" />
+          <End Role="VASContent" Type="AcountingModel.Store.VASContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VASService">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VASContent">
+              <PropertyRef Name="VASServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SPTbl_Bulk_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BulkId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SpTbl_OnlineUsrCredit_Insert_ForAdminCharj" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IUsrId" Type="nvarchar" Mode="In" />
+          <Parameter Name="PayTypeCode" Type="int" Mode="In" />
+          <Parameter Name="PaymentAmount" Type="int" Mode="In" />
+          <Parameter Name="PaymentDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="PayFlag" Type="bit" Mode="In" />
+          <Parameter Name="ISMSFaPrice" Type="int" Mode="In" />
+          <Parameter Name="ISMSEnPrice" Type="int" Mode="In" />
+          <Parameter Name="IRcvSmsPrice" Type="int" Mode="In" />
+          <Parameter Name="PayDate" Type="datetime" Mode="In" />
+          <Parameter Name="TransactionNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="BankId" Type="int" Mode="In" />
+          <Parameter Name="InvoiceNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="Description" Type="nvarchar" Mode="In" />
+          <Parameter Name="IsFrist" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="SpTbl_Payment_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IUsrId" Type="nvarchar" Mode="In" />
+          <Parameter Name="PayTypeCode" Type="int" Mode="In" />
+          <Parameter Name="PayCommentCode" Type="int" Mode="In" />
+          <Parameter Name="PaymentAmount" Type="int" Mode="In" />
+          <Parameter Name="PaymentDiscount" Type="tinyint" Mode="In" />
+          <Parameter Name="PayDisComment" Type="nvarchar" Mode="In" />
+          <Parameter Name="PaySerial" Type="nvarchar" Mode="In" />
+          <Parameter Name="PaymentDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="PayExpiredDate" Type="nvarchar" Mode="In" />
+          <Parameter Name="PayFlag" Type="bit" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AcountingModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AcountingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CreditLogs" EntityType="AcountingModel.CreditLog" />
+          <EntitySet Name="UserAccounts" EntityType="AcountingModel.UserAccount" />
+          <FunctionImport Name="SPTbl_Bulk_Delete" ReturnType="Collection(Int32)">
+          <Parameter Name="BulkId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Tbl_UsrCredit" EntityType="AcountingModel.Tbl_UsrCredit" />
+          <EntitySet Name="Bulk_RequestAcc" EntityType="AcountingModel.Bulk_RequestAcc" />
+          <EntitySet Name="BulkAccs" EntityType="AcountingModel.BulkAcc" />
+          <AssociationSet Name="FK_Bulk_Request_Bulks1" Association="AcountingModel.FK_Bulk_Request_Bulks1">
+            <End Role="Bulk" EntitySet="BulkAccs" />
+            <End Role="Bulk_Request" EntitySet="Bulk_RequestAcc" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bulks_Tbl_UserAccount1" Association="AcountingModel.FK_Bulks_Tbl_UserAccount1">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="Bulk" EntitySet="BulkAccs" />
+          </AssociationSet>
+          <EntitySet Name="Tbl_BulkSendingDefinition" EntityType="AcountingModel.Tbl_BulkSendingDefinition" />
+          <EntitySet Name="Tbl_LineNumber" EntityType="AcountingModel.linenumber" />
+          <AssociationSet Name="FK_Bulks_Tbl_LineNumber" Association="AcountingModel.FK_Bulks_Tbl_LineNumber">
+            <End Role="Tbl_LineNumber" EntitySet="Tbl_LineNumber" />
+            <End Role="BulkAcc" EntitySet="BulkAccs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_LineNumber_Tbl_UserAccount" Association="AcountingModel.FK_Tbl_LineNumber_Tbl_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="Tbl_LineNumber" EntitySet="Tbl_LineNumber" />
+          </AssociationSet>
+          <EntitySet Name="ReservedLineNumbers" EntityType="AcountingModel.ReservedLineNumbers" />
+          <EntitySet Name="Ticket" EntityType="AcountingModel.Ticket" />
+          <EntitySet Name="VASContent" EntityType="AcountingModel.VASContent" />
+          <FunctionImport Name="SpTbl_Payment_Insert" ReturnType="Collection(Int32)">
+            <Parameter Name="IUsrId" Mode="In" Type="String" />
+            <Parameter Name="PayTypeCode" Mode="In" Type="Int32" />
+            <Parameter Name="PayCommentCode" Mode="In" Type="Int32" />
+            <Parameter Name="PaymentAmount" Mode="In" Type="Int32" />
+            <Parameter Name="PaymentDiscount" Mode="In" Type="Byte" />
+            <Parameter Name="PayDisComment" Mode="In" Type="String" />
+            <Parameter Name="PaySerial" Mode="In" Type="String" />
+            <Parameter Name="PaymentDate" Mode="In" Type="String" />
+            <Parameter Name="PayExpiredDate" Mode="In" Type="String" />
+            <Parameter Name="PayFlag" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <EntitySet Name="Customers" EntityType="AcountingModel.Customers" />
+          <AssociationSet Name="FK_Tbl_UserAccount_Tbl_Customers" Association="AcountingModel.FK_Tbl_UserAccount_Tbl_Customers">
+            <End Role="Tbl_Customers" EntitySet="Customers" />
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+          </AssociationSet>
+          <EntitySet Name="VASService" EntityType="AcountingModel.VASService" />
+          <AssociationSet Name="FK_VASContent_VASService" Association="AcountingModel.FK_VASContent_VASService">
+            <End Role="VASService" EntitySet="VASService" />
+            <End Role="VASContent" EntitySet="VASContent" />
+          </AssociationSet>
+          <EntitySet Name="tbl_Extensible" EntityType="AcountingModel.tbl_Extensible" />
+          <FunctionImport Name="SpTbl_OnlineUsrCredit_Insert_ForAdminCharj" ReturnType="Collection(String)">
+            <Parameter Name="IUsrId" Mode="In" Type="String" />
+            <Parameter Name="PayTypeCode" Mode="In" Type="Int32" />
+            <Parameter Name="PaymentAmount" Mode="In" Type="Int32" />
+            <Parameter Name="PaymentDate" Mode="In" Type="String" />
+            <Parameter Name="PayFlag" Mode="In" Type="Boolean" />
+            <Parameter Name="ISMSFaPrice" Mode="In" Type="Int32" />
+            <Parameter Name="ISMSEnPrice" Mode="In" Type="Int32" />
+            <Parameter Name="IRcvSmsPrice" Mode="In" Type="Int32" />
+            <Parameter Name="PayDate" Mode="In" Type="DateTime" />
+            <Parameter Name="TransactionNumber" Mode="In" Type="String" />
+            <Parameter Name="BankId" Mode="In" Type="Int32" />
+            <Parameter Name="InvoiceNumber" Mode="In" Type="String" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="IsFrist" Mode="In" Type="Boolean" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="CreditLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Int64" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Action" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FaPrice" Type="Int32" Nullable="false" />
+          <Property Name="EnPrice" Type="Int32" Nullable="false" />
+          <Property Name="PaymentId" Type="Int32" />
+          <Property Name="EnSmsCount" Type="Int32" />
+          <Property Name="FaSmsCount" Type="Int32" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TotalCredit" Type="Int32" />
+          <Property Name="TransactionType" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="IsIncrease" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="IUsrId" />
+          </Key>
+          <Property Type="Int32" Name="IUsrAccCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IUserParentID" />
+          <Property Type="String" Name="IUsrManagerId" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="IUsrCCode" Nullable="false" />
+          <Property Type="Int32" Name="AscRoleCode" Nullable="false" />
+          <Property Type="String" Name="IUsrId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IUsrPaswrd" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IUsrActive" />
+          <Property Type="Boolean" Name="IUsrSpesial" />
+          <Property Type="Boolean" Name="IUsrISAdmin" />
+          <Property Type="String" Name="IUsrIName" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IUsrAccCreatDate" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IUsrAccExpireDate" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Bulks" Relationship="AcountingModel.FK_Bulks_Tbl_UserAccount1" FromRole="UserAccount" ToRole="Bulk" />
+          <NavigationProperty Name="Tbl_LineNumber" Relationship="AcountingModel.FK_Tbl_LineNumber_Tbl_UserAccount" FromRole="UserAccount" ToRole="Tbl_LineNumber" />
+          <NavigationProperty Name="Tbl_Customers" Relationship="AcountingModel.FK_Tbl_UserAccount_Tbl_Customers" FromRole="UserAccount" ToRole="Tbl_Customers" />
+        </EntityType>
+        <EntityType Name="Tbl_UsrCredit">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Type="Int32" Name="PaymentId" Nullable="false" />
+          <Property Type="String" Name="IUsrId" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ICreditAmount" />
+          <Property Type="Int32" Name="ISMSFaPrice" />
+          <Property Type="Int32" Name="ISMSEnPrice" />
+          <Property Type="Int32" Name="IRcvSmsPrice" />
+        </EntityType>
+        <EntityType Name="Bulk_RequestAcc">
+          <Key>
+            <PropertyRef Name="BulkRequestId" />
+          </Key>
+          <Property Type="Int32" Name="BulkRequestId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="CategoryId" />
+          <Property Type="Int32" Name="StartIndex" />
+          <Property Type="Int32" Name="RequestCount" />
+          <Property Type="Int32" Name="BulkId" />
+          <Property Type="String" Name="BulkValue" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ValueType" />
+          <Property Type="Int32" Name="ValueOperation" />
+          <Property Type="Byte" Name="PhoneType" Nullable="false" />
+          <NavigationProperty Name="Bulk" Relationship="AcountingModel.FK_Bulk_Request_Bulks1" FromRole="Bulk_Request" ToRole="Bulk" />
+        </EntityType>
+        <EntityType Name="BulkAcc">
+          <Key>
+            <PropertyRef Name="BulkId" />
+          </Key>
+          <Property Type="Int32" Name="BulkId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="LineNumberCode" />
+          <Property Type="String" Name="BulkText" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="SendDate" Precision="3" />
+          <Property Type="Byte" Name="SendingType" />
+          <Property Type="Boolean" Name="IsPersian" />
+          <Property Type="Byte" Name="Status" />
+          <Property Type="String" Name="AdminNote" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TotalPrice" />
+          <Property Type="DateTime" Name="RequestDate" Precision="3" />
+          <Property Type="String" Name="UserId" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
+          <Property Type="String" Name="ModifyBy" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Bulk_Request" Relationship="AcountingModel.FK_Bulk_Request_Bulks1" FromRole="Bulk" ToRole="Bulk_Request" />
+          <NavigationProperty Name="Tbl_UserAccount" Relationship="AcountingModel.FK_Bulks_Tbl_UserAccount1" FromRole="Bulk" ToRole="UserAccount" />
+          <NavigationProperty Name="Tbl_LineNumber" Relationship="AcountingModel.FK_Bulks_Tbl_LineNumber" FromRole="BulkAcc" ToRole="Tbl_LineNumber" />
+          <Property Type="String" Name="Notation" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ReturnCredit" />
+        </EntityType>
+        <Association Name="FK_Bulk_Request_Bulks1">
+          <End Type="AcountingModel.BulkAcc" Role="Bulk" Multiplicity="0..1" />
+          <End Type="AcountingModel.Bulk_RequestAcc" Role="Bulk_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bulk">
+              <PropertyRef Name="BulkId" />
+            </Principal>
+            <Dependent Role="Bulk_Request">
+              <PropertyRef Name="BulkId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bulks_Tbl_UserAccount1">
+          <End Type="AcountingModel.UserAccount" Role="UserAccount" Multiplicity="0..1" />
+          <End Type="AcountingModel.BulkAcc" Role="Bulk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="IUsrId" />
+            </Principal>
+            <Dependent Role="Bulk">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tbl_BulkSendingDefinition">
+          <Key>
+            <PropertyRef Name="IBulkSendingDefCode" />
+          </Key>
+          <Property Type="Int32" Name="IBulkSendingDefCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IBulkMinQuantiy" />
+          <Property Type="Int32" Name="IBulkMaxQuantity" />
+          <Property Type="Int32" Name="IBulkSMSFaPrice" />
+          <Property Type="Int32" Name="IBulkSMSEnPrice" />
+          <Property Type="Int32" Name="IRcvPrice" />
+          <Property Type="String" Name="IUserID" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="linenumber">
+          <Key>
+            <PropertyRef Name="ILineNumberCode" />
+          </Key>
+          <Property Type="Int32" Name="ILineNumberCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="IUsrId" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ILineNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ILineModuleNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ILineServiceType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ILineKeyWord" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ILineStatuse" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ILineLastModify" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ILineDuration" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Bulks" Relationship="AcountingModel.FK_Bulks_Tbl_LineNumber" FromRole="Tbl_LineNumber" ToRole="BulkAcc" />
+          <NavigationProperty Name="Tbl_UserAccount" Relationship="AcountingModel.FK_Tbl_LineNumber_Tbl_UserAccount" FromRole="Tbl_LineNumber" ToRole="UserAccount" />
+        </EntityType>
+        <Association Name="FK_Bulks_Tbl_LineNumber">
+          <End Type="AcountingModel.linenumber" Role="Tbl_LineNumber" Multiplicity="0..1" />
+          <End Type="AcountingModel.BulkAcc" Role="BulkAcc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_LineNumber">
+              <PropertyRef Name="ILineNumberCode" />
+            </Principal>
+            <Dependent Role="BulkAcc">
+              <PropertyRef Name="LineNumberCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_LineNumber_Tbl_UserAccount">
+          <End Type="AcountingModel.UserAccount" Role="UserAccount" Multiplicity="0..1" />
+          <End Type="AcountingModel.linenumber" Role="Tbl_LineNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="IUsrId" />
+            </Principal>
+            <Dependent Role="Tbl_LineNumber">
+              <PropertyRef Name="IUsrId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReservedLineNumbers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="LineNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="State" />
+          <Property Type="Int32" Name="Price" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="TicketId" />
+          </Key>
+          <Property Type="Int32" Name="TicketId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Subject" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Body" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ResponsibleRole" Nullable="false" />
+          <Property Type="String" Name="MessageFrom" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Byte" Name="TicketStatus" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="ParentId" Nullable="false" />
+          <Property Type="Binary" Name="AttachFile" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="FileName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PanelId" Nullable="false" />
+          <Property Type="String" Name="ManagerId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MessageTo" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VASContent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Body" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="VASServiceId" Nullable="false" />
+          <Property Type="Int32" Name="SortIndex" Nullable="false" />
+          <Property Type="Boolean" Name="IsNew" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="String" Name="ContentName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="VASService" Relationship="AcountingModel.FK_VASContent_VASService" FromRole="VASContent" ToRole="VASService" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="ICCode" />
+          </Key>
+          <Property Type="Int32" Name="ICCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ICParentID" />
+          <Property Type="Int32" Name="IProviencyCode" />
+          <Property Type="Int32" Name="ICityCode" />
+          <Property Type="Int32" Name="IActTypeCode" />
+          <Property Type="String" Name="ICName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICLName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICTel" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICMobile" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICFax" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICEmail" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICWebSite" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICPrsAdrs" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICZipeCode" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICCoName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="ICCoType" />
+          <Property Type="String" Name="ICCoActivity" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICDescrtiption" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICPrsNumber" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ICMeliCartPic" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICPrsNumberPic" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tbl_UserAccount" Relationship="AcountingModel.FK_Tbl_UserAccount_Tbl_Customers" FromRole="Tbl_Customers" ToRole="UserAccount" />
+        </EntityType>
+        <Association Name="FK_Tbl_UserAccount_Tbl_Customers">
+          <End Type="AcountingModel.Customers" Role="Tbl_Customers" Multiplicity="1" />
+          <End Type="AcountingModel.UserAccount" Role="UserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Customers">
+              <PropertyRef Name="ICCode" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="IUsrCCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="VASService">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PardisServiceId" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Price" Nullable="false" />
+          <Property Type="String" Name="UserId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsPublished" />
+          <Property Type="String" Name="Image" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="EndDate" Precision="3" />
+          <Property Type="Int32" Name="DefaultPerDay" Nullable="false" />
+          <Property Type="Int32" Name="DefaultTimePeriod" />
+          <Property Type="String" Name="LineNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ActiveKeyword" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeactiveKeyword" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SendType" />
+          <Property Type="Int32" Name="ChargType" />
+          <Property Type="Int32" Name="ServiceType" />
+          <Property Type="Int32" Name="FreeContentCount" />
+          <Property Type="String" Name="WelcomeMessage" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ResignMessage" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DeactivateMessage" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MCIServiceId" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TCOperator" />
+          <Property Type="Time" Name="StartTime" Precision="7" />
+          <Property Type="Time" Name="EndTime" Precision="7" />
+          <Property Type="String" Name="InternalPardisId" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="VASContent" Relationship="AcountingModel.FK_VASContent_VASService" FromRole="VASService" ToRole="VASContent" />
+        </EntityType>
+        <Association Name="FK_VASContent_VASService">
+          <End Type="AcountingModel.VASService" Role="VASService" Multiplicity="1" />
+          <End Type="AcountingModel.VASContent" Role="VASContent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VASService">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VASContent">
+              <PropertyRef Name="VASServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_Extensible">
+          <Key>
+            <PropertyRef Name="IUsrId" />
+          </Key>
+          <Property Type="String" Name="IUsrId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ServerURL" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UsageType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UserQuantity" />
+          <Property Type="Int64" Name="TotalSupply" />
+          <Property Type="Int64" Name="CurrentSupply" />
+          <Property Type="String" Name="SupportExpert" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SalesExpert" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FixFaPrice" />
+          <Property Type="Int32" Name="FixEnPrice" />
+          <Property Type="String" Name="RecieveServerURL" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="HasBankAccount" />
+          <Property Type="String" Name="ConnectionString" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AcountingModelStoreContainer" CdmEntityContainer="AcountingEntities">
+          <EntitySetMapping Name="CreditLogs"><EntityTypeMapping TypeName="AcountingModel.CreditLog"><MappingFragment StoreEntitySet="CreditLog">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Amount" ColumnName="Amount" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="Action" ColumnName="Action" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="FaPrice" ColumnName="FaPrice" />
+            <ScalarProperty Name="EnPrice" ColumnName="EnPrice" />
+            <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+            <ScalarProperty Name="EnSmsCount" ColumnName="EnSmsCount" />
+            <ScalarProperty Name="FaSmsCount" ColumnName="FaSmsCount" />
+            <ScalarProperty Name="Source" ColumnName="Source" />
+            <ScalarProperty Name="TotalCredit" ColumnName="TotalCredit" />
+            <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="IsIncrease" ColumnName="IsIncrease" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UserAccounts">
+            <EntityTypeMapping TypeName="AcountingModel.UserAccount">
+              <MappingFragment StoreEntitySet="Tbl_UserAccount">
+                <ScalarProperty Name="IUsrAccExpireDate" ColumnName="IUsrAccExpireDate" />
+                <ScalarProperty Name="IUsrAccCreatDate" ColumnName="IUsrAccCreatDate" />
+                <ScalarProperty Name="IUsrIName" ColumnName="IUsrIName" />
+                <ScalarProperty Name="IUsrISAdmin" ColumnName="IUsrISAdmin" />
+                <ScalarProperty Name="IUsrSpesial" ColumnName="IUsrSpesial" />
+                <ScalarProperty Name="IUsrActive" ColumnName="IUsrActive" />
+                <ScalarProperty Name="IUsrPaswrd" ColumnName="IUsrPaswrd" />
+                <ScalarProperty Name="IUsrId" ColumnName="IUsrId" />
+                <ScalarProperty Name="AscRoleCode" ColumnName="AscRoleCode" />
+                <ScalarProperty Name="IUsrCCode" ColumnName="IUsrCCode" />
+                <ScalarProperty Name="IUsrManagerId" ColumnName="IUsrManagerId" />
+                <ScalarProperty Name="IUserParentID" ColumnName="IUserParentID" />
+                <ScalarProperty Name="IUsrAccCode" ColumnName="IUsrAccCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SPTbl_Bulk_Delete" FunctionName="AcountingModel.Store.SPTbl_Bulk_Delete" />
+          <EntitySetMapping Name="Tbl_UsrCredit">
+            <EntityTypeMapping TypeName="AcountingModel.Tbl_UsrCredit">
+              <MappingFragment StoreEntitySet="Tbl_UsrCredit">
+                <ScalarProperty Name="IRcvSmsPrice" ColumnName="IRcvSmsPrice" />
+                <ScalarProperty Name="ISMSEnPrice" ColumnName="ISMSEnPrice" />
+                <ScalarProperty Name="ISMSFaPrice" ColumnName="ISMSFaPrice" />
+                <ScalarProperty Name="ICreditAmount" ColumnName="ICreditAmount" />
+                <ScalarProperty Name="IUsrId" ColumnName="IUsrId" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bulk_RequestAcc">
+            <EntityTypeMapping TypeName="AcountingModel.Bulk_RequestAcc">
+              <MappingFragment StoreEntitySet="Bulk_Request">
+                <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+                <ScalarProperty Name="ValueOperation" ColumnName="ValueOperation" />
+                <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+                <ScalarProperty Name="BulkValue" ColumnName="BulkValue" />
+                <ScalarProperty Name="BulkId" ColumnName="BulkId" />
+                <ScalarProperty Name="RequestCount" ColumnName="RequestCount" />
+                <ScalarProperty Name="StartIndex" ColumnName="StartIndex" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="BulkRequestId" ColumnName="BulkRequestId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BulkAccs">
+            <EntityTypeMapping TypeName="AcountingModel.BulkAcc">
+              <MappingFragment StoreEntitySet="Bulks">
+                <ScalarProperty Name="ReturnCredit" ColumnName="ReturnCredit" />
+                <ScalarProperty Name="Notation" ColumnName="Notation" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="AdminNote" ColumnName="AdminNote" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsPersian" ColumnName="IsPersian" />
+                <ScalarProperty Name="SendingType" ColumnName="SendingType" />
+                <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+                <ScalarProperty Name="BulkText" ColumnName="BulkText" />
+                <ScalarProperty Name="LineNumberCode" ColumnName="LineNumberCode" />
+                <ScalarProperty Name="BulkId" ColumnName="BulkId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_BulkSendingDefinition">
+            <EntityTypeMapping TypeName="AcountingModel.Tbl_BulkSendingDefinition">
+              <MappingFragment StoreEntitySet="Tbl_BulkSendingDefinition">
+                <ScalarProperty Name="IUserID" ColumnName="IUserID" />
+                <ScalarProperty Name="IRcvPrice" ColumnName="IRcvPrice" />
+                <ScalarProperty Name="IBulkSMSEnPrice" ColumnName="IBulkSMSEnPrice" />
+                <ScalarProperty Name="IBulkSMSFaPrice" ColumnName="IBulkSMSFaPrice" />
+                <ScalarProperty Name="IBulkMaxQuantity" ColumnName="IBulkMaxQuantity" />
+                <ScalarProperty Name="IBulkMinQuantiy" ColumnName="IBulkMinQuantiy" />
+                <ScalarProperty Name="IBulkSendingDefCode" ColumnName="IBulkSendingDefCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_LineNumber">
+            <EntityTypeMapping TypeName="AcountingModel.linenumber">
+              <MappingFragment StoreEntitySet="Tbl_LineNumber">
+                <ScalarProperty Name="ILineDuration" ColumnName="ILineDuration" />
+                <ScalarProperty Name="ILineLastModify" ColumnName="ILineLastModify" />
+                <ScalarProperty Name="ILineStatuse" ColumnName="ILineStatuse" />
+                <ScalarProperty Name="ILineKeyWord" ColumnName="ILineKeyWord" />
+                <ScalarProperty Name="ILineServiceType" ColumnName="ILineServiceType" />
+                <ScalarProperty Name="ILineModuleNumber" ColumnName="ILineModuleNumber" />
+                <ScalarProperty Name="ILineNumber" ColumnName="ILineNumber" />
+                <ScalarProperty Name="IUsrId" ColumnName="IUsrId" />
+                <ScalarProperty Name="ILineNumberCode" ColumnName="ILineNumberCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReservedLineNumbers">
+            <EntityTypeMapping TypeName="AcountingModel.ReservedLineNumbers">
+              <MappingFragment StoreEntitySet="ReservedLineNumbers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ticket">
+            <EntityTypeMapping TypeName="AcountingModel.Ticket">
+              <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="MessageTo" ColumnName="MessageTo" />
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+                <ScalarProperty Name="PanelId" ColumnName="PanelId" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="AttachFile" ColumnName="AttachFile" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+                <ScalarProperty Name="MessageFrom" ColumnName="MessageFrom" />
+                <ScalarProperty Name="ResponsibleRole" ColumnName="ResponsibleRole" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VASContent">
+            <EntityTypeMapping TypeName="AcountingModel.VASContent">
+              <MappingFragment StoreEntitySet="VASContent">
+                <ScalarProperty Name="ContentName" ColumnName="ContentName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+                <ScalarProperty Name="VASServiceId" ColumnName="VASServiceId" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SpTbl_Payment_Insert" FunctionName="AcountingModel.Store.SpTbl_Payment_Insert" />
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="AcountingModel.Customers">
+              <MappingFragment StoreEntitySet="Tbl_Customers">
+                <ScalarProperty Name="ICPrsNumberPic" ColumnName="ICPrsNumberPic" />
+                <ScalarProperty Name="ICMeliCartPic" ColumnName="ICMeliCartPic" />
+                <ScalarProperty Name="ICPrsNumber" ColumnName="ICPrsNumber" />
+                <ScalarProperty Name="ICDescrtiption" ColumnName="ICDescrtiption" />
+                <ScalarProperty Name="ICCoActivity" ColumnName="ICCoActivity" />
+                <ScalarProperty Name="ICCoType" ColumnName="ICCoType" />
+                <ScalarProperty Name="ICCoName" ColumnName="ICCoName" />
+                <ScalarProperty Name="ICZipeCode" ColumnName="ICZipeCode" />
+                <ScalarProperty Name="ICPrsAdrs" ColumnName="ICPrsAdrs" />
+                <ScalarProperty Name="ICWebSite" ColumnName="ICWebSite" />
+                <ScalarProperty Name="ICEmail" ColumnName="ICEmail" />
+                <ScalarProperty Name="ICFax" ColumnName="ICFax" />
+                <ScalarProperty Name="ICMobile" ColumnName="ICMobile" />
+                <ScalarProperty Name="ICTel" ColumnName="ICTel" />
+                <ScalarProperty Name="ICLName" ColumnName="ICLName" />
+                <ScalarProperty Name="ICName" ColumnName="ICName" />
+                <ScalarProperty Name="IActTypeCode" ColumnName="IActTypeCode" />
+                <ScalarProperty Name="ICityCode" ColumnName="ICityCode" />
+                <ScalarProperty Name="IProviencyCode" ColumnName="IProviencyCode" />
+                <ScalarProperty Name="ICParentID" ColumnName="ICParentID" />
+                <ScalarProperty Name="ICCode" ColumnName="ICCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VASService">
+            <EntityTypeMapping TypeName="AcountingModel.VASService">
+              <MappingFragment StoreEntitySet="VASService">
+                <ScalarProperty Name="InternalPardisId" ColumnName="InternalPardisId" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="TCOperator" ColumnName="TCOperator" />
+                <ScalarProperty Name="MCIServiceId" ColumnName="MCIServiceId" />
+                <ScalarProperty Name="DeactivateMessage" ColumnName="DeactivateMessage" />
+                <ScalarProperty Name="ResignMessage" ColumnName="ResignMessage" />
+                <ScalarProperty Name="WelcomeMessage" ColumnName="WelcomeMessage" />
+                <ScalarProperty Name="FreeContentCount" ColumnName="FreeContentCount" />
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+                <ScalarProperty Name="ChargType" ColumnName="ChargType" />
+                <ScalarProperty Name="SendType" ColumnName="SendType" />
+                <ScalarProperty Name="DeactiveKeyword" ColumnName="DeactiveKeyword" />
+                <ScalarProperty Name="ActiveKeyword" ColumnName="ActiveKeyword" />
+                <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
+                <ScalarProperty Name="DefaultTimePeriod" ColumnName="DefaultTimePeriod" />
+                <ScalarProperty Name="DefaultPerDay" ColumnName="DefaultPerDay" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="PardisServiceId" ColumnName="PardisServiceId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Extensible">
+            <EntityTypeMapping TypeName="AcountingModel.tbl_Extensible">
+              <MappingFragment StoreEntitySet="tbl_Extensible">
+                <ScalarProperty Name="ConnectionString" ColumnName="ConnectionString" />
+                <ScalarProperty Name="HasBankAccount" ColumnName="HasBankAccount" />
+                <ScalarProperty Name="RecieveServerURL" ColumnName="RecieveServerURL" />
+                <ScalarProperty Name="FixEnPrice" ColumnName="FixEnPrice" />
+                <ScalarProperty Name="FixFaPrice" ColumnName="FixFaPrice" />
+                <ScalarProperty Name="SalesExpert" ColumnName="SalesExpert" />
+                <ScalarProperty Name="SupportExpert" ColumnName="SupportExpert" />
+                <ScalarProperty Name="CurrentSupply" ColumnName="CurrentSupply" />
+                <ScalarProperty Name="TotalSupply" ColumnName="TotalSupply" />
+                <ScalarProperty Name="UserQuantity" ColumnName="UserQuantity" />
+                <ScalarProperty Name="UsageType" ColumnName="UsageType" />
+                <ScalarProperty Name="ServerURL" ColumnName="ServerURL" />
+                <ScalarProperty Name="IUsrId" ColumnName="IUsrId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SpTbl_OnlineUsrCredit_Insert_ForAdminCharj" FunctionName="AcountingModel.Store.SpTbl_OnlineUsrCredit_Insert_ForAdminCharj" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Acounting" ZoomLevel="84">
+        <EntityTypeShape EntityType="AcountingModel.CreditLog" Width="1.5" PointX="7.25" PointY="6.625" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="AcountingModel.UserAccount" Width="1.5" PointX="5" PointY="7.875" Height="4.0956022135416656" />
+        <EntityTypeShape EntityType="AcountingModel.Tbl_UsrCredit" Width="1.5" PointX="9.375" PointY="4.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="AcountingModel.Bulk_RequestAcc" Width="1.5" PointX="9" PointY="12.25" Height="2.9417936197916745" />
+        <EntityTypeShape EntityType="AcountingModel.BulkAcc" Width="1.5" PointX="6.75" PointY="11.75" Height="3.903300781249996" />
+        <AssociationConnector Association="AcountingModel.FK_Bulk_Request_Bulks1" >
+          <ConnectorPoint PointX="8.25" PointY="13.720896809895837" />
+          <ConnectorPoint PointX="9" PointY="13.720896809895837" />
+        </AssociationConnector>
+        <AssociationConnector Association="AcountingModel.FK_Bulks_Tbl_UserAccount1" >
+          <ConnectorPoint PointX="5.8437494999999995" PointY="11.970602213541666" />
+          <ConnectorPoint PointX="5.8437494999999995" PointY="13.893951822916668" />
+          <ConnectorPoint PointX="6.75" PointY="13.893951822916668" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AcountingModel.Tbl_BulkSendingDefinition" Width="1.5" PointX="8.375" PointY="0.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="AcountingModel.linenumber" Width="1.5" PointX="3.875" PointY="16.375" Height="3.1340950520833317" />
+        <AssociationConnector Association="AcountingModel.FK_Bulks_Tbl_LineNumber" >
+          <ConnectorPoint PointX="5.375" PointY="17.942047526041666" />
+          <ConnectorPoint PointX="7.5" PointY="17.942047526041666" />
+          <ConnectorPoint PointX="7.5" PointY="16.037903645833335" />
+        </AssociationConnector>
+        <AssociationConnector Association="AcountingModel.FK_Tbl_LineNumber_Tbl_UserAccount" >
+          <ConnectorPoint PointX="5.1875" PointY="11.970602213541666" />
+          <ConnectorPoint PointX="5.1875" PointY="16.375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AcountingModel.ReservedLineNumbers" Width="2.25" PointX="5" PointY="1.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="AcountingModel.Ticket" Width="1.5" PointX="9.375" PointY="7.75" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="AcountingModel.VASContent" Width="1.5" PointX="6.375" PointY="4.25" />
+        <EntityTypeShape EntityType="AcountingModel.Customers" Width="1.5" PointX="2.75" PointY="8.25" Height="5.2494108072916745" />
+        <AssociationConnector Association="AcountingModel.FK_Tbl_UserAccount_Tbl_Customers" >
+          <ConnectorPoint PointX="4.25" PointY="10.110301106770834" />
+          <ConnectorPoint PointX="5" PointY="10.110301106770834" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AcountingModel.VASService" Width="1.5" PointX="6.0585946245391824" PointY="29.1059612767333" />
+        <AssociationConnector Association="AcountingModel.FK_VASContent_VASService" />
+        <EntityTypeShape EntityType="AcountingModel.tbl_Extensible" Width="1.5" PointX="4.443708151785521" PointY="9.8300108508346646" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,19 @@
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Debug\SSB.Service.Core.dll.config
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Debug\SSB.Service.Core.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Debug\SSB.Service.Core.pdb
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Debug\EntityFramework.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Debug\EntityFramework.SqlServer.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Debug\SSB.Core.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Debug\SSB.Helpers.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\obj\Debug\SSB.Service.Core.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\obj\Debug\SSB.Service.Core.pdb
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\obj\Debug\SSB.Service.Core.csprojResolveAssemblyReference.cache
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Debug\SSB.Service.Core.csproj.AssemblyReference.cache
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Debug\SSB.Service.Core.csproj.CoreCompileInputs.cache
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Debug\SSB.Service.Core.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Debug\SSB.Service.Core.pdb
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Debug\SSB.Service.Core.dll.config
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Debug\SSB.Service.Core.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Debug\SSB.Service.Core.pdb
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Debug\SSB.Serv.BACD14F9.Up2Date
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Debug\System.Data.Entity.dll

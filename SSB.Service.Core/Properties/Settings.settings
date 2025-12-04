@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SSB.Service.Core.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SSB_Service_Core_ir_bankmellat_bpm_pgws_PaymentGatewayImplService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://pgws.bpm.bankmellat.ir/pgwchannel/services/pgw</Value>
+    </Setting>
+    <Setting Name="SSB_Service_Core_MagfaService_SoapSmsQueuableImplementationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://5.160.8.139/services/urn:SOAPSmsQueue</Value>
+    </Setting>
+    <Setting Name="SSB_Service_Core_com_sahandsms_PaymentWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.sahandsms.com/OnlineCharge/paymentwebservice.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

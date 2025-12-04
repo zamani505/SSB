@@ -1,0 +1,23 @@
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Service.Core.dll.config
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Service.Core.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Service.Core.XmlSerializers.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Service.Core.pdb
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Release\EntityFramework.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Release\EntityFramework.SqlServer.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Core.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Helpers.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Service.Core.csprojResolveAssemblyReference.cache
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Service.Core.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Service.Core.pdb
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Service.Core.XmlSerializers.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Service.Core.csproj.AssemblyReference.cache
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Service.Core.csproj.CoreCompileInputs.cache
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Service.Core.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Service.Core.pdb
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Service.Core.XmlSerializers.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Service.Core.dll.config
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Service.Core.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Service.Core.XmlSerializers.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Service.Core.pdb
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Release\System.Data.Entity.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Serv.BACD14F9.Up2Date

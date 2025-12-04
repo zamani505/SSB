@@ -1,0 +1,28 @@
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Web.dll.config
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Web.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Web.XmlSerializers.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Web.pdb
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\bin\SSB.Helpers.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Core.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\bin\EntityFramework.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Core.pdb
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Core.XmlSerializers.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.csprojResolveAssemblyReference.cache
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.dll
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.pdb
+E:\project\SoftwareDept\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.XmlSerializers.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Web.dll.config
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Web.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Web.XmlSerializers.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Web.pdb
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Core.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\bin\EntityFramework.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Core.pdb
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Core.dll.config
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\bin\SSB.Service.Core.XmlSerializers.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.csproj.AssemblyReference.cache
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.csproj.CoreCompileInputs.cache
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Serv.59AD3FDF.Up2Date
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.dll
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.pdb
+D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.XmlSerializers.dll

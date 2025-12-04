@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AcountingModelStoreContainer" CdmEntityContainer="AcountingEntities">
+    <EntitySetMapping Name="CreditLogs">
+      <EntityTypeMapping TypeName="AcountingModel.CreditLog">
+        <MappingFragment StoreEntitySet="CreditLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="FaPrice" ColumnName="FaPrice" />
+          <ScalarProperty Name="EnPrice" ColumnName="EnPrice" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="EnSmsCount" ColumnName="EnSmsCount" />
+          <ScalarProperty Name="FaSmsCount" ColumnName="FaSmsCount" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="TotalCredit" ColumnName="TotalCredit" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsIncrease" ColumnName="IsIncrease" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccounts">
+      <EntityTypeMapping TypeName="AcountingModel.UserAccount">
+        <MappingFragment StoreEntitySet="Tbl_UserAccount">
+          <ScalarProperty Name="IUsrAccExpireDate" ColumnName="IUsrAccExpireDate" />
+          <ScalarProperty Name="IUsrAccCreatDate" ColumnName="IUsrAccCreatDate" />
+          <ScalarProperty Name="IUsrIName" ColumnName="IUsrIName" />
+          <ScalarProperty Name="IUsrISAdmin" ColumnName="IUsrISAdmin" />
+          <ScalarProperty Name="IUsrSpesial" ColumnName="IUsrSpesial" />
+          <ScalarProperty Name="IUsrActive" ColumnName="IUsrActive" />
+          <ScalarProperty Name="IUsrPaswrd" ColumnName="IUsrPaswrd" />
+          <ScalarProperty Name="IUsrId" ColumnName="IUsrId" />
+          <ScalarProperty Name="AscRoleCode" ColumnName="AscRoleCode" />
+          <ScalarProperty Name="IUsrCCode" ColumnName="IUsrCCode" />
+          <ScalarProperty Name="IUsrManagerId" ColumnName="IUsrManagerId" />
+          <ScalarProperty Name="IUserParentID" ColumnName="IUserParentID" />
+          <ScalarProperty Name="IUsrAccCode" ColumnName="IUsrAccCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SPTbl_Bulk_Delete" FunctionName="AcountingModel.Store.SPTbl_Bulk_Delete" />
+    <EntitySetMapping Name="Tbl_UsrCredit">
+      <EntityTypeMapping TypeName="AcountingModel.Tbl_UsrCredit">
+        <MappingFragment StoreEntitySet="Tbl_UsrCredit">
+          <ScalarProperty Name="IRcvSmsPrice" ColumnName="IRcvSmsPrice" />
+          <ScalarProperty Name="ISMSEnPrice" ColumnName="ISMSEnPrice" />
+          <ScalarProperty Name="ISMSFaPrice" ColumnName="ISMSFaPrice" />
+          <ScalarProperty Name="ICreditAmount" ColumnName="ICreditAmount" />
+          <ScalarProperty Name="IUsrId" ColumnName="IUsrId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bulk_RequestAcc">
+      <EntityTypeMapping TypeName="AcountingModel.Bulk_RequestAcc">
+        <MappingFragment StoreEntitySet="Bulk_Request">
+          <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+          <ScalarProperty Name="ValueOperation" ColumnName="ValueOperation" />
+          <ScalarProperty Name="ValueType" ColumnName="ValueType" />
+          <ScalarProperty Name="BulkValue" ColumnName="BulkValue" />
+          <ScalarProperty Name="BulkId" ColumnName="BulkId" />
+          <ScalarProperty Name="RequestCount" ColumnName="RequestCount" />
+          <ScalarProperty Name="StartIndex" ColumnName="StartIndex" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="BulkRequestId" ColumnName="BulkRequestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BulkAccs">
+      <EntityTypeMapping TypeName="AcountingModel.BulkAcc">
+        <MappingFragment StoreEntitySet="Bulks">
+          <ScalarProperty Name="ReturnCredit" ColumnName="ReturnCredit" />
+          <ScalarProperty Name="Notation" ColumnName="Notation" />
+          <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="AdminNote" ColumnName="AdminNote" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsPersian" ColumnName="IsPersian" />
+          <ScalarProperty Name="SendingType" ColumnName="SendingType" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="BulkText" ColumnName="BulkText" />
+          <ScalarProperty Name="LineNumberCode" ColumnName="LineNumberCode" />
+          <ScalarProperty Name="BulkId" ColumnName="BulkId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_BulkSendingDefinition">
+      <EntityTypeMapping TypeName="AcountingModel.Tbl_BulkSendingDefinition">
+        <MappingFragment StoreEntitySet="Tbl_BulkSendingDefinition">
+          <ScalarProperty Name="IUserID" ColumnName="IUserID" />
+          <ScalarProperty Name="IRcvPrice" ColumnName="IRcvPrice" />
+          <ScalarProperty Name="IBulkSMSEnPrice" ColumnName="IBulkSMSEnPrice" />
+          <ScalarProperty Name="IBulkSMSFaPrice" ColumnName="IBulkSMSFaPrice" />
+          <ScalarProperty Name="IBulkMaxQuantity" ColumnName="IBulkMaxQuantity" />
+          <ScalarProperty Name="IBulkMinQuantiy" ColumnName="IBulkMinQuantiy" />
+          <ScalarProperty Name="IBulkSendingDefCode" ColumnName="IBulkSendingDefCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_LineNumber">
+      <EntityTypeMapping TypeName="AcountingModel.linenumber">
+        <MappingFragment StoreEntitySet="Tbl_LineNumber">
+          <ScalarProperty Name="ILineDuration" ColumnName="ILineDuration" />
+          <ScalarProperty Name="ILineLastModify" ColumnName="ILineLastModify" />
+          <ScalarProperty Name="ILineStatuse" ColumnName="ILineStatuse" />
+          <ScalarProperty Name="ILineKeyWord" ColumnName="ILineKeyWord" />
+          <ScalarProperty Name="ILineServiceType" ColumnName="ILineServiceType" />
+          <ScalarProperty Name="ILineModuleNumber" ColumnName="ILineModuleNumber" />
+          <ScalarProperty Name="ILineNumber" ColumnName="ILineNumber" />
+          <ScalarProperty Name="IUsrId" ColumnName="IUsrId" />
+          <ScalarProperty Name="ILineNumberCode" ColumnName="ILineNumberCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReservedLineNumbers">
+      <EntityTypeMapping TypeName="AcountingModel.ReservedLineNumbers">
+        <MappingFragment StoreEntitySet="ReservedLineNumbers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ticket">
+      <EntityTypeMapping TypeName="AcountingModel.Ticket">
+        <MappingFragment StoreEntitySet="Ticket">
+          <ScalarProperty Name="MessageTo" ColumnName="MessageTo" />
+          <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+          <ScalarProperty Name="PanelId" ColumnName="PanelId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="AttachFile" ColumnName="AttachFile" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+          <ScalarProperty Name="MessageFrom" ColumnName="MessageFrom" />
+          <ScalarProperty Name="ResponsibleRole" ColumnName="ResponsibleRole" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="TicketId" ColumnName="TicketId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VASContent">
+      <EntityTypeMapping TypeName="AcountingModel.VASContent">
+        <MappingFragment StoreEntitySet="VASContent">
+          <ScalarProperty Name="ContentName" ColumnName="ContentName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+          <ScalarProperty Name="SortIndex" ColumnName="SortIndex" />
+          <ScalarProperty Name="VASServiceId" ColumnName="VASServiceId" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpTbl_Payment_Insert" FunctionName="AcountingModel.Store.SpTbl_Payment_Insert" />
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="AcountingModel.Customers">
+        <MappingFragment StoreEntitySet="Tbl_Customers">
+          <ScalarProperty Name="ICPrsNumberPic" ColumnName="ICPrsNumberPic" />
+          <ScalarProperty Name="ICMeliCartPic" ColumnName="ICMeliCartPic" />
+          <ScalarProperty Name="ICPrsNumber" ColumnName="ICPrsNumber" />
+          <ScalarProperty Name="ICDescrtiption" ColumnName="ICDescrtiption" />
+          <ScalarProperty Name="ICCoActivity" ColumnName="ICCoActivity" />
+          <ScalarProperty Name="ICCoType" ColumnName="ICCoType" />
+          <ScalarProperty Name="ICCoName" ColumnName="ICCoName" />
+          <ScalarProperty Name="ICZipeCode" ColumnName="ICZipeCode" />
+          <ScalarProperty Name="ICPrsAdrs" ColumnName="ICPrsAdrs" />
+          <ScalarProperty Name="ICWebSite" ColumnName="ICWebSite" />
+          <ScalarProperty Name="ICEmail" ColumnName="ICEmail" />
+          <ScalarProperty Name="ICFax" ColumnName="ICFax" />
+          <ScalarProperty Name="ICMobile" ColumnName="ICMobile" />
+          <ScalarProperty Name="ICTel" ColumnName="ICTel" />
+          <ScalarProperty Name="ICLName" ColumnName="ICLName" />
+          <ScalarProperty Name="ICName" ColumnName="ICName" />
+          <ScalarProperty Name="IActTypeCode" ColumnName="IActTypeCode" />
+          <ScalarProperty Name="ICityCode" ColumnName="ICityCode" />
+          <ScalarProperty Name="IProviencyCode" ColumnName="IProviencyCode" />
+          <ScalarProperty Name="ICParentID" ColumnName="ICParentID" />
+          <ScalarProperty Name="ICCode" ColumnName="ICCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VASService">
+      <EntityTypeMapping TypeName="AcountingModel.VASService">
+        <MappingFragment StoreEntitySet="VASService">
+          <ScalarProperty Name="InternalPardisId" ColumnName="InternalPardisId" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="TCOperator" ColumnName="TCOperator" />
+          <ScalarProperty Name="MCIServiceId" ColumnName="MCIServiceId" />
+          <ScalarProperty Name="DeactivateMessage" ColumnName="DeactivateMessage" />
+          <ScalarProperty Name="ResignMessage" ColumnName="ResignMessage" />
+          <ScalarProperty Name="WelcomeMessage" ColumnName="WelcomeMessage" />
+          <ScalarProperty Name="FreeContentCount" ColumnName="FreeContentCount" />
+          <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+          <ScalarProperty Name="ChargType" ColumnName="ChargType" />
+          <ScalarProperty Name="SendType" ColumnName="SendType" />
+          <ScalarProperty Name="DeactiveKeyword" ColumnName="DeactiveKeyword" />
+          <ScalarProperty Name="ActiveKeyword" ColumnName="ActiveKeyword" />
+          <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
+          <ScalarProperty Name="DefaultTimePeriod" ColumnName="DefaultTimePeriod" />
+          <ScalarProperty Name="DefaultPerDay" ColumnName="DefaultPerDay" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PardisServiceId" ColumnName="PardisServiceId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Extensible">
+      <EntityTypeMapping TypeName="AcountingModel.tbl_Extensible">
+        <MappingFragment StoreEntitySet="tbl_Extensible">
+          <ScalarProperty Name="ConnectionString" ColumnName="ConnectionString" />
+          <ScalarProperty Name="HasBankAccount" ColumnName="HasBankAccount" />
+          <ScalarProperty Name="RecieveServerURL" ColumnName="RecieveServerURL" />
+          <ScalarProperty Name="FixEnPrice" ColumnName="FixEnPrice" />
+          <ScalarProperty Name="FixFaPrice" ColumnName="FixFaPrice" />
+          <ScalarProperty Name="SalesExpert" ColumnName="SalesExpert" />
+          <ScalarProperty Name="SupportExpert" ColumnName="SupportExpert" />
+          <ScalarProperty Name="CurrentSupply" ColumnName="CurrentSupply" />
+          <ScalarProperty Name="TotalSupply" ColumnName="TotalSupply" />
+          <ScalarProperty Name="UserQuantity" ColumnName="UserQuantity" />
+          <ScalarProperty Name="UsageType" ColumnName="UsageType" />
+          <ScalarProperty Name="ServerURL" ColumnName="ServerURL" />
+          <ScalarProperty Name="IUsrId" ColumnName="IUsrId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpTbl_OnlineUsrCredit_Insert_ForAdminCharj" FunctionName="AcountingModel.Store.SpTbl_OnlineUsrCredit_Insert_ForAdminCharj" />
+  </EntityContainerMapping>
+</Mapping>

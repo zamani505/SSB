@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="SMSModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UsrCredits" EntityType="SMSModel.UsrCredit" />
+    <EntitySet Name="Bulk_Request" EntityType="SMSModel.Bulk_Request" />
+    <EntitySet Name="Tbl_Customers" EntityType="SMSModel.Tbl_Customers" />
+    <EntitySet Name="Tbl_LineNumber" EntityType="SMSModel.Tbl_LineNumber" />
+    <EntitySet Name="Tbl_UserAccountRole" EntityType="SMSModel.Tbl_UserAccountRole" />
+    <EntitySet Name="UserInfoes" EntityType="SMSModel.UserInfo" />
+    <FunctionImport Name="SpTbl_RecieveUnreadedSms_Select" EntitySet="Tbl_RecieveSms" ReturnType="Collection(SMSModel.Tbl_RecieveSms)">
+      <Parameter Name="RcvSmsTo" Mode="In" Type="String" />
+      <Parameter Name="DateFrom" Mode="In" Type="String" />
+      <Parameter Name="DateTo" Mode="In" Type="String" />
+      <Parameter Name="TimeFrom" Mode="In" Type="String" />
+      <Parameter Name="TimeTo" Mode="In" Type="String" />
+      <Parameter Name="UsrId" Mode="In" Type="String" />
+      <Parameter Name="Today" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetRecieveSMS" EntitySet="Tbl_RecieveSms" ReturnType="Collection(SMSModel.Tbl_RecieveSms)">
+      <Parameter Name="RcvSmsTo" Mode="In" Type="String" />
+      <Parameter Name="DateFrom" Mode="In" Type="String" />
+      <Parameter Name="DateTo" Mode="In" Type="String" />
+      <Parameter Name="TimeFrom" Mode="In" Type="String" />
+      <Parameter Name="TimeTo" Mode="In" Type="String" />
+      <Parameter Name="Today" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SpTbl_UsrCredit_SelectTotalCredit" ReturnType="Collection(Int32)">
+      <Parameter Name="UsrId" Mode="In" Type="String" />
+      <Parameter Name="Today" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="OperatorTarrifRates" EntityType="SMSModel.OperatorTarrifRate" />
+    <EntitySet Name="Tbl_RecieveSms" EntityType="SMSModel.Tbl_RecieveSms" />
+    <EntitySet Name="tbl_Extensible" EntityType="SMSModel.tbl_Extensible" />
+    <FunctionImport Name="SpTbl_OnlineUsrCredit_Insert" ReturnType="Collection(Int32)">
+      <Parameter Name="IUsrId" Mode="In" Type="String" />
+      <Parameter Name="PayTypeCode" Mode="In" Type="Int32" />
+      <Parameter Name="PaymentAmount" Mode="In" Type="Int32" />
+      <Parameter Name="PaymentDate" Mode="In" Type="String" />
+      <Parameter Name="PayFlag" Mode="In" Type="Boolean" />
+      <Parameter Name="ISMSFaPrice" Mode="In" Type="Int32" />
+      <Parameter Name="ISMSEnPrice" Mode="In" Type="Int32" />
+      <Parameter Name="IRcvSmsPrice" Mode="In" Type="Int32" />
+      <Parameter Name="PayDate" Mode="In" Type="DateTime" />
+      <Parameter Name="TransactionNumber" Mode="In" Type="String" />
+      <Parameter Name="BankId" Mode="In" Type="Int32" />
+      <Parameter Name="InvoiceNumber" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Tbl_UserAccount" EntityType="SMSModel.Tbl_UserAccount" />
+    <AssociationSet Name="FK_Tbl_UserAccount_Tbl_Customers" Association="SMSModel.FK_Tbl_UserAccount_Tbl_Customers">
+      <End Role="Tbl_Customers" EntitySet="Tbl_Customers" />
+      <End Role="Tbl_UserAccount" EntitySet="Tbl_UserAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_LineNumber_Tbl_UserAccount" Association="SMSModel.FK_Tbl_LineNumber_Tbl_UserAccount">
+      <End Role="Tbl_UserAccount" EntitySet="Tbl_UserAccount" />
+      <End Role="Tbl_LineNumber" EntitySet="Tbl_LineNumber" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_UserAccount_Tbl_UserAccountRole" Association="SMSModel.FK_Tbl_UserAccount_Tbl_UserAccountRole">
+      <End Role="Tbl_UserAccountRole" EntitySet="Tbl_UserAccountRole" />
+      <End Role="Tbl_UserAccount" EntitySet="Tbl_UserAccount" />
+    </AssociationSet>
+    <EntitySet Name="Bulks" EntityType="SMSModel.Bulk" />
+    <AssociationSet Name="FK_Bulk_Request_Bulks1" Association="SMSModel.FK_Bulk_Request_Bulks1">
+      <End Role="Bulk" EntitySet="Bulks" />
+      <End Role="Bulk_Request" EntitySet="Bulk_Request" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bulks_Tbl_LineNumber" Association="SMSModel.FK_Bulks_Tbl_LineNumber">
+      <End Role="Tbl_LineNumber" EntitySet="Tbl_LineNumber" />
+      <End Role="Bulk" EntitySet="Bulks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bulks_Tbl_UserAccount1" Association="SMSModel.FK_Bulks_Tbl_UserAccount1">
+      <End Role="Tbl_UserAccount" EntitySet="Tbl_UserAccount" />
+      <End Role="Bulk" EntitySet="Bulks" />
+    </AssociationSet>
+    <EntitySet Name="View_Tbl_SentSMS" EntityType="SMSModel.View_Tbl_SentSMS" />
+    <EntitySet Name="Tbl_SentSMS" EntityType="SMSModel.Tbl_SentSMS" />
+    <FunctionImport Name="SpTbl_RecieveSms_SelectFromId" EntitySet="Tbl_RecieveSms" ReturnType="Collection(SMSModel.Tbl_RecieveSms)">
+      <Parameter Name="RcvSmsTo" Mode="In" Type="String" />
+      <Parameter Name="SmsId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Tbl_Payment" EntityType="SMSModel.Tbl_Payment" />
+    <AssociationSet Name="FK_Tbl_UsrCredit_Tbl_Payment" Association="SMSModel.FK_Tbl_UsrCredit_Tbl_Payment">
+      <End Role="Tbl_Payment" EntitySet="Tbl_Payment" />
+      <End Role="UsrCredit" EntitySet="UsrCredits" />
+    </AssociationSet>
+    <FunctionImport Name="SpTbl_Usrcredit_UpdateCredit" ReturnType="Collection(Int32)">
+      <Parameter Name="UsrId" Mode="In" Type="String" />
+      <Parameter Name="FaSmsCount" Mode="In" Type="Int32" />
+      <Parameter Name="EnSmsCount" Mode="In" Type="Int32" />
+      <Parameter Name="Today" Mode="In" Type="String" />
+      <Parameter Name="Rate" Mode="In" Type="Double" />
+      <Parameter Name="TrActionType" Mode="In" Type="Byte" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="UsrCredit">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Type="Int32" Name="PaymentId" Nullable="false" />
+    <Property Type="String" Name="IUsrId" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ICreditAmount" />
+    <Property Type="Int32" Name="ISMSFaPrice" />
+    <Property Type="Int32" Name="ISMSEnPrice" />
+    <Property Type="Int32" Name="IRcvSmsPrice" />
+    <NavigationProperty Name="Tbl_Payment" Relationship="SMSModel.FK_Tbl_UsrCredit_Tbl_Payment" FromRole="UsrCredit" ToRole="Tbl_Payment" />
+  </EntityType>
+  <EntityType Name="Bulk_Request">
+    <Key>
+      <PropertyRef Name="BulkRequestId" />
+    </Key>
+    <Property Type="Int32" Name="BulkRequestId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="CategoryId" />
+    <Property Type="Int32" Name="StartIndex" />
+    <Property Type="Int32" Name="RequestCount" />
+    <Property Type="Int32" Name="BulkId" />
+    <Property Type="String" Name="BulkValue" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ValueType" />
+    <Property Type="Int32" Name="ValueOperation" />
+    <Property Type="Byte" Name="PhoneType" Nullable="false" />
+    <NavigationProperty Name="Bulk" Relationship="SMSModel.FK_Bulk_Request_Bulks1" FromRole="Bulk_Request" ToRole="Bulk" />
+  </EntityType>
+  <EntityType Name="Tbl_Customers">
+    <Key>
+      <PropertyRef Name="ICCode" />
+    </Key>
+    <Property Type="Int32" Name="ICCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ICParentID" />
+    <Property Type="Int32" Name="IProviencyCode" />
+    <Property Type="Int32" Name="ICityCode" />
+    <Property Type="Int32" Name="IActTypeCode" />
+    <Property Type="String" Name="ICName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICLName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICTel" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICMobile" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICFax" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICEmail" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICWebSite" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICPrsAdrs" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICZipeCode" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICCoName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="ICCoType" />
+    <Property Type="String" Name="ICCoActivity" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICDescrtiption" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_UserAccount" Relationship="SMSModel.FK_Tbl_UserAccount_Tbl_Customers" FromRole="Tbl_Customers" ToRole="Tbl_UserAccount" />
+    <Property Type="String" Name="ICPrsNumber" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ICMeliCartPic" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICPrsNumberPic" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tbl_LineNumber">
+    <Key>
+      <PropertyRef Name="ILineNumberCode" />
+    </Key>
+    <Property Type="Int32" Name="ILineNumberCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="IUsrId" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ILineNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ILineModuleNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ILineServiceType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ILineKeyWord" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ILineStatuse" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ILineLastModify" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ILineDuration" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_UserAccount" Relationship="SMSModel.FK_Tbl_LineNumber_Tbl_UserAccount" FromRole="Tbl_LineNumber" ToRole="Tbl_UserAccount" />
+    <NavigationProperty Name="Bulks" Relationship="SMSModel.FK_Bulks_Tbl_LineNumber" FromRole="Tbl_LineNumber" ToRole="Bulk" />
+  </EntityType>
+  <EntityType Name="Tbl_UserAccountRole">
+    <Key>
+      <PropertyRef Name="AcsRoleCode" />
+    </Key>
+    <Property Type="Int32" Name="AcsRoleCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="AcsRoleParentId" />
+    <Property Type="String" Name="AcsRoleEnName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AcsRoleFaName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="AcsRolePrice" />
+    <Property Type="String" Name="AcsRoleDateFrom" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AcsRoleDateTo" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_UserAccount" Relationship="SMSModel.FK_Tbl_UserAccount_Tbl_UserAccountRole" FromRole="Tbl_UserAccountRole" ToRole="Tbl_UserAccount" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="IUsrId" />
+      <PropertyRef Name="AscRoleCode" />
+    </Key>
+    <Property Type="String" Name="IUsrId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AcsRoleEnName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AcsRoleFaName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ILineNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ILineModuleNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IUsrISAdmin" />
+    <Property Type="String" Name="IUsrIName" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IUsrPaswrd" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IUsrActive" />
+    <Property Type="Int32" Name="AscRoleCode" Nullable="false" />
+    <Property Type="String" Name="ICName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ICLName" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IUsrAccExpireDate" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OperatorTarrifRate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="LineStartWith" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="Rate" Nullable="false" />
+    <Property Type="Int32" Name="OperatorId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_RecieveSms">
+    <Key>
+      <PropertyRef Name="RecieveSMSId" />
+    </Key>
+    <Property Type="String" Name="RcvSmsText" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RcvsmsKeyWord" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RcvSmsfrom" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RcvSmsTo" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RcvSmsInteredDate" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RcvSmsUDH" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RcvsmsCharSet" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="rcvSmsSmsC" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RcvSmsStatus" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RcvSmsMessageID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RcvSmsRuleID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="RcvSmsDeliveredTime" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="RcvSmsReeded" />
+    <Property Type="String" Name="UsrId" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="RecieveSMSId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="OperatorId" />
+    <Property Type="DateTime" Name="RecieveDate" />
+  </EntityType>
+  <EntityType Name="tbl_Extensible">
+    <Key>
+      <PropertyRef Name="IUsrId" />
+    </Key>
+    <Property Type="String" Name="IUsrId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ServerURL" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UsageType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="UserQuantity" />
+    <Property Type="Int64" Name="TotalSupply" />
+    <Property Type="Int64" Name="CurrentSupply" />
+    <Property Type="String" Name="SupportExpert" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SalesExpert" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="FixFaPrice" />
+    <Property Type="Int32" Name="FixEnPrice" />
+    <Property Type="String" Name="RecieveServerURL" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="HasBankAccount" />
+  </EntityType>
+  <EntityType Name="Tbl_UserAccount">
+    <Key>
+      <PropertyRef Name="IUsrId" />
+    </Key>
+    <Property Type="Int32" Name="IUsrAccCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IUserParentID" />
+    <Property Type="String" Name="IUsrManagerId" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="IUsrCCode" Nullable="false" />
+    <Property Type="Int32" Name="AscRoleCode" Nullable="false" />
+    <Property Type="String" Name="IUsrId" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IUsrPaswrd" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IUsrActive" />
+    <Property Type="Boolean" Name="IUsrSpesial" />
+    <Property Type="Boolean" Name="IUsrISAdmin" />
+    <Property Type="String" Name="IUsrIName" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IUsrAccCreatDate" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IUsrAccExpireDate" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_Customers" Relationship="SMSModel.FK_Tbl_UserAccount_Tbl_Customers" FromRole="Tbl_UserAccount" ToRole="Tbl_Customers" />
+    <NavigationProperty Name="Tbl_LineNumber" Relationship="SMSModel.FK_Tbl_LineNumber_Tbl_UserAccount" FromRole="Tbl_UserAccount" ToRole="Tbl_LineNumber" />
+    <NavigationProperty Name="Tbl_UserAccountRole" Relationship="SMSModel.FK_Tbl_UserAccount_Tbl_UserAccountRole" FromRole="Tbl_UserAccount" ToRole="Tbl_UserAccountRole" />
+    <NavigationProperty Name="Bulks" Relationship="SMSModel.FK_Bulks_Tbl_UserAccount1" FromRole="Tbl_UserAccount" ToRole="Bulk" />
+  </EntityType>
+  <Association Name="FK_Tbl_UserAccount_Tbl_Customers">
+    <End Type="SMSModel.Tbl_Customers" Role="Tbl_Customers" Multiplicity="1" />
+    <End Type="SMSModel.Tbl_UserAccount" Role="Tbl_UserAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Customers">
+        <PropertyRef Name="ICCode" />
+      </Principal>
+      <Dependent Role="Tbl_UserAccount">
+        <PropertyRef Name="IUsrCCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_LineNumber_Tbl_UserAccount">
+    <End Type="SMSModel.Tbl_UserAccount" Role="Tbl_UserAccount" Multiplicity="0..1" />
+    <End Type="SMSModel.Tbl_LineNumber" Role="Tbl_LineNumber" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_UserAccount">
+        <PropertyRef Name="IUsrId" />
+      </Principal>
+      <Dependent Role="Tbl_LineNumber">
+        <PropertyRef Name="IUsrId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_UserAccount_Tbl_UserAccountRole">
+    <End Type="SMSModel.Tbl_UserAccountRole" Role="Tbl_UserAccountRole" Multiplicity="1" />
+    <End Type="SMSModel.Tbl_UserAccount" Role="Tbl_UserAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_UserAccountRole">
+        <PropertyRef Name="AcsRoleCode" />
+      </Principal>
+      <Dependent Role="Tbl_UserAccount">
+        <PropertyRef Name="AscRoleCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Bulk">
+    <Key>
+      <PropertyRef Name="BulkId" />
+    </Key>
+    <Property Type="Int32" Name="BulkId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="LineNumberCode" />
+    <Property Type="String" Name="BulkText" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="SendDate" />
+    <Property Type="Byte" Name="SendingType" />
+    <Property Type="Boolean" Name="IsPersian" />
+    <Property Type="Byte" Name="Status" />
+    <Property Type="String" Name="AdminNote" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="TotalPrice" />
+    <Property Type="DateTime" Name="RequestDate" />
+    <Property Type="String" Name="UserId" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="ModifiedDate" />
+    <Property Type="String" Name="ModifyBy" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Notation" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bulk_Request" Relationship="SMSModel.FK_Bulk_Request_Bulks1" FromRole="Bulk" ToRole="Bulk_Request" />
+    <NavigationProperty Name="Tbl_LineNumber" Relationship="SMSModel.FK_Bulks_Tbl_LineNumber" FromRole="Bulk" ToRole="Tbl_LineNumber" />
+    <NavigationProperty Name="Tbl_UserAccount" Relationship="SMSModel.FK_Bulks_Tbl_UserAccount1" FromRole="Bulk" ToRole="Tbl_UserAccount" />
+    <Property Type="Boolean" Name="ReturnCredit" />
+  </EntityType>
+  <Association Name="FK_Bulk_Request_Bulks1">
+    <End Type="SMSModel.Bulk" Role="Bulk" Multiplicity="0..1" />
+    <End Type="SMSModel.Bulk_Request" Role="Bulk_Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bulk">
+        <PropertyRef Name="BulkId" />
+      </Principal>
+      <Dependent Role="Bulk_Request">
+        <PropertyRef Name="BulkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bulks_Tbl_LineNumber">
+    <End Type="SMSModel.Tbl_LineNumber" Role="Tbl_LineNumber" Multiplicity="0..1" />
+    <End Type="SMSModel.Bulk" Role="Bulk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_LineNumber">
+        <PropertyRef Name="ILineNumberCode" />
+      </Principal>
+      <Dependent Role="Bulk">
+        <PropertyRef Name="LineNumberCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bulks_Tbl_UserAccount1">
+    <End Type="SMSModel.Tbl_UserAccount" Role="Tbl_UserAccount" Multiplicity="0..1" />
+    <End Type="SMSModel.Bulk" Role="Bulk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_UserAccount">
+        <PropertyRef Name="IUsrId" />
+      </Principal>
+      <Dependent Role="Bulk">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="View_Tbl_SentSMS">
+    <Key>
+      <PropertyRef Name="MagfaSmsId" />
+      <PropertyRef Name="ISMSText" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="OperatorId" />
+    </Key>
+    <Property Type="Int64" Name="MagfaSmsId" Nullable="false" />
+    <Property Type="String" Name="ISMSText" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ISendingDate" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ISendingTime" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ISenderNumber" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IReciverNumber" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ISMSStatuse" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IUsrId" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ISMSStatusCode" />
+    <Property Type="Int32" Name="Priority" />
+    <Property Type="Int32" Name="PriorityStatus" />
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="OperatorId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_SentSMS">
+    <Key>
+      <PropertyRef Name="MagfaSmsId" />
+      <PropertyRef Name="ISMSText" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="OperatorId" />
+    </Key>
+    <Property Type="Int64" Name="MagfaSmsId" Nullable="false" />
+    <Property Type="String" Name="ISMSText" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ISendingDate" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ISendingTime" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ISenderNumber" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IReciverNumber" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ISMSStatuse" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IUsrId" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ISMSStatusCode" />
+    <Property Type="Int32" Name="Priority" />
+    <Property Type="Int32" Name="PriorityStatus" />
+    <Property Type="Guid" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="OperatorId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Payment">
+    <Key>
+      <PropertyRef Name="PaymentCode" />
+    </Key>
+    <Property Type="Int32" Name="PaymentCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="IUsrId" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PayTypeCode" />
+    <Property Type="Int32" Name="PayCommentCode" />
+    <Property Type="Int32" Name="PaymentAmount" />
+    <Property Type="Byte" Name="PaymentDiscount" />
+    <Property Type="String" Name="PayDisComment" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PaySerial" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PaymentDate" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="PayExpiredDate" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="PayFlag" />
+    <Property Type="DateTime" Name="PayDate" />
+    <Property Type="String" Name="TransactionNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="BankId" />
+    <Property Type="String" Name="InvoiceNumber" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tbl_UsrCredit" Relationship="SMSModel.FK_Tbl_UsrCredit_Tbl_Payment" FromRole="Tbl_Payment" ToRole="UsrCredit" />
+  </EntityType>
+  <Association Name="FK_Tbl_UsrCredit_Tbl_Payment">
+    <End Type="SMSModel.Tbl_Payment" Role="Tbl_Payment" Multiplicity="1" />
+    <End Type="SMSModel.UsrCredit" Role="UsrCredit" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Payment">
+        <PropertyRef Name="PaymentCode" />
+      </Principal>
+      <Dependent Role="UsrCredit">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

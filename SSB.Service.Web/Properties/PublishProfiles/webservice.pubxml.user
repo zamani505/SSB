@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\PublishAllProject\webservice</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AccountingWebService.asmx">
+      <publishTime>01/15/2019 11:05:22</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>08/20/2017 15:36:02</publishTime>
+    </File>
+    <File Include="bin/SSB.Core.dll">
+      <publishTime>08/20/2017 15:36:02</publishTime>
+    </File>
+    <File Include="bin/SSB.Helpers.dll">
+      <publishTime>11/04/2018 11:45:52</publishTime>
+    </File>
+    <File Include="bin/SSB.Service.Core.dll">
+      <publishTime>07/03/2019 17:33:42</publishTime>
+    </File>
+    <File Include="bin/SSB.Service.Core.XmlSerializers.dll">
+      <publishTime>07/03/2019 17:33:42</publishTime>
+    </File>
+    <File Include="bin/SSB.Service.Web.dll">
+      <publishTime>07/03/2019 17:33:43</publishTime>
+    </File>
+    <File Include="bin/SSB.Service.Web.XmlSerializers.dll">
+      <publishTime>07/03/2019 17:33:44</publishTime>
+    </File>
+    <File Include="NewSmsWebservice.asmx">
+      <publishTime>08/20/2017 15:35:22</publishTime>
+    </File>
+    <File Include="PaymentWebservice.asmx">
+      <publishTime>01/15/2019 11:05:22</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>07/03/2019 17:33:45</publishTime>
+    </File>
+    <File Include="SMSWebService.asmx">
+      <publishTime>01/15/2019 11:05:22</publishTime>
+    </File>
+    <File Include="UserWebService.asmx">
+      <publishTime>01/15/2019 11:05:22</publishTime>
+    </File>
+    <File Include="VASWebService.asmx">
+      <publishTime>01/15/2019 11:05:22</publishTime>
+    </File>
+    <File Include="Web References/avanak/Campaign.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/CDRDetails.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/Message.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/MessagesByPage.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/Numbers.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/OCVSend.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/PriceViewModel.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/Profile.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/Result.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/Ticket.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/Transactions.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/TTSResult.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/avanak/UserInfo.datasource">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/GenderBulkPG/Reference.map">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/GenderBulkPG/SMSCity.disco">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web References/GenderBulkPG/SMSCity.wsdl">
+      <publishTime>01/15/2019 11:05:23</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/09/2019 14:26:16</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

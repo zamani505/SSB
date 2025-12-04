@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://rahyabbulk.ir:8020/WebService/SMSCity.asmx?wsdl" docRef="http://rahyabbulk.ir:8020/WebService/SMSCity.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://rahyabbulk.ir:8020/WebService/SMSCity.asmx" xmlns:q1="http://rahyabbulk.ir/smsbulk" binding="q1:smscitySoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://rahyabbulk.ir:8020/WebService/SMSCity.asmx" xmlns:q2="http://rahyabbulk.ir/smsbulk" binding="q2:smscitySoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
