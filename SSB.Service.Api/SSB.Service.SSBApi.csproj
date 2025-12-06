@@ -46,6 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SSB.Helpers, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SSB.Service.Core\bin\Debug\SSB.Helpers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -133,16 +137,30 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attribute\ApiKeyHandler.cs" />
+    <Compile Include="CacheManager\Login\CacheLogin.cs" />
+    <Compile Include="Constant\SSBConstant.cs" />
     <Compile Include="Controllers\SSBSMSController.cs" />
+    <Compile Include="Extentions\SSBExtentions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ArraySendQeue\ArraySendQeueDto.cs" />
+    <Compile Include="Models\ArraySendQeue\ArraySendQeueVM.cs" />
+    <Compile Include="Models\Login\LoginDto.cs" />
+    <Compile Include="Models\Login\LoginVM.cs" />
+    <Compile Include="Models\SendFromUrl\SendFromUrlDto.cs" />
+    <Compile Include="Models\SendFromUrl\SendFromUrlVM.cs" />
+    <Compile Include="Models\SendPostUrl\SendPostUrlDto.cs" />
+    <Compile Include="Models\SendPostUrl\SendPostUrlVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Validation\LineNumerValidation.cs" />
+    <Compile Include="Validation\LoginValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -169,6 +187,10 @@
     <ProjectReference Include="..\SSB.Service.Core\SSB.Service.Core.csproj">
       <Project>{c5c87baa-d3bd-4f89-9901-e0375315fafe}</Project>
       <Name>SSB.Service.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SSB.Service.Web\SSB.Service.Web.csproj">
+      <Project>{F444F9DD-663A-4431-8223-1712E1FA33B5}</Project>
+      <Name>SSB.Service.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

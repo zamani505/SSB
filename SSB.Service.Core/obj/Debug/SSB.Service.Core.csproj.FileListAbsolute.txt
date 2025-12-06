@@ -17,3 +17,12 @@ D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Debug\SSB.Service.Core
 D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Debug\SSB.Service.Core.pdb
 D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Debug\SSB.Serv.BACD14F9.Up2Date
 D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Debug\System.Data.Entity.dll
+D:\Zamani\SSB\SSB\SSB.Service.Core\bin\Debug\SSB.Service.Core.dll.config
+D:\Zamani\SSB\SSB\SSB.Service.Core\bin\Debug\SSB.Service.Core.dll
+D:\Zamani\SSB\SSB\SSB.Service.Core\bin\Debug\SSB.Service.Core.pdb
+D:\Zamani\SSB\SSB\SSB.Service.Core\bin\Debug\System.Data.Entity.dll
+D:\Zamani\SSB\SSB\SSB.Service.Core\obj\Debug\SSB.Service.Core.csproj.AssemblyReference.cache
+D:\Zamani\SSB\SSB\SSB.Service.Core\obj\Debug\SSB.Service.Core.csproj.CoreCompileInputs.cache
+D:\Zamani\SSB\SSB\SSB.Service.Core\obj\Debug\SSB.Serv.BACD14F9.Up2Date
+D:\Zamani\SSB\SSB\SSB.Service.Core\obj\Debug\SSB.Service.Core.dll
+D:\Zamani\SSB\SSB\SSB.Service.Core\obj\Debug\SSB.Service.Core.pdb

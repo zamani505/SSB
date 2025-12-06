@@ -29,3 +29,15 @@ D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Debug\SSB.Service.Web.c
 D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Debug\SSB.Serv.59AD3FDF.Up2Date
 D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Debug\SSB.Service.Web.dll
 D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Debug\SSB.Service.Web.pdb
+D:\Zamani\SSB\SSB\SSB.Service.Web\bin\SSB.Service.Web.dll.config
+D:\Zamani\SSB\SSB\SSB.Service.Web\bin\SSB.Service.Web.dll
+D:\Zamani\SSB\SSB\SSB.Service.Web\bin\SSB.Service.Web.pdb
+D:\Zamani\SSB\SSB\SSB.Service.Web\bin\SSB.Service.Core.dll
+D:\Zamani\SSB\SSB\SSB.Service.Web\bin\EntityFramework.dll
+D:\Zamani\SSB\SSB\SSB.Service.Web\bin\SSB.Service.Core.pdb
+D:\Zamani\SSB\SSB\SSB.Service.Web\bin\SSB.Service.Core.dll.config
+D:\Zamani\SSB\SSB\SSB.Service.Web\obj\Debug\SSB.Service.Web.csproj.AssemblyReference.cache
+D:\Zamani\SSB\SSB\SSB.Service.Web\obj\Debug\SSB.Service.Web.csproj.CoreCompileInputs.cache
+D:\Zamani\SSB\SSB\SSB.Service.Web\obj\Debug\SSB.Serv.59AD3FDF.Up2Date
+D:\Zamani\SSB\SSB\SSB.Service.Web\obj\Debug\SSB.Service.Web.dll
+D:\Zamani\SSB\SSB\SSB.Service.Web\obj\Debug\SSB.Service.Web.pdb
