@@ -209,46 +209,7 @@ namespace SSB.Service.Web
         [WebMethod]
         public long[] Send(string username, string password, string message, string fromNumber, string[] toNumbers)
         {
-            //if (username.Contains("ssb776"))
-            //{
-            //    using (StreamWriter outfile = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + @"\Send_LogForMoalem.txt", true))
-            //    {
-            //        outfile.Write(" ####################################################################################"
-            //            + Environment.NewLine);
-            //    }
-            //    using (StreamWriter outfile = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + @"\Send_LogForMoalem.txt", true))
-            //    {
-            //        outfile.Write("Date :"+DateTime.Now + Environment.NewLine + " username :" + username + " password :"+password + Environment.NewLine +
-            //            " message :" + message + " fromNumber :" + fromNumber
-            //            + Environment.NewLine);
-            //    }
-            //    for (int i = 0; i < toNumbers.Count(); i++)
-            //    {
-            //        using (StreamWriter outfile = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + @"\Send_LogForMoalem.txt", true))
-            //        {
-            //            outfile.Write(" toNumbers["+i.ToString()+"] :" + toNumbers[i]
-            //                + Environment.NewLine);
-            //        }
-            //    }
-            //    using (StreamWriter outfile = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + @"\Send_LogForMoalem.txt", true))
-            //    {
-            //        outfile.Write(" ####################################################################################"
-            //            + Environment.NewLine);
-            //    }
-            //}
-            //for (int i = 0; i < toNumbers.Count(); i++)
-            //{
-            //    using (StreamWriter outfile = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + @"\Send_LogForBank.txt", true))
-            //    {
-            //        outfile.Write(" toNumbers :" + toNumbers[i]
-            //            + Environment.NewLine);
-            //    }
-            //}
-            //using (StreamWriter outfile = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + @"\Send_LogForBank.txt", true))
-            //{
-            //    outfile.Write(" ####################################################################################"
-            //        + Environment.NewLine);
-            //}
+           
             fromNumber = Helpers.Utility.FixPhoneNumber(fromNumber);
             SMSService service = new SMSService();
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))

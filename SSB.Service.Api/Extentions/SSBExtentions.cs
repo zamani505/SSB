@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SSB.Service.SSBApi.Models.ArraySendQeue;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,11 @@ namespace SSB.Service.SSBApi.Extentions
         => Convert.ToBase64String(
             System.Text.Encoding.UTF8.GetBytes($"{username}:{pass}:{Guid.NewGuid()}"));
 
-
+        public static string[] FixPhoneNumber(this string[] numbers)
+        {
+            for (int i = 0; i < numbers.Count(); i++)
+                numbers[i] = Helpers.Utility.FixPhoneNumber(numbers[i]);
+            return numbers;
+        }
     }
 }
