@@ -39,13 +39,11 @@ namespace SSB.Service.SSBApi.CacheManager.Login
         }
         public void RemoveSession(string token)
             => _cache.Remove(token);
+
         public string GetUsername(string token)
-        {
-            var session = _cache.FirstOrDefault(o => o.Key.Equals(token)).Value;
-            return session.Username;
-        }
-
-
+         => GetTokenModel(token).Username;
+        public TokenModel GetTokenModel(string token)
+            => _cache.FirstOrDefault(o => o.Key.Equals(token)).Value;
         #endregion
         #region private methods
         private void ClearCache() {
@@ -79,5 +77,6 @@ namespace SSB.Service.SSBApi.CacheManager.Login
         }
         public string Username { get; set; }
         public DateTime ExpireDate { get; set; }
+        public string  Password { get; set; }
     }
 }

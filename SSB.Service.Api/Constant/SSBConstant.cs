@@ -12,7 +12,8 @@ namespace SSB.Service.SSBApi.Constant
         {
             SMS_EQUALCOUNT_MOBILE = 101,
             CHECKINGID_EQUALCOUNT_MOBILES = 102,
-            COUNT_OF_GETSTATUS = 100
+            COUNT_OF_GETSTATUS = 100,
+            EXCEPTION=-1
         }
     }
 }
