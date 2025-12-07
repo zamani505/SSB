@@ -14,14 +14,11 @@ namespace SSB.Service.SSBApi.Controllers
     public class SMSStatusController : BaseController
     {
         #region props
-
-        public readonly string _username;
         #endregion
         #region ctors
-
         public SMSStatusController()
         {
-            _username = _cacheLogin.GetUsername(HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME]);
+            
         }
         #endregion
         #region public methods

@@ -13,13 +13,13 @@ namespace SSB.Service.SSBApi.Controllers
     {
         #region props
 
-        public readonly string _username;
+       
         #endregion
         #region ctors
 
         public CreditController()
         {
-            _username = _cacheLogin.GetUsername(HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME]);
+           
         }
         #endregion
         #region public methods

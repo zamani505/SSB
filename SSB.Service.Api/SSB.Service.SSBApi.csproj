@@ -143,6 +143,7 @@
     <Compile Include="Constant\SSBConstant.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CreditController.cs" />
+    <Compile Include="Controllers\RecieveController.cs" />
     <Compile Include="Controllers\SendSMSController.cs" />
     <Compile Include="Controllers\SMSStatusController.cs" />
     <Compile Include="Extentions\SSBExtentions.cs" />
@@ -162,6 +163,9 @@
     <Compile Include="Models\GetTarrifOperator\GetTarrifOperatorVM.cs" />
     <Compile Include="Models\Login\LoginDto.cs" />
     <Compile Include="Models\Login\LoginVM.cs" />
+    <Compile Include="Models\RecieveSMSById\RecieveSMSByIdVM.cs" />
+    <Compile Include="Models\RecieveSMS\RecieveSMSVM.cs" />
+    <Compile Include="Models\Recieve\RecieveDto.cs" />
     <Compile Include="Models\SendFromUrl\SendFromUrlDto.cs" />
     <Compile Include="Models\SendFromUrl\SendFromUrlVM.cs" />
     <Compile Include="Models\SendPostUrl\SendPostUrlDto.cs" />
@@ -201,6 +205,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Credit\" />
+    <Folder Include="Views\Recieve\" />
     <Folder Include="Views\SMSStatus\" />
   </ItemGroup>
   <ItemGroup>

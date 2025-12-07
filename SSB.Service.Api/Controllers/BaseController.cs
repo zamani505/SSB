@@ -1,8 +1,10 @@
 ﻿using SSB.Service.Core;
 using SSB.Service.SSBApi.CacheManager.Login;
+using SSB.Service.SSBApi.Constant;
 using SSB.Service.SSBApi.Models;
 using SSB.Service.SSBApi.Validation;
 using System;
+using System.Web;
 using System.Web.Configuration;
 using System.Web.Http;
 namespace SSB.Service.SSBApi.Controllers
@@ -13,12 +15,14 @@ namespace SSB.Service.SSBApi.Controllers
         protected readonly CacheLogin _cacheLogin;
         protected SMSService _service;
         protected LineNumerValidation _lineNumberValidation;
+        public readonly string _username;
         #endregion
         #region ctors
         public BaseController() {
             _cacheLogin = new CacheLogin();
             _service = new SMSService();
             _lineNumberValidation = new LineNumerValidation();
+            _username = _cacheLogin.GetUsername(HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME]);
         }
         #endregion
         #region protected methods

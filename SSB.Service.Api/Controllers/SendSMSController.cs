@@ -1,10 +1,8 @@
-﻿using SSB.Service.SSBApi.Constant;
-using SSB.Service.SSBApi.Extentions;
+﻿using SSB.Service.SSBApi.Extentions;
 using SSB.Service.SSBApi.Models;
 using SSB.Service.SSBApi.Validation;
 using System;
 using System.Linq;
-using System.Web;
 using System.Web.Http;
 using static SSB.Service.SSBApi.Constant.SSBConstant;
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
@@ -14,15 +12,11 @@ namespace SSB.Service.SSBApi.Controllers
     public class SendSMSController : BaseController
     {
         #region props
-
-        public readonly string _username;
         #endregion
         #region ctors
 
         public SendSMSController()
         {
-
-            _username = _cacheLogin.GetUsername(HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME]);
         }
         #endregion
         #region public methods
