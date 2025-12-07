@@ -1,30 +1,13 @@
-﻿using SSB.Service.Core;
-using SSB.Service.SSBApi.CacheManager.Login;
-using SSB.Service.SSBApi.Constant;
+﻿using SSB.Service.SSBApi.Constant;
 using SSB.Service.SSBApi.Extentions;
-using SSB.Service.SSBApi.Models.ArraySend;
-using SSB.Service.SSBApi.Models.ArraySendQeue;
-using SSB.Service.SSBApi.Models.ArraySendQeueWithId;
-using SSB.Service.SSBApi.Models.Login;
-using SSB.Service.SSBApi.Models.Send;
-using SSB.Service.SSBApi.Models.SendFromUrl;
-using SSB.Service.SSBApi.Models.SendPostUrl;
-using SSB.Service.SSBApi.Models.SendQeue;
-using SSB.Service.SSBApi.Models.SendSMS;
-using SSB.Service.SSBApi.Models.SendWithCheckinId;
-using SSB.Service.SSBApi.Models.SendWithUdh;
-using SSB.Service.SSBApi.Models.SMS;
+using SSB.Service.SSBApi.Models;
 using SSB.Service.SSBApi.Validation;
-using SSB.Service.Web.avanak;
 using System;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-
-
+using static SSB.Service.SSBApi.Constant.SSBConstant;
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
-
-
 namespace SSB.Service.SSBApi.Controllers
 {
     [System.Web.Mvc.Route("api/SendSMS")]
@@ -133,7 +116,7 @@ namespace SSB.Service.SSBApi.Controllers
             if (!string.IsNullOrEmpty(validate))
                 return Ok(new SendSMSDto() { Code = validate });
             if (sendWithCheckinIdVM.ToNumbers.Length != sendWithCheckinIdVM.CheckingMessageId.Length)
-                return Ok(new SendSMSDto() { Code = "102", Message = " تعداد شناسه ارسالی با تعداد گیرنده برابر نمیباشد." });
+                return Ok(new SendSMSDto() { Code = SSBErrorCode.CHECKINGID_EQUALCOUNT_MOBILES.ToString(), Message = " تعداد شناسه ارسالی با تعداد گیرنده برابر نمیباشد." });
 
             return SendTo_SSB_SendSMS(sendWithCheckinIdVM.Messages, sendWithCheckinIdVM.FromNumber, sendWithCheckinIdVM.ToNumbers, sendWithCheckinIdVM.CheckingMessageId, new string[0]);
         }
@@ -144,7 +127,7 @@ namespace SSB.Service.SSBApi.Controllers
             if (!string.IsNullOrEmpty(validate))
                 return Ok(new SendSMSDto() { Code = validate });
             if (arraySendVM.ToNumbers.Length != arraySendVM.Messages.Length)
-                return Ok(new SendSMSDto() { Code = "101", Message = "تعدا پیام با تعداد موبایل برابر نمی باشد" });
+                return Ok(new SendSMSDto() { Code = SSBErrorCode.SMS_EQUALCOUNT_MOBILE.ToString(), Message = "تعدا پیام با تعداد موبایل برابر نمی باشد" });
             return SendTo_SSB_SendSMS(arraySendVM.Messages, arraySendVM.FromNumber, arraySendVM.ToNumbers, new long[0],new string[0], sendToMagfa: true);
 
         }

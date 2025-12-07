@@ -1,5 +1,5 @@
 ﻿
-namespace SSB.Service.SSBApi.Models.SendPostUrl
+namespace SSB.Service.SSBApi.Models
 {
     public class SendPostUrlDto
     {

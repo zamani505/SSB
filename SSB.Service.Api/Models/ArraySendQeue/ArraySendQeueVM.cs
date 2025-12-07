@@ -1,5 +1,5 @@
 ﻿
-namespace SSB.Service.SSBApi.Models.ArraySendQeue
+namespace SSB.Service.SSBApi.Models
 {
     public class ArraySendQeueVM
     {

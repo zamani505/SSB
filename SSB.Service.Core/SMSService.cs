@@ -52,6 +52,43 @@ namespace SSB.Service.Core
             return rate;
 
         }
+        public int[] GetStatusFromContainer(long[] messageIds) {
+            int[] result = new int[messageIds.Length];
+
+            long msgId = 0;
+
+            for (int j = 0; j < messageIds.Length; j++)
+            {
+                using (SMSModelContainer ctx = new SMSModelContainer())
+                {
+
+                    msgId = messageIds[j];
+                    result[j] = (from i in ctx.Tbl_SentSMS
+                                 where i.ISMSStatusCode.HasValue && i.MagfaSmsId.Equals(msgId)
+                                 select i.ISMSStatusCode.Value).FirstOrDefault();
+
+
+                }
+
+            }
+            return result;
+        }
+        public int[] GetStatusFromContainer(string[] messageIds)
+        {
+             int[] result = new int[messageIds.Length];
+            Guid[] ids = Array.ConvertAll(messageIds, x => new Guid(x));
+            using (SMSModelContainer ctx = new SMSModelContainer())
+            {
+                var res = (from i in ctx.View_Tbl_SentSMS
+                           where i.ISMSStatusCode.HasValue && ids.Contains(i.Id)
+                           select new { i.Id, i.ISMSStatusCode.Value }).ToArray();
+                for (int i = 0; i < messageIds.Length; i++)
+                {
+                    result[i] = (from r in res where r.Id == Guid.Parse(messageIds[i]) select r.Value).FirstOrDefault();
+                }
+            }
+            return result;
+        }
         public int GetOperatorId(string lineNumer)
         {
             int rate = 3;

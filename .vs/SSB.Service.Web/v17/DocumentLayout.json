@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\Zamani\\SSB\\SSB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\controllers\\sendsmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\controllers\\sendsmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\controllers\\smsstatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\controllers\\smsstatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F444F9DD-663A-4431-8223-1712E1FA33B5}|SSB.Service.Web\\SSB.Service.Web.csproj|D:\\Zamani\\SSB\\SSB\\ssb.service.web\\newsmswebservice.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F444F9DD-663A-4431-8223-1712E1FA33B5}|SSB.Service.Web\\SSB.Service.Web.csproj|solutionrelative:ssb.service.web\\newsmswebservice.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\models\\sendwithudh\\sendwithudhvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\models\\sendwithudh\\sendwithudhvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\models\\getqueuemessagestatus\\getqueuemessagestatusvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\models\\getqueuemessagestatus\\getqueuemessagestatusvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|D:\\Zamani\\SSB\\SSB\\ssb.service.api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\controllers\\sendsmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\controllers\\sendsmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,39 +94,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SendWithUdhVM.cs",
-              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Models\\SendWithUdh\\SendWithUdhVM.cs",
-              "RelativeDocumentMoniker": "SSB.Service.Api\\Models\\SendWithUdh\\SendWithUdhVM.cs",
-              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Models\\SendWithUdh\\SendWithUdhVM.cs",
-              "RelativeToolTip": "SSB.Service.Api\\Models\\SendWithUdh\\SendWithUdhVM.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAcAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T09:28:24.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "SSB.Service.Api\\Controllers\\BaseController.cs",
-              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "SSB.Service.Api\\Controllers\\BaseController.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAqwFoAAAA0AAAA",
+              "Title": "GetQueueMessageStatusVM.cs",
+              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Models\\GetQueueMessageStatus\\GetQueueMessageStatusVM.cs",
+              "RelativeDocumentMoniker": "SSB.Service.Api\\Models\\GetQueueMessageStatus\\GetQueueMessageStatusVM.cs",
+              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Models\\GetQueueMessageStatus\\GetQueueMessageStatusVM.cs",
+              "RelativeToolTip": "SSB.Service.Api\\Models\\GetQueueMessageStatus\\GetQueueMessageStatusVM.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T06:41:23.044Z",
+              "WhenOpened": "2025-12-07T10:30:35.642Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "SSB.Service.Api\\Controllers\\BaseController.cs",
+              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "SSB.Service.Api\\Controllers\\BaseController.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAqwHcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T09:58:05.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "NewSmsWebservice.asmx.cs",
               "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Web\\NewSmsWebservice.asmx.cs",
               "RelativeDocumentMoniker": "SSB.Service.Web\\NewSmsWebservice.asmx.cs",
               "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Web\\NewSmsWebservice.asmx.cs",
               "RelativeToolTip": "SSB.Service.Web\\NewSmsWebservice.asmx.cs",
-              "ViewState": "AQIAAK4AAAAAAAAAAAAzwEABAAAwAAAA",
+              "ViewState": "AQIAAJgBAAAAAAAAAAAowLsBAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-06T09:39:02.88Z",
               "EditorCaption": ""
@@ -130,12 +134,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SMSStatusController.cs",
+              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Controllers\\SMSStatusController.cs",
+              "RelativeDocumentMoniker": "SSB.Service.Api\\Controllers\\SMSStatusController.cs",
+              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Controllers\\SMSStatusController.cs",
+              "RelativeToolTip": "SSB.Service.Api\\Controllers\\SMSStatusController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowBgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-07T09:51:11.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "SendSMSController.cs",
               "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Controllers\\SendSMSController.cs",
               "RelativeDocumentMoniker": "SSB.Service.Api\\Controllers\\SendSMSController.cs",
               "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Controllers\\SendSMSController.cs",
               "RelativeToolTip": "SSB.Service.Api\\Controllers\\SendSMSController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAIwBYAAAAAAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAwwA0AAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-04T15:21:04.191Z",
               "EditorCaption": ""

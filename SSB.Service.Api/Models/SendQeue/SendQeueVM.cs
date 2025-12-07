@@ -1,5 +1,5 @@
 ﻿
-namespace SSB.Service.SSBApi.Models.SendQeue
+namespace SSB.Service.SSBApi.Models
 {
     public class SendQeueVM
     {

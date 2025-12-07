@@ -318,7 +318,7 @@ namespace SSB.Service.Web
                 throw new Exception(" در هربار فقط 100 پیامک فراخوانی میشود.");
             List<UserInfo> info = service.Authenticate(username, password).ToList();
             if (info == null || info.Count == 0)
-                return new int[1] { (int)18 }; ;
+                return new int[1] { (int)18 }; 
             return service.getMessageStatusFromMagfa(id);
         }
         [WebMethod]

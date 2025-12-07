@@ -1,5 +1,5 @@
 ﻿
-namespace SSB.Service.SSBApi.Models.SendSMS
+namespace SSB.Service.SSBApi.Models
 {
     public class SendSMSDto
     {

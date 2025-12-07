@@ -1,5 +1,5 @@
 ﻿
-namespace SSB.Service.SSBApi.Models.SendWithUdh
+namespace SSB.Service.SSBApi.Models
 {
     public class SendWithUdhVM
     {

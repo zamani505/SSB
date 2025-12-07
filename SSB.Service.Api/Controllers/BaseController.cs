@@ -1,15 +1,10 @@
 ﻿using SSB.Service.Core;
 using SSB.Service.SSBApi.CacheManager.Login;
-using SSB.Service.SSBApi.Models.SendSMS;
-using SSB.Service.SSBApi.Models.SMS;
+using SSB.Service.SSBApi.Models;
 using SSB.Service.SSBApi.Validation;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Web.Configuration;
 using System.Web.Http;
-using System.Web.Mvc;
-
 namespace SSB.Service.SSBApi.Controllers
 {
     public class BaseController : ApiController
@@ -99,6 +94,28 @@ namespace SSB.Service.SSBApi.Controllers
 
                 return new SendSMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
             }
+        }
+        protected SMSStatusDto SSB_SMSStatus(long[] messageIds,bool fromMafa=false) {
+            try
+            {
+                if (fromMafa)
+                    return new SMSStatusDto() { Result = _service.getMessageStatusFromMagfa(messageIds) };
+                else {
+                    int[] result =_service.GetStatusFromContainer(messageIds);
+                    return new SMSStatusDto() { Result = result };
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return new SMSStatusDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
+            }
+        }
+        protected SMSStatusDto SSB_SMSStatus(string[] messageIds)
+        {
+            int[] result = _service.GetStatusFromContainer(messageIds);
+            return new SMSStatusDto() { Result = result };
         }
         #endregion
     }

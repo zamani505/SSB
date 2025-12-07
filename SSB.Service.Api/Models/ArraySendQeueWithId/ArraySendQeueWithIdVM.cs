@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SSB.Service.SSBApi.Models.ArraySendQeueWithId
+namespace SSB.Service.SSBApi.Models
 {
     public class ArraySendQeueWithIdVM
     {

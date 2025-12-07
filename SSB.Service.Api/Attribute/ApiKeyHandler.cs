@@ -5,11 +5,9 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Threading;
-using System.Web;
 using SSB.Service.SSBApi.CacheManager.Login;
 using SSB.Service.SSBApi.Constant;
-using SSB.Service.SSBApi.Models.SendSMS;
-using SSB.Service.SSBApi.Models.SMS;
+using SSB.Service.SSBApi.Models;
 using SSB.Service.SSBApi.Extentions;
 
 namespace SSB.Service.SSBApi.Attribute

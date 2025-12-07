@@ -52,6 +52,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -142,6 +143,7 @@
     <Compile Include="Constant\SSBConstant.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\SendSMSController.cs" />
+    <Compile Include="Controllers\SMSStatusController.cs" />
     <Compile Include="Extentions\SSBExtentions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -150,6 +152,9 @@
     <Compile Include="Models\ArraySendQeue\ArraySendQeueDto.cs" />
     <Compile Include="Models\ArraySendQeue\ArraySendQeueVM.cs" />
     <Compile Include="Models\ArraySend\ArraySendVM.cs" />
+    <Compile Include="Models\GetArrayMessageStatus\GetArrayMessageStatusVM.cs" />
+    <Compile Include="Models\GetMessageStatus\GetMessageStatusVM.cs" />
+    <Compile Include="Models\GetQueueMessageStatus\GetQueueMessageStatusVM.cs" />
     <Compile Include="Models\Login\LoginDto.cs" />
     <Compile Include="Models\Login\LoginVM.cs" />
     <Compile Include="Models\SendFromUrl\SendFromUrlDto.cs" />
@@ -161,6 +166,7 @@
     <Compile Include="Models\SendWithCheckinId\SendWithCheckinIdVM.cs" />
     <Compile Include="Models\SendWithUdh\SendWithUdhVM.cs" />
     <Compile Include="Models\Send\SendVM.cs" />
+    <Compile Include="Models\SMSStatus\SMSStatusDto.cs" />
     <Compile Include="Models\SMS\SMSDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -189,6 +195,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\SMSStatus\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

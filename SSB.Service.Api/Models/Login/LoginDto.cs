@@ -1,5 +1,5 @@
 ﻿
-namespace SSB.Service.SSBApi.Models.Login
+namespace SSB.Service.SSBApi.Models
 {
     public class LoginDto
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace SSB.Service.SSBApi.Models.SendWithCheckinId
+namespace SSB.Service.SSBApi.Models
 {
     public class SendWithCheckinIdVM
     {
