@@ -141,7 +141,7 @@
     <Compile Include="CacheManager\Login\CacheLogin.cs" />
     <Compile Include="Constant\SSBConstant.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\SSBSMSController.cs" />
+    <Compile Include="Controllers\SendSMSController.cs" />
     <Compile Include="Extentions\SSBExtentions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -149,6 +149,7 @@
     <Compile Include="Models\ArraySendQeueWithId\ArraySendQeueWithIdVM.cs" />
     <Compile Include="Models\ArraySendQeue\ArraySendQeueDto.cs" />
     <Compile Include="Models\ArraySendQeue\ArraySendQeueVM.cs" />
+    <Compile Include="Models\ArraySend\ArraySendVM.cs" />
     <Compile Include="Models\Login\LoginDto.cs" />
     <Compile Include="Models\Login\LoginVM.cs" />
     <Compile Include="Models\SendFromUrl\SendFromUrlDto.cs" />
@@ -157,6 +158,8 @@
     <Compile Include="Models\SendPostUrl\SendPostUrlVM.cs" />
     <Compile Include="Models\SendQeue\SendQeueVM.cs" />
     <Compile Include="Models\SendSMS\SendSMSDto.cs" />
+    <Compile Include="Models\SendWithCheckinId\SendWithCheckinIdVM.cs" />
+    <Compile Include="Models\SendWithUdh\SendWithUdhVM.cs" />
     <Compile Include="Models\Send\SendVM.cs" />
     <Compile Include="Models\SMS\SMSDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

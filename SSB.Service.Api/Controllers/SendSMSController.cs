@@ -2,6 +2,7 @@
 using SSB.Service.SSBApi.CacheManager.Login;
 using SSB.Service.SSBApi.Constant;
 using SSB.Service.SSBApi.Extentions;
+using SSB.Service.SSBApi.Models.ArraySend;
 using SSB.Service.SSBApi.Models.ArraySendQeue;
 using SSB.Service.SSBApi.Models.ArraySendQeueWithId;
 using SSB.Service.SSBApi.Models.Login;
@@ -10,9 +11,13 @@ using SSB.Service.SSBApi.Models.SendFromUrl;
 using SSB.Service.SSBApi.Models.SendPostUrl;
 using SSB.Service.SSBApi.Models.SendQeue;
 using SSB.Service.SSBApi.Models.SendSMS;
+using SSB.Service.SSBApi.Models.SendWithCheckinId;
+using SSB.Service.SSBApi.Models.SendWithUdh;
 using SSB.Service.SSBApi.Models.SMS;
 using SSB.Service.SSBApi.Validation;
+using SSB.Service.Web.avanak;
 using System;
+using System.Linq;
 using System.Web;
 using System.Web.Http;
 
@@ -22,18 +27,18 @@ using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
 
 namespace SSB.Service.SSBApi.Controllers
 {
-    [System.Web.Mvc.Route("api/SSBSMS")]
-    public class SSBSMSController : BaseController
+    [System.Web.Mvc.Route("api/SendSMS")]
+    public class SendSMSController : BaseController
     {
         #region props
-       
+
         public readonly string _username;
         #endregion
         #region ctors
 
-        public SSBSMSController()
+        public SendSMSController()
         {
-           
+
             _username = _cacheLogin.GetUsername(HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME]);
         }
         #endregion
@@ -108,32 +113,80 @@ namespace SSB.Service.SSBApi.Controllers
             return Ok(SSB_SendSMSQueue(sendQeueVM.Message, sendQeueVM.ToNumber, sendQeueVM.FromNumber, _username));
         }
         [HttpPost]
-        public IHttpActionResult Send([FromBody] SendVM sendVM) {
+        public IHttpActionResult Send([FromBody] SendVM sendVM)
+        {
             sendVM.FromNumber = Helpers.Utility.FixPhoneNumber(sendVM.FromNumber);
-            int lenght=sendVM.ToNumber.Length;
-            string[] sms = new string[lenght];
-            int[] encods = new int[lenght];
-            int[] mclass = new int[lenght];
-            int[] priority = new int[lenght];
-            string[] origis = new string[lenght];
-            string[] udh = new string[lenght];
-            long[] checkingIds = new long[lenght];
-            Random rnd = new Random();
-            for (int i = 0; i < lenght; i++)
-            {
-                sms[i] = sendVM.Message;
-                encods[i] = 1;
-                origis[i] = sendVM.FromNumber;
-                udh[i] = "";
-                mclass[i] = 1;
-                priority[i] = -1;
-                checkingIds[i] = rnd.Next();
-            }
-            return Ok(SSB_SendSMS(sms, encods, sendVM.ToNumber, origis, udh, mclass, priority, checkingIds, _username));
+
+            var validate = _lineNumberValidation.LineValidation(new string[] { sendVM.FromNumber }, _username);
+            if (!string.IsNullOrEmpty(validate))
+                return Ok(new SendSMSDto() { Code = validate });
+
+            var sms = Enumerable.Repeat(sendVM.Message, sendVM.ToNumber.Length).ToArray();
+            return SendTo_SSB_SendSMS(sms, sendVM.FromNumber, sendVM.ToNumber, new long[0], new string[0]);
+
+        }
+        [HttpPost]
+        public IHttpActionResult SendWithCheckinId([FromBody] SendWithCheckinIdVM sendWithCheckinIdVM)
+        {
+            sendWithCheckinIdVM.FromNumber = Helpers.Utility.FixPhoneNumber(sendWithCheckinIdVM.FromNumber);
+            var validate = _lineNumberValidation.LineValidation(new string[] { sendWithCheckinIdVM.FromNumber }, _username);
+            if (!string.IsNullOrEmpty(validate))
+                return Ok(new SendSMSDto() { Code = validate });
+            if (sendWithCheckinIdVM.ToNumbers.Length != sendWithCheckinIdVM.CheckingMessageId.Length)
+                return Ok(new SendSMSDto() { Code = "102", Message = " تعداد شناسه ارسالی با تعداد گیرنده برابر نمیباشد." });
+
+            return SendTo_SSB_SendSMS(sendWithCheckinIdVM.Messages, sendWithCheckinIdVM.FromNumber, sendWithCheckinIdVM.ToNumbers, sendWithCheckinIdVM.CheckingMessageId, new string[0]);
+        }
+        public IHttpActionResult ArraySend([FromBody] ArraySendVM arraySendVM)
+        {
+            arraySendVM.FromNumber = Helpers.Utility.FixPhoneNumber(arraySendVM.FromNumber);
+            var validate = _lineNumberValidation.LineValidation(new string[] { arraySendVM.FromNumber }, _username);
+            if (!string.IsNullOrEmpty(validate))
+                return Ok(new SendSMSDto() { Code = validate });
+            if (arraySendVM.ToNumbers.Length != arraySendVM.Messages.Length)
+                return Ok(new SendSMSDto() { Code = "101", Message = "تعدا پیام با تعداد موبایل برابر نمی باشد" });
+            return SendTo_SSB_SendSMS(arraySendVM.Messages, arraySendVM.FromNumber, arraySendVM.ToNumbers, new long[0],new string[0], sendToMagfa: true);
+
+        }
+        public IHttpActionResult SendWithUdh([FromBody] SendWithUdhVM sendWithUdhVM) {
+            sendWithUdhVM.FromNumber = Helpers.Utility.FixPhoneNumber(sendWithUdhVM.FromNumber);
+            var validate = _lineNumberValidation.LineValidation(new string[] { sendWithUdhVM.FromNumber }, _username);
+            if (!string.IsNullOrEmpty(validate))
+                return Ok(new SendSMSDto() { Code = validate });
+            var sms = Enumerable.Repeat(sendWithUdhVM.Message, sendWithUdhVM.ToNumber.Length).ToArray();
+            return SendTo_SSB_SendSMS(sms, sendWithUdhVM.FromNumber, sendWithUdhVM.ToNumber, new long[0], sendWithUdhVM.Udh
+                );
+
         }
         #endregion
         #region private methods
-       
+        private IHttpActionResult SendTo_SSB_SendSMS(string[] message, string fromNumber, string[] toNumber,
+            long[] chkId, string[] udhs, bool sendToMagfa = false)
+        {
+            int length = toNumber.Length;
+            var sms = new string[length];
+            var encods = Enumerable.Repeat(1, length).ToArray();
+            var mclass = Enumerable.Repeat(1, length).ToArray();
+            var priority = Enumerable.Repeat(-1, length).ToArray();
+            var origis = Enumerable.Repeat(fromNumber, length).ToArray();
+            string[] udh = Enumerable.Repeat("", length).ToArray();
+            long[] checkingIds = new long[length];
+
+            Random rnd = new Random();
+            for (int i = 0; i < length; i++)
+            {
+                sms[i] = message[i];
+                checkingIds[i] = rnd.Next();
+            }
+
+            if (chkId.Count() == toNumber.Count())
+                checkingIds = chkId;
+            if (udhs.Count() > 0)
+                udh = udhs;
+            if (sendToMagfa) return Ok(SSB_SendSMSArrayToMagfa(sms, encods, toNumber, origis, udh, mclass, priority, checkingIds, _username));
+            return Ok(SSB_SendSMS(sms, encods, toNumber, origis, udh, mclass, priority, checkingIds, _username));
+
+        }
         #endregion
     }
 }

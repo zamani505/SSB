@@ -88,6 +88,18 @@ namespace SSB.Service.SSBApi.Controllers
                 return new SendSMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
             }
         }
+        protected SendSMSDto SSB_SendSMSArrayToMagfa(string[] messages, int[] encodings, string[] mobiles, string[] origs, string[] udh, int[] messageClass, int[] priorities, long[] checkingIds, string username)
+        {
+            try
+            {
+                return new SendSMSDto() { Result = _service.SendSMSForArraySendMagfa(messages, encodings, mobiles, origs, udh, messageClass, priorities, checkingIds, username) };
+            }
+            catch (Exception ex)
+            {
+
+                return new SendSMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
+            }
+        }
         #endregion
     }
 }
