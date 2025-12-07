@@ -18,5 +18,7 @@ namespace SSB.Service.SSBApi.Extentions
                 numbers[i] = Helpers.Utility.FixPhoneNumber(numbers[i]);
             return numbers;
         }
+        public static string GetVerbName(this string verbName)
+            => verbName.Substring(verbName.LastIndexOf('/') + 1);
     }
 }

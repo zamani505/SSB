@@ -584,50 +584,7 @@ namespace SSB.Service.Web
             return rcvsList;
 
         }
-        //[WebMethod]
-        //public List<RecieveSmsStruct> NewRecieveSMSById(string Username, string password, string phNo, int Id)
-        //{
-        //    phNo = Helpers.Utility.FixPhoneNumber(phNo);
-        //    SMSService srv = new SMSService();
-        //    if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(password))
-        //        throw new Exception(" نام کاربری و رمز عبور داده نشده است.");
-        //    List<UserInfo> info = srv.Authenticate(Username, password).ToList();
-        //    if (info == null || info.Count == 0)
-        //        throw new Exception(" نام کاربری و رمز عبور صحیح نمی باشد.");
-
-        //    if (!info[0].IUsrActive.GetValueOrDefault(false))
-        //        throw new Exception(" کاربر غیر فعال می باشد.");
-        //    if (!srv.CheckIsLinenumberOwner(new string[] { phNo }, Username))
-        //        throw new Exception("خط متعلق به کاربر نمی باشد.");
-
-        //    List<Tbl_RecieveSms> list = srv.RecieveSMSById(Id, phNo);
-        //    List<RecieveSmsStruct> rcvsList = new List<RecieveSmsStruct>();
-        //    for (int i = 0; i < list.Count; i++)
-        //    {
-        //        RecieveSmsStruct rcvs = new RecieveSmsStruct();
-        //        list[i].RcvSmsText = Regex.Replace(list[i].RcvSmsText, "[\x01-\x1F]", "");
-        //        rcvs.RcvSmsText = list[i].RcvSmsText;
-        //        rcvs.RcvsmsKeyWord = list[i].RcvsmsKeyWord;
-        //        rcvs.RcvSmsfrom = list[i].RcvSmsfrom;
-        //        rcvs.RcvSmsTo = list[i].RcvSmsTo;
-        //        rcvs.RcvSmsInteredDate = list[i].RcvSmsInteredDate;
-        //        rcvs.RcvSmsUDH = list[i].RcvSmsUDH;
-        //        rcvs.RcvsmsCharSet = list[i].RcvsmsCharSet;
-        //        rcvs.rcvSmsSmsC = list[i].rcvSmsSmsC;
-        //        rcvs.RcvSmsStatus = list[i].RcvSmsStatus;
-        //        rcvs.RcvSmsMessageID = list[i].RcvSmsMessageID;
-        //        rcvs.RcvSmsRuleID = list[i].RcvSmsRuleID;
-        //        rcvs.RcvSmsDeliveredTime = list[i].RcvSmsDeliveredTime;
-        //        rcvs.RcvSmsReeded = false;
-        //        rcvs.UsrId = list[i].UsrId;
-        //        rcvs.RecieveSMSId = list[i].RecieveSMSId;
-        //        rcvs.OperatorId = list[i].OperatorId.Value;
-        //        rcvs.RecieveDate = list[i].RecieveDate.Value;
-        //        rcvsList.Add(rcvs);
-        //    }
-        //    return rcvsList;
-
-        //}
+      
         [WebMethod]
         public int GetUnreadMessgese(string Username, string password, string toNumber, out string[] messages, out string[] fromNumber, out string[] recivedates)
         {
@@ -722,46 +679,7 @@ namespace SSB.Service.Web
             public int OperatorId; //{ get; set; }
             public DateTime RecieveDate; //{ get; set; }
         }
-        //public struct RecieveSmsStruct {
-        //    public string RcvSmsText; 
-        //    public string RcvsmsKeyWord; 
-        //    public string RcvSmsfrom;
-        //    public string RcvSmsTo; 
-        //    public string RcvSmsInteredDate; 
-        //    public string RcvSmsUDH; 
-        //    public string RcvsmsCharSet;
-        //    public string rcvSmsSmsC;
-        //    public string RcvSmsStatus;
-        //    public string RcvSmsMessageID;
-        //    public string RcvSmsRuleID; 
-        //    public string RcvSmsDeliveredTime;
-        //    public bool RcvSmsReeded;
-        //    public string UsrId;
-        //    public int RecieveSMSId; 
-        //    public int OperatorId; 
-        //    public DateTime RecieveDate; 
-        //}
-        //[Serializable, XmlRoot("RecieveSms")]
-        //public class NewRecieveSms
-        //{
-        //    public string RcvSmsText { get; set; }
-        //    public string RcvsmsKeyWord { get; set; }
-        //    public string RcvSmsfrom { get; set; }
-        //    public string RcvSmsTo { get; set; }
-        //    public string RcvSmsInteredDate { get; set; }
-        //    public string RcvSmsUDH { get; set; }
-        //    public string RcvsmsCharSet { get; set; }
-        //    public string rcvSmsSmsC { get; set; }
-        //    public string RcvSmsStatus { get; set; }
-        //    public string RcvSmsMessageID { get; set; }
-        //    public string RcvSmsRuleID { get; set; }
-        //    public string RcvSmsDeliveredTime;// { get; set; }
-        //    public bool RcvSmsReeded { get; set; }
-        //    public string UsrId { get; set; }
-        //    public int RecieveSMSId { get; set; }
-        //    public int OperatorId { get; set; }
-        //    public DateTime RecieveDate { get; set; }
-        //}
+       
 
         [WebMethod]
         public string Test(string[] str)

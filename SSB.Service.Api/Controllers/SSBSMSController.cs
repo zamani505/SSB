@@ -12,37 +12,28 @@ using SSB.Service.SSBApi.Models.SendQeue;
 using SSB.Service.SSBApi.Models.SendSMS;
 using SSB.Service.SSBApi.Models.SMS;
 using SSB.Service.SSBApi.Validation;
-using SSB.Service.Web.avanak;
 using System;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.Http;
-using System.Web.Mvc;
-using System.Web.Razor.Tokenizer;
-using System.Web.Services.Description;
-using HttpGetAttribute = System.Web.Mvc.HttpGetAttribute;
+
+
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
-using RoutePrefixAttribute = System.Web.Mvc.RoutePrefixAttribute;
+
 
 namespace SSB.Service.SSBApi.Controllers
 {
     [System.Web.Mvc.Route("api/SSBSMS")]
-    public class SSBSMSController : ApiController
+    public class SSBSMSController : BaseController
     {
         #region props
-        public readonly CacheLogin _cacheLogin;
-        SMSService _service;
-        LineNumerValidation _lineNumberValidation;
+       
         public readonly string _username;
         #endregion
         #region ctors
 
         public SSBSMSController()
         {
-            _cacheLogin = new CacheLogin();
-            _service = new SMSService();
-            _lineNumberValidation = new LineNumerValidation();
+           
             _username = _cacheLogin.GetUsername(HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME]);
         }
         #endregion
@@ -142,66 +133,7 @@ namespace SSB.Service.SSBApi.Controllers
         }
         #endregion
         #region private methods
-        private SMSDto SendSMSQueueWithId(Guid[] ids, string[] messages, string[] mobiles, string[] senderNumbers, string username)
-        {
-            try
-            {
-                return new SMSDto() { Result = _service.SendSMSQueueWithId(ids, messages, mobiles, senderNumbers, username) };
-            }
-            catch (Exception ex)
-            {
-
-                return new SMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
-            }
-        }
-        private SMSDto SSB_SendSMSQueue(string[] messages, string[] mobiles, string[] origs, string username)
-        {
-            try
-            {
-                return new SMSDto() { Result = _service.SendSMSQueue(messages, mobiles, origs, username) };
-            }
-            catch (System.Exception ex)
-            {
-
-                return new SMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
-            }
-        }
-        private SMSDto SSB_SendSMSQueue(string messages, string mobiles, string origs, string username)
-        {
-            try
-            {
-                string[] toNumbers = mobiles.Split(',');
-                return new SMSDto() { Result = _service.SendSMSQueue(messages, toNumbers, origs, username) };
-            }
-            catch (System.Exception ex)
-            {
-
-                return new SMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
-            }
-        }
-        private SMSDto SSB_SendSMSQueue(string messages, string[] mobiles, string origs, string username)
-        {
-            try
-            {
-                return new SMSDto() { Result = _service.SendSMSQueue(messages, mobiles, origs, username) };
-            }
-            catch (System.Exception ex)
-            {
-
-                return new SMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
-            }
-        }
-        private SendSMSDto SSB_SendSMS(string[] messages, int[] encodings, string[] mobiles, string[] origs, string[] udh, int[] messageClass, int[] priorities, long[] checkingIds, string username) {
-            try
-            {
-                return new SendSMSDto(){ Result = _service.SendSMS(messages,encodings,mobiles,origs,udh,messageClass,priorities,checkingIds,username)};
-            }
-            catch (Exception ex)
-            {
-
-                return new SendSMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
-            }
-        }
+       
         #endregion
     }
 }

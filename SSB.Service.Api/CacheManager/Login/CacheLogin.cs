@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace SSB.Service.SSBApi.CacheManager.Login
         #region ctors
         public CacheLogin()
         {
-
+            ClearCache();
         }
         #endregion
         #region public methods
@@ -33,7 +34,7 @@ namespace SSB.Service.SSBApi.CacheManager.Login
         public void AddSession(string token, string username)
         {
             RemoveSession(token);
-            var expireTime =int.Parse( ConfigurationManager.AppSettings["ExpireTime"] ?? "10");
+            var expireTime = int.Parse(ConfigurationManager.AppSettings["ExpireTime"] ?? "10");
             _cache.Add(token, new TokenModel(username, DateTime.Now.AddHours(expireTime)));
         }
         public void RemoveSession(string token)
@@ -43,10 +44,31 @@ namespace SSB.Service.SSBApi.CacheManager.Login
             var session = _cache.FirstOrDefault(o => o.Key.Equals(token)).Value;
             return session.Username;
         }
-        
-       
-        #endregion
 
+
+        #endregion
+        #region private methods
+        private void ClearCache() {
+            try
+            {
+                if (DateTime.Now.Hour >= 7 && DateTime.Now.Hour <= 9)
+                {
+                    _cache.ForEach(c =>
+                    {
+                        if (c.Value.ExpireDate.Day < DateTime.Now.Day) _cache.Remove(c.Key);
+                        if (c.Value.ExpireDate.Month != DateTime.Now.Month)
+                            _cache.Remove(c.Key);
+                    });
+                }
+            }
+            catch (Exception)
+            {
+
+               
+            }
+           
+        }
+        #endregion
     }
     public class TokenModel
     {
