@@ -142,6 +142,7 @@
     <Compile Include="CacheManager\Login\CacheLogin.cs" />
     <Compile Include="Constant\SSBConstant.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CheckVersionController.cs" />
     <Compile Include="Controllers\CreditController.cs" />
     <Compile Include="Controllers\RecieveController.cs" />
     <Compile Include="Controllers\SendSMSController.cs" />
@@ -155,12 +156,14 @@
     <Compile Include="Models\ArraySendQeue\ArraySendQeueVM.cs" />
     <Compile Include="Models\ArraySend\ArraySendVM.cs" />
     <Compile Include="Models\CheckCredit\CheckCreditVM.cs" />
+    <Compile Include="Models\CheckVersion\CheckVersionDto.cs" />
     <Compile Include="Models\Credit\CreditDto.cs" />
     <Compile Include="Models\GetArrayMessageStatus\GetArrayMessageStatusVM.cs" />
     <Compile Include="Models\GetMessageStatus\GetMessageStatusVM.cs" />
     <Compile Include="Models\GetQueueMessageStatus\GetQueueMessageStatusVM.cs" />
     <Compile Include="Models\GetTarrifOperator\GetTarrifOperatorDto.cs" />
     <Compile Include="Models\GetTarrifOperator\GetTarrifOperatorVM.cs" />
+    <Compile Include="Models\GetUnreadMessgese\GetUnreadMessgeseVM.cs" />
     <Compile Include="Models\Login\LoginDto.cs" />
     <Compile Include="Models\Login\LoginVM.cs" />
     <Compile Include="Models\RecieveSMSById\RecieveSMSByIdVM.cs" />
@@ -204,6 +207,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\CheckVersion\" />
     <Folder Include="Views\Credit\" />
     <Folder Include="Views\Recieve\" />
     <Folder Include="Views\SMSStatus\" />

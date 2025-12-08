@@ -7,7 +7,7 @@ namespace SSB.Service.SSBApi.Models
     {
         public List<RecieveSMSModel> Result { get; set; }
         public string Message { get; set; }
-        public string Code { get; set; }
+        public string Code { get; set; } = "0";
     }
     public class RecieveSMSModel {
         public string RcvSmsText { get; set; }

@@ -1,9 +1,6 @@
-﻿using SSB.Service.Core;
-using SSB.Service.SSBApi.Constant;
-using SSB.Service.SSBApi.Extentions;
+﻿using SSB.Service.SSBApi.Extentions;
 using SSB.Service.SSBApi.Models;
 using System;
-using System.Collections.Generic;
 using System.Web.Http;
 using static SSB.Service.SSBApi.Constant.SSBConstant;
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
@@ -14,7 +11,7 @@ namespace SSB.Service.SSBApi.Controllers
     public class RecieveController : BaseController
     {
         #region props
-        
+
         #endregion
         #region public methods
         [HttpPost]
@@ -49,7 +46,43 @@ namespace SSB.Service.SSBApi.Controllers
 
                 return Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
             }
-           
+
+        }
+        [HttpPost]
+        public IHttpActionResult GetUnreadMessgese([FromBody] GetUnreadMessgeseVM getUnreadMessgeseVM)
+        {
+            try
+            {
+                getUnreadMessgeseVM.ToNumber = Helpers.Utility.FixPhoneNumber(getUnreadMessgeseVM.ToNumber);
+                var validate = _lineNumberValidation.LineValidation(new string[] { getUnreadMessgeseVM.ToNumber }, _username);
+                if (!string.IsNullOrEmpty(validate))
+                    return Ok(new RecieveDto() { Code = validate });
+                var tblRec = _service.RecieveUnreadSMS(getUnreadMessgeseVM.ToNumber);
+                return Ok(new RecieveDto() { Result = tblRec.ToRecieveSMSModel() });
+            }
+            catch (Exception)
+            {
+
+                return Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                
+            }
+
+        }
+        [HttpPost]
+        public IHttpActionResult GetUnreadMessgeseWithUsername() 
+        {
+            try
+            {
+                var tblRec = _service.GetUnreadMessgeseWithUsername(_username);
+                return Ok(new RecieveDto() { Result = tblRec.ToRecieveSMSModel() });
+
+            }
+            catch (Exception)
+            {
+
+                return Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+
+            }
         }
         #endregion
     }

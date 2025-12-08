@@ -605,7 +605,7 @@ namespace SSB.Service.Web
 
             List<Tbl_RecieveSms> list = srv.RecieveUnreadSMS(toNumber);
             messages = new string[list.Count];
-            fromNumber = new string[list.Count];
+            fromNumber = new string[list.Count];    
             recivedates = new string[list.Count];
             for (int i = 0; i < list.Count; i++)
             {
