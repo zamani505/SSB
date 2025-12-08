@@ -1,0 +1,220 @@
+﻿<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>صفحه معرفی API — COMPANY_NAME</title>
+    <style>
+        :root {
+            --bg: #f7f9fc;
+            --card: #ffffff;
+            --accent: #0069ff;
+            --muted: #666
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Tahoma, Arial, sans-serif;
+            background: var(--bg);
+            color: #111
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 48px auto;
+            padding: 20px
+        }
+
+        header {
+            display: flex;
+            gap: 16px;
+            align-items: center
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 10px;
+            background: linear-gradient(135deg,var(--accent),#33aaff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.6rem
+        }
+
+        p.lead {
+            margin: 8px 0 0;
+            color: var(--muted)
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 18px;
+            margin-top: 20px;
+            box-shadow: 0 4px 18px rgba(16,24,40,0.06)
+        }
+
+        .meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+            align-items: center
+        }
+
+        .badge {
+            background: #eef6ff;
+            color: var(--accent);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-weight: 600
+        }
+
+        a.btn {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            background: var(--accent);
+            color: white
+        }
+
+        code {
+            background: #f2f4f7;
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-family: monospace
+        }
+
+        pre {
+            background: #0b1220;
+            color: #e6eef8;
+            padding: 12px;
+            border-radius: 8px;
+            overflow: auto
+        }
+
+        .row {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+
+        .col {
+            flex: 1;
+            min-width: 220px
+        }
+
+        footer {
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 0.95rem
+        }
+
+        .copy-btn {
+            cursor: pointer;
+            border: 0;
+            background: #e9f2ff;
+            color: var(--accent);
+            padding: 6px 8px;
+            border-radius: 6px
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">CN</div>
+            <div>
+                <h1 id="company">سهند سامانه برتر SSB</h1>
+                <p class="lead"> این َAPI  ارسال پیامک به روش های مختلف و دریافت پیامک های ارسال شده و همچنین شارژ کاربر فراهم می کند</p>
+            </div>
+        </header>
+
+        <div class="card">
+            <div class="meta">
+                <div class="badge" id="apiname">API: http://SSB/v1/api/SendSMS/{سرویس ارسال پیامک}</div>
+                <div class="badge" id="apiname">API: http://SSB/v1/api/Recieve/{سرویس دریافت پیامک}</div>
+                <div class="badge" id="apiname">API: http://SSB/v1/api/Credit/{سرویس دریافت شارز}</div>
+                <div class="badge" id="version">نسخه: 1.0.0</div>
+                <br />
+                <a id="doclink" class="btn" href="https://SSbSMS.ir/v1/docs" target="_blank" rel="noopener">مستندات کامل API</a>
+            </div>
+
+            <section style="margin-top:16px">
+                <h3>خلاصه</h3>
+                <p>API شرکت سهند سامانه برتر دارای انواع متد های ارسال و همچنین دریافت پیامک های ارسال شده که هربار امکان دریافت 100 پیامک می باشد و همچنین شما می توانید قبل ارسال پیامک میزارن شارژ مورد استفاده برای ارسال مدنظر و شارژ کاربری خود را دریافت نمایید</p>
+                <p>در تمامی سرویس در صورت بروز خطا کد مربوط به خطا در فیلد Code , شرح مختصر خطا در Message قرار میگیرد.API با بروز Exception به هیچ عنوان متن خطا را به کاربر نمایش نمیدهد و فقط در خروجی Code خطا را قرار میدهد</p>
+            </section>
+
+            <section style="margin-top:12px">
+                <h3>شروع سریع — مثال curl</h3>
+                <div class="row">
+                    <div class="col">
+                        <pre id="curlExample">curl --location 'http://SSB/api/SendSMS/SendPostUrl' \
+--header 'SSBToken: YOURTOKEN' \
+--header 'Content-Type: application/json'
+data '{
+    
+        "message":"d",
+        "fromNumber":"3000",
+        "toNumber":"9127688"
+    
+}'
+</pre>
+                    </div>
+                    <div style="align-self:start">
+                        <button class="copy-btn" onclick="copyCurl()">کپی</button>
+                    </div>
+                </div>
+            </section>
+
+           
+
+            <section style="margin-top:12px">
+                <h3>نمونه پاسخ (JSON)</h3>
+                <pre>{
+"result":[],
+"message":"",
+"code":"0"
+}
+  </pre>
+            </section>
+
+            <footer>
+                <p> در صورت انتشار نسخه جدید فقط کافی است برای درسافت سرویس جدید ورژن Api که در Url قرار دارد را تغییر دهید<code>http://SSB/v1/api/Credit/</code> مانند <code>v2/api/</code>.</p>
+            </footer>
+        </div>
+
+        <div style="margin-top:10px;color:var(--muted)">
+            <small>سهند سامانه برتر</small>
+        </div>
+    </div>
+
+    <script>
+    function copyCurl(){
+      const text = document.getElementById('curlExample').innerText;
+      navigator.clipboard?.writeText(text).then(()=>{
+        alert('دستور کپی شد');
+      }).catch(()=>{ alert('فشرده‌سازی دستی: لطفا متن را انتخاب و کپی کنید.'); });
+    }
+
+    // توابع کمکی برای تغییر سریع محتوا از کنسول یا اسکریپت
+    function setCompany(name){document.getElementById('company').innerText = name}
+    function setApi(name){document.getElementById('apiname').innerText = 'API: '+name}
+    function setVersion(v){document.getElementById('version').innerText = 'نسخه: '+v}
+    function setDocs(url){const a=document.getElementById('doclink');a.href=url}
+
+    // مثال: اگر خواستید از کنسول تغییر دهید:
+    // setCompany('شرکت من'); setApi('My API'); setVersion('2.3.1'); setDocs('https://docs.myapi.com')
+    </script>
+</body>
+</html>

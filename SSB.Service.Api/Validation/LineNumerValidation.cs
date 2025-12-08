@@ -1,5 +1,5 @@
 ﻿using SSB.Service.Core;
-using SSB.Service.SSBApi.Models.SendFromUrl;
+using SSB.Service.SSBApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

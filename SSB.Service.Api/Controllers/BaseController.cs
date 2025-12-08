@@ -18,11 +18,13 @@ namespace SSB.Service.SSBApi.Controllers
         public readonly string _username;
         #endregion
         #region ctors
-        public BaseController() {
+        public BaseController()
+        {
             _cacheLogin = new CacheLogin();
             _service = new SMSService();
             _lineNumberValidation = new LineNumerValidation();
-            _username = _cacheLogin.GetUsername(HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME]);
+            if (HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME] != null)
+                _username = _cacheLogin.GetUsername(HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME]);
         }
         #endregion
         #region protected methods
@@ -99,13 +101,15 @@ namespace SSB.Service.SSBApi.Controllers
                 return new SendSMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
             }
         }
-        protected SMSStatusDto SSB_SMSStatus(long[] messageIds,bool fromMafa=false) {
+        protected SMSStatusDto SSB_SMSStatus(long[] messageIds, bool fromMafa = false)
+        {
             try
             {
                 if (fromMafa)
                     return new SMSStatusDto() { Result = _service.getMessageStatusFromMagfa(messageIds) };
-                else {
-                    int[] result =_service.GetStatusFromContainer(messageIds);
+                else
+                {
+                    int[] result = _service.GetStatusFromContainer(messageIds);
                     return new SMSStatusDto() { Result = result };
 
                 }

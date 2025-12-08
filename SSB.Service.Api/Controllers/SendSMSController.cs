@@ -25,12 +25,21 @@ namespace SSB.Service.SSBApi.Controllers
         //[Route("Login")]
         public IHttpActionResult Login([FromBody] LoginVM loginVM)
         {
-            var validate = new LoginValidation().Validate(loginVM.Username, loginVM.Password);
-            if (!string.IsNullOrEmpty(validate))
-                return Ok(new LoginDto() { Message = validate });
-            var token = loginVM.Username.CreateToken(loginVM.Password);
-            _cacheLogin.AddSession(token, loginVM.Username);
-            return Ok(new LoginDto() { SSBToken = token });
+            try
+            {
+                var validate = new LoginValidation().Validate(loginVM.Username, loginVM.Password);
+                if (!string.IsNullOrEmpty(validate))
+                    return Ok(new LoginDto() { Message = validate });
+                var token = loginVM.Username.CreateToken(loginVM.Password);
+                _cacheLogin.AddSession(token, loginVM.Username);
+                return Ok(new LoginDto() { SSBToken = token });
+            }
+            catch (Exception)
+            {
+
+                return Ok(new LoginDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+            }
+            
         }
         [HttpPost]
         public IHttpActionResult SendFromUrl([FromBody] SendFromUrlVM sendFromUrlVM)
