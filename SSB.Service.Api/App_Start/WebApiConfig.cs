@@ -21,7 +21,7 @@ namespace SSB.Service.SSBApi
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{action}",
+                routeTemplate: "v1/api/{controller}/{action}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }

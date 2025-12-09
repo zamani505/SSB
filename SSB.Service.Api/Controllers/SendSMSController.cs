@@ -8,7 +8,7 @@ using static SSB.Service.SSBApi.Constant.SSBConstant;
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
 namespace SSB.Service.SSBApi.Controllers
 {
-    [System.Web.Mvc.Route("api/SendSMS")]
+    [System.Web.Mvc.Route("v1/api/SendSMS")]
     public class SendSMSController : BaseController
     {
         #region props

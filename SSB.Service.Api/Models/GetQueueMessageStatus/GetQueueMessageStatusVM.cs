@@ -2,6 +2,6 @@
 {
     public class GetQueueMessageStatusVM
     {
-        public string[] Ids { get; set; }
+        public long[] Ids { get; set; }
     }
 }

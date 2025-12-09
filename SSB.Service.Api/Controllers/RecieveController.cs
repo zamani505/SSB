@@ -7,7 +7,7 @@ using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
 
 namespace SSB.Service.SSBApi.Controllers
 {
-    [System.Web.Mvc.Route("api/Recieve")]
+    [System.Web.Mvc.Route("v1/api/Recieve")]
     public class RecieveController : BaseController
     {
         #region props

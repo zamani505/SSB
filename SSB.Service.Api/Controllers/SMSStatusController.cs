@@ -10,7 +10,7 @@ using static SSB.Service.SSBApi.Constant.SSBConstant;
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
 namespace SSB.Service.SSBApi.Controllers
 {
-    [System.Web.Mvc.Route("api/SMSStatus")]
+    [System.Web.Mvc.Route("v1/api/SMSStatus")]
     public class SMSStatusController : BaseController
     {
         #region props

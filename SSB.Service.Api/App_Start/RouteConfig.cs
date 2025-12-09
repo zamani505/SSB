@@ -15,7 +15,7 @@ namespace SSB.Service.SSBApi
 
             routes.MapRoute(
                 name: "Default",
-                url: "api/{controller}/{action}",
+                url: "v1/api/{controller}/{action}",
                 defaults: new { controller = "SendSMS", action = "Login" }
             );
         }

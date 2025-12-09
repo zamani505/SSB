@@ -8,7 +8,7 @@ using static SSB.Service.SSBApi.Constant.SSBConstant;
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
 namespace SSB.Service.SSBApi.Controllers
 {
-    [System.Web.Mvc.Route("api/Credit")]
+    [System.Web.Mvc.Route("v1/api/Credit")]
     public class CreditController : BaseController
     {
         #region props

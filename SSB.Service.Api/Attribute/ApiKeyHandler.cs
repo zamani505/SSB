@@ -30,7 +30,7 @@ namespace SSB.Service.SSBApi.Attribute
         protected override async Task<HttpResponseMessage> SendAsync(
        HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            if(request.RequestUri.AbsolutePath.ToLower().Equals("/api/ssbsms/login"))
+            if(request.RequestUri.AbsolutePath.ToLower().Equals("v1/api/ssbsms/login"))
                 return await base.SendAsync(request, cancellationToken);
             if (!request.Headers.Contains(SSBConstant.TOKEN_NAME))
                 return request.CreateResponse(HttpStatusCode.Unauthorized, GetBody(HttpStatusCode.Unauthorized, request.RequestUri.AbsolutePath.GetVerbName()));

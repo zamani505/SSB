@@ -6,7 +6,7 @@ using static SSB.Service.SSBApi.Constant.SSBConstant;
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
 namespace SSB.Service.SSBApi.Controllers
 {
-    [System.Web.Mvc.Route("api/CheckVersion")]
+    [System.Web.Mvc.Route("v1/api/CheckVersion")]
     public class CheckVersionController : BaseController
     {
         #region public methods
