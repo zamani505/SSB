@@ -55,10 +55,36 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "webservice", "..\webservice
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "1363"
 		VWDDynamicPort = "false"
+	EndProjectSection
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{C5C87BAA-D3BD-4F89-9901-E0375315FAFE}|SSB.Service.Core.dll;{f444f9dd-663a-4431-8223-1712e1fa33b5}|SSB.Service.Web.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/webservice"
+		Debug.AspNetCompiler.PhysicalPath = "..\Webservice\webservice\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\webservice\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/webservice"
+		Release.AspNetCompiler.PhysicalPath = "..\Webservice\webservice\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\webservice\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1363"
+		VWDDynamicPort = "false"
 		SlnRelativePath = "..\webservice\webservice\"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSB.Service.SSBApi", "SSB.Service.Api\SSB.Service.SSBApi.csproj", "{542ACA44-CF1E-45F4-9E7B-B64E879D083E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseSSBApi", "UseSSBApi\UseSSBApi.csproj", "{E3AD595B-DA12-4E96-ABDF-47D56FF21567}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,28 +108,15 @@ Global
 		{542ACA44-CF1E-45F4-9E7B-B64E879D083E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{542ACA44-CF1E-45F4-9E7B-B64E879D083E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{542ACA44-CF1E-45F4-9E7B-B64E879D083E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3AD595B-DA12-4E96-ABDF-47D56FF21567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3AD595B-DA12-4E96-ABDF-47D56FF21567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3AD595B-DA12-4E96-ABDF-47D56FF21567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3AD595B-DA12-4E96-ABDF-47D56FF21567}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A56DA227-F373-474E-9B9F-7DCAC22AFE6E}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://ad:8080/tfs/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = SSB.Service.Core\\SSB.Service.Core.csproj
-		SccProjectName1 = SSB.Service.Core
-		SccLocalPath1 = SSB.Service.Core
-		SccProjectUniqueName2 = SSB.Service.Web\\SSB.Service.Web.csproj
-		SccProjectName2 = SSB.Service.Web
-		SccLocalPath2 = SSB.Service.Web
-		SccWebProject3 = true
-		SccProjectUniqueName3 = ..\\webservice\\webservice
-		SccProjectName3 = ../webservice/webservice
-		SccLocalPath3 = ..\\webservice\\webservice
-		SccProjectEnlistmentChoice3 = 2
 	EndGlobalSection
 EndGlobal

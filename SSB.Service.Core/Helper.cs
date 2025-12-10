@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Linq;
 using SSB.Helpers;
-
 namespace SSB.Service.Core
 {
     public class Helper
