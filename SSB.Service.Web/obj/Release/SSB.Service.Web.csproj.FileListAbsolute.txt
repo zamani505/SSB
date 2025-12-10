@@ -26,3 +26,8 @@ D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Serv.59AD3F
 D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.dll
 D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.pdb
 D:\backup webservice\SSB.Service.Web\SSB.Service.Web\obj\Release\SSB.Service.Web.XmlSerializers.dll
+D:\Zamani\SSB\SSB\SSB.Service.Web\obj\Release\SSB.Service.Web.csproj.AssemblyReference.cache
+D:\Zamani\SSB\SSB\SSB.Service.Web\obj\Release\SSB.Service.Web.csproj.CoreCompileInputs.cache
+D:\Zamani\SSB\SSB\SSB.Service.Web\obj\Release\SSB.Service.Web.dll
+D:\Zamani\SSB\SSB\SSB.Service.Web\obj\Release\SSB.Service.Web.pdb
+D:\Zamani\SSB\SSB\SSB.Service.Web\obj\Release\SSB.Service.Web.XmlSerializers.dll

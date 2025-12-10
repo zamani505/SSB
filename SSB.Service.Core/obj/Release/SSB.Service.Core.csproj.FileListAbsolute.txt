@@ -21,3 +21,8 @@ D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Service.Co
 D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Release\SSB.Service.Core.pdb
 D:\backup webservice\SSB.Service.Web\SSB.Service.Core\bin\Release\System.Data.Entity.dll
 D:\backup webservice\SSB.Service.Web\SSB.Service.Core\obj\Release\SSB.Serv.BACD14F9.Up2Date
+D:\Zamani\SSB\SSB\SSB.Service.Core\obj\Release\SSB.Service.Core.csproj.AssemblyReference.cache
+D:\Zamani\SSB\SSB\SSB.Service.Core\obj\Release\SSB.Service.Core.csproj.CoreCompileInputs.cache
+D:\Zamani\SSB\SSB\SSB.Service.Core\obj\Release\SSB.Service.Core.dll
+D:\Zamani\SSB\SSB\SSB.Service.Core\obj\Release\SSB.Service.Core.pdb
+D:\Zamani\SSB\SSB\SSB.Service.Core\obj\Release\SSB.Service.Core.XmlSerializers.dll

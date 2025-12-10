@@ -1,0 +1,2 @@
+D:\Zamani\SSB\SSB\SSB.Service.Api\obj\Release\SSB.Service.SSBApi.csproj.AssemblyReference.cache
+D:\Zamani\SSB\SSB\SSB.Service.Api\obj\Release\SSB.Service.SSBApi.csproj.CoreCompileInputs.cache
