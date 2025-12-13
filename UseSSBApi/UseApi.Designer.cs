@@ -31,6 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBaseUrl = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtToken = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,28 +47,27 @@
             this.txtLineNumber = new System.Windows.Forms.TextBox();
             this.tabSMSApi = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnSuccess = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button6 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnSuccess = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtResult = new System.Windows.Forms.TextBox();
             this.btnFailed = new System.Windows.Forms.Button();
+            this.txtResult = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -117,6 +117,18 @@
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Login SMS API";
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Image = global::UseSSBApi.Properties.Resources.login_Small;
+            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogin.Location = new System.Drawing.Point(408, 46);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(129, 27);
+            this.btnLogin.TabIndex = 6;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label3
             // 
@@ -271,59 +283,6 @@
             this.tabPage1.Text = "SenSMSApi";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.button8);
-            this.tabPage2.Controls.Add(this.button9);
-            this.tabPage2.Controls.Add(this.button10);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(674, 104);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "RecieveSMSApi";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.button14);
-            this.tabPage3.Controls.Add(this.button15);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(674, 104);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "StatusSMSApi";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.button6);
-            this.tabPage4.Controls.Add(this.button11);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(674, 104);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "CreditSMSApi";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // btnSuccess
-            // 
-            this.btnSuccess.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.btnSuccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuccess.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSuccess.Image = global::UseSSBApi.Properties.Resources.Success;
-            this.btnSuccess.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuccess.Location = new System.Drawing.Point(88, -5);
-            this.btnSuccess.Name = "btnSuccess";
-            this.btnSuccess.Size = new System.Drawing.Size(137, 48);
-            this.btnSuccess.TabIndex = 7;
-            this.btnSuccess.Text = "SUCCESS";
-            this.btnSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuccess.UseVisualStyleBackColor = true;
-            this.btnSuccess.Visible = false;
-            // 
             // button16
             // 
             this.button16.Image = global::UseSSBApi.Properties.Resources.Array_Send;
@@ -402,6 +361,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.button7);
+            this.tabPage2.Controls.Add(this.button8);
+            this.tabPage2.Controls.Add(this.button9);
+            this.tabPage2.Controls.Add(this.button10);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(674, 104);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "RecieveSMSApi";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // button7
             // 
             this.button7.Image = global::UseSSBApi.Properties.Resources.UnreadMessage_Username;
@@ -413,6 +386,7 @@
             this.button7.Text = "GetUnreadMessgeseWithUsername";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -425,6 +399,7 @@
             this.button8.Text = "GetUnreadMessagese";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -437,6 +412,7 @@
             this.button9.Text = "RecieveSMSById";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -450,6 +426,17 @@
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.button14);
+            this.tabPage3.Controls.Add(this.button15);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(674, 104);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "StatusSMSApi";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // button14
             // 
@@ -475,6 +462,17 @@
             this.button15.Text = "GetMessageStatus";
             this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button15.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.button6);
+            this.tabPage4.Controls.Add(this.button11);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(674, 104);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "CreditSMSApi";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -503,17 +501,22 @@
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // btnLogin
+            // btnSuccess
             // 
-            this.btnLogin.Image = global::UseSSBApi.Properties.Resources.login_Small;
-            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogin.Location = new System.Drawing.Point(408, 46);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(129, 27);
-            this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnSuccess.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnSuccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuccess.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSuccess.Image = global::UseSSBApi.Properties.Resources.Success;
+            this.btnSuccess.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuccess.Location = new System.Drawing.Point(88, -5);
+            this.btnSuccess.Name = "btnSuccess";
+            this.btnSuccess.Size = new System.Drawing.Size(137, 48);
+            this.btnSuccess.TabIndex = 7;
+            this.btnSuccess.Text = "SUCCESS";
+            this.btnSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuccess.UseVisualStyleBackColor = true;
+            this.btnSuccess.Visible = false;
             // 
             // groupBox2
             // 
@@ -525,16 +528,6 @@
             this.groupBox2.Size = new System.Drawing.Size(323, 360);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            // 
-            // txtResult
-            // 
-            this.txtResult.Location = new System.Drawing.Point(6, 55);
-            this.txtResult.Multiline = true;
-            this.txtResult.Name = "txtResult";
-            this.txtResult.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtResult.Size = new System.Drawing.Size(311, 299);
-            this.txtResult.TabIndex = 8;
-            this.txtResult.Visible = false;
             // 
             // btnFailed
             // 
@@ -552,6 +545,16 @@
             this.btnFailed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFailed.UseVisualStyleBackColor = true;
             this.btnFailed.Visible = false;
+            // 
+            // txtResult
+            // 
+            this.txtResult.Location = new System.Drawing.Point(6, 55);
+            this.txtResult.Multiline = true;
+            this.txtResult.Name = "txtResult";
+            this.txtResult.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtResult.Size = new System.Drawing.Size(311, 299);
+            this.txtResult.TabIndex = 8;
+            this.txtResult.Visible = false;
             // 
             // label6
             // 

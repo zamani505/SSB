@@ -175,5 +175,26 @@ namespace UseSSBApi
             var response = GetClient<RecieveModel>(body, "Recieve/RecieveSMS");
             RecieveSMSResult(response);
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            var body = new { PhNo = txtLineNumber.Text, Id = 10 };
+            var response = GetClient<RecieveModel>(body, "Recieve/RecieveSMSById");
+            RecieveSMSResult(response);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            var body = new { ToNumber = txtMobile.Text };
+            var response = GetClient<RecieveModel>(body, "Recieve/UnreadMessgese");
+            RecieveSMSResult(response);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            var body = new { Username = txtUsername.Text };
+            var response = GetClient<RecieveModel>(body, "Recieve/UnreadMessgeseWithUsername");
+            RecieveSMSResult(response);
+        }
     }
 }

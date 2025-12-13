@@ -49,7 +49,7 @@ namespace SSB.Service.SSBApi.Controllers
 
         }
         [HttpPost]
-        public IHttpActionResult GetUnreadMessgese([FromBody] GetUnreadMessgeseVM getUnreadMessgeseVM)
+        public IHttpActionResult UnreadMessgese([FromBody] GetUnreadMessgeseVM getUnreadMessgeseVM)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace SSB.Service.SSBApi.Controllers
 
         }
         [HttpPost]
-        public IHttpActionResult GetUnreadMessgeseWithUsername() 
+        public IHttpActionResult UnreadMessgeseWithUsername([FromBody] GetUnreadMessgeseWithUsernameVM getUnreadMessgeseWithUsernameVM) 
         {
             try
             {
