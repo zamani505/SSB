@@ -63,6 +63,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RecieveModel.cs" />
+    <Compile Include="Models\SMSModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UseApi.cs">
@@ -101,6 +103,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\Success.png" />
     <None Include="Images\Chek_Credit.png" />
     <None Include="Images\Cedit.png" />
     <None Include="Images\Status_Queue.png" />
@@ -116,6 +119,7 @@
     <None Include="Images\Send.png" />
     <None Include="Images\Array_Send_Queue.png" />
     <None Include="Images\Array_Send.png" />
+    <None Include="Images\Failed.png" />
     <Content Include="Images\login.png" />
     <None Include="Images\login_Small.png" />
   </ItemGroup>

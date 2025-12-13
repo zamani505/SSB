@@ -12,7 +12,6 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using SSB.Core.Data;
 
-
 using System.Data.Entity.Core.Objects;
 
 namespace SSB.Service.Core

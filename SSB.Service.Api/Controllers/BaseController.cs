@@ -7,6 +7,7 @@ using System;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Http;
+using static SSB.Service.SSBApi.Constant.SSBConstant;
 namespace SSB.Service.SSBApi.Controllers
 {
     public class BaseController : ApiController
@@ -37,7 +38,7 @@ namespace SSB.Service.SSBApi.Controllers
             catch (Exception ex)
             {
 
-                return new SMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
+                return new SMSDto() {Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
             }
         }
         protected SMSDto SSB_SendSMSQueue(string[] messages, string[] mobiles, string[] origs, string username)
@@ -49,7 +50,7 @@ namespace SSB.Service.SSBApi.Controllers
             catch (System.Exception ex)
             {
 
-                return new SMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
+                return new SMSDto() {Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
             }
         }
         protected SMSDto SSB_SendSMSQueue(string messages, string mobiles, string origs, string username)
@@ -62,7 +63,7 @@ namespace SSB.Service.SSBApi.Controllers
             catch (System.Exception ex)
             {
 
-                return new SMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
+                return new SMSDto() {Code=SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
             }
         }
         protected SMSDto SSB_SendSMSQueue(string messages, string[] mobiles, string origs, string username)
@@ -74,7 +75,7 @@ namespace SSB.Service.SSBApi.Controllers
             catch (System.Exception ex)
             {
 
-                return new SMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
+                return new SMSDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
             }
         }
         protected SendSMSDto SSB_SendSMS(string[] messages, int[] encodings, string[] mobiles, string[] origs, string[] udh, int[] messageClass, int[] priorities, long[] checkingIds, string username)
@@ -86,7 +87,7 @@ namespace SSB.Service.SSBApi.Controllers
             catch (Exception ex)
             {
 
-                return new SendSMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
+                return new SendSMSDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
             }
         }
         protected SendSMSDto SSB_SendSMSArrayToMagfa(string[] messages, int[] encodings, string[] mobiles, string[] origs, string[] udh, int[] messageClass, int[] priorities, long[] checkingIds, string username)
@@ -98,7 +99,7 @@ namespace SSB.Service.SSBApi.Controllers
             catch (Exception ex)
             {
 
-                return new SendSMSDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
+                return new SendSMSDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
             }
         }
         protected SMSStatusDto SSB_SMSStatus(long[] messageIds, bool fromMafa = false)
@@ -117,7 +118,7 @@ namespace SSB.Service.SSBApi.Controllers
             catch (Exception ex)
             {
 
-                return new SMSStatusDto() { Message = "متاسفانه مشکلی بوجود آمده است" };
+                return new SMSStatusDto() {Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
             }
         }
         protected SMSStatusDto SSB_SMSStatus(string[] messageIds)

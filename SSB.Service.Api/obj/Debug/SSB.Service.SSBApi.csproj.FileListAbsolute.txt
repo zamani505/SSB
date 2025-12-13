@@ -184,3 +184,4 @@ D:\Zamani\SSB\SSB\SSB.Service.Api\obj\Debug\SSB.Service.SSBApi.csproj.CoreCompil
 D:\Zamani\SSB\SSB\SSB.Service.Api\obj\Debug\SSB.Serv.1F964FF1.Up2Date
 D:\Zamani\SSB\SSB\SSB.Service.Api\obj\Debug\SSB.Service.Api.dll
 D:\Zamani\SSB\SSB\SSB.Service.Api\obj\Debug\SSB.Service.Api.pdb
+D:\Zamani\SSB\SSB\SSB.Service.Api\bin\EntityFramework.SqlServer.dll

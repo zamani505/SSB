@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\backup webservice\SSB.Service.Web\SSB.Service.Core\Acounting.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Zamani\SSB\SSB\SSB.Service.Core\Acounting.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

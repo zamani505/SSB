@@ -31,25 +31,25 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtBaseUrl = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtToken = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.grpMessage = new System.Windows.Forms.GroupBox();
-            this.txtLineNumber = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtMobile = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.lblMobile = new System.Windows.Forms.Label();
+            this.txtMobile = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtLineNumber = new System.Windows.Forms.TextBox();
             this.tabSMSApi = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnSuccess = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -62,8 +62,13 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtResult = new System.Windows.Forms.TextBox();
+            this.btnFailed = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.grpMessage.SuspendLayout();
@@ -72,6 +77,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -112,38 +118,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Login SMS API";
             // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(74, 19);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(146, 21);
-            this.txtUsername.TabIndex = 0;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(74, 45);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(146, 21);
-            this.txtPassword.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Username :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Password :";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -161,13 +135,47 @@
             this.txtToken.Size = new System.Drawing.Size(249, 21);
             this.txtToken.TabIndex = 4;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Password :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Username :";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(74, 45);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(146, 21);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "zamani123";
+            // 
+            // txtUsername
+            // 
+            this.txtUsername.Location = new System.Drawing.Point(74, 19);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(146, 21);
+            this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "zamani";
+            // 
             // grpMessage
             // 
             this.grpMessage.BackColor = System.Drawing.Color.Transparent;
             this.grpMessage.Controls.Add(this.label5);
-            this.grpMessage.Controls.Add(this.textBox2);
+            this.grpMessage.Controls.Add(this.txtMessage);
+            this.grpMessage.Controls.Add(this.lblMobile);
             this.grpMessage.Controls.Add(this.txtMobile);
-            this.grpMessage.Controls.Add(this.textBox1);
             this.grpMessage.Controls.Add(this.label4);
             this.grpMessage.Controls.Add(this.txtLineNumber);
             this.grpMessage.Enabled = false;
@@ -179,12 +187,43 @@
             this.grpMessage.TabStop = false;
             this.grpMessage.Text = "Message";
             // 
-            // txtLineNumber
+            // label5
             // 
-            this.txtLineNumber.Location = new System.Drawing.Point(74, 26);
-            this.txtLineNumber.Name = "txtLineNumber";
-            this.txtLineNumber.Size = new System.Drawing.Size(146, 21);
-            this.txtLineNumber.TabIndex = 0;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(314, 43);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Text :";
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.Location = new System.Drawing.Point(354, 29);
+            this.txtMessage.Multiline = true;
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMessage.Size = new System.Drawing.Size(249, 45);
+            this.txtMessage.TabIndex = 10;
+            this.txtMessage.Text = "Test";
+            this.txtMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMessage.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // lblMobile
+            // 
+            this.lblMobile.AutoSize = true;
+            this.lblMobile.Location = new System.Drawing.Point(30, 57);
+            this.lblMobile.Name = "lblMobile";
+            this.lblMobile.Size = new System.Drawing.Size(44, 13);
+            this.lblMobile.TabIndex = 9;
+            this.lblMobile.Text = "Mobile :";
+            // 
+            // txtMobile
+            // 
+            this.txtMobile.Location = new System.Drawing.Point(74, 54);
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Size = new System.Drawing.Size(146, 21);
+            this.txtMobile.TabIndex = 8;
+            this.txtMobile.Text = "09127698738";
             // 
             // label4
             // 
@@ -195,41 +234,13 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "LineNumber :";
             // 
-            // txtMobile
+            // txtLineNumber
             // 
-            this.txtMobile.AutoSize = true;
-            this.txtMobile.Location = new System.Drawing.Point(30, 57);
-            this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(44, 13);
-            this.txtMobile.TabIndex = 9;
-            this.txtMobile.Text = "Mobile :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(74, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 21);
-            this.textBox1.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(314, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Text :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(354, 29);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(249, 45);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtLineNumber.Location = new System.Drawing.Point(74, 26);
+            this.txtLineNumber.Name = "txtLineNumber";
+            this.txtLineNumber.Size = new System.Drawing.Size(146, 21);
+            this.txtLineNumber.TabIndex = 0;
+            this.txtLineNumber.Text = "+983000";
             // 
             // tabSMSApi
             // 
@@ -237,6 +248,7 @@
             this.tabSMSApi.Controls.Add(this.tabPage2);
             this.tabSMSApi.Controls.Add(this.tabPage3);
             this.tabSMSApi.Controls.Add(this.tabPage4);
+            this.tabSMSApi.Enabled = false;
             this.tabSMSApi.Location = new System.Drawing.Point(6, 256);
             this.tabSMSApi.Name = "tabSMSApi";
             this.tabSMSApi.SelectedIndex = 0;
@@ -295,19 +307,22 @@
             this.tabPage4.Text = "CreditSMSApi";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnSuccess
             // 
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.button6.FlatAppearance.BorderSize = 2;
-            this.button6.Image = global::UseSSBApi.Properties.Resources.Chek_Credit;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(132, 16);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(102, 72);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "CheckCredit";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSuccess.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnSuccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuccess.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSuccess.Image = global::UseSSBApi.Properties.Resources.Success;
+            this.btnSuccess.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuccess.Location = new System.Drawing.Point(88, -5);
+            this.btnSuccess.Name = "btnSuccess";
+            this.btnSuccess.Size = new System.Drawing.Size(137, 48);
+            this.btnSuccess.TabIndex = 7;
+            this.btnSuccess.Text = "SUCCESS";
+            this.btnSuccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuccess.UseVisualStyleBackColor = true;
+            this.btnSuccess.Visible = false;
             // 
             // button16
             // 
@@ -320,6 +335,7 @@
             this.button16.Text = "ArraySend";
             this.button16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button5
             // 
@@ -332,6 +348,7 @@
             this.button5.Text = "Send";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -344,6 +361,7 @@
             this.button4.Text = "SendQeue";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -356,6 +374,7 @@
             this.button3.Text = "ArraySendQeueWithId";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -368,6 +387,7 @@
             this.button2.Text = "ArraySendQeue";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -380,6 +400,7 @@
             this.button1.Text = "SendFromUrl ";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button7
             // 
@@ -428,6 +449,7 @@
             this.button10.Text = "RecieveSMS";
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button14
             // 
@@ -454,6 +476,20 @@
             this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button15.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.button6.FlatAppearance.BorderSize = 2;
+            this.button6.Image = global::UseSSBApi.Properties.Resources.Chek_Credit;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.Location = new System.Drawing.Point(132, 16);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(102, 72);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "CheckCredit";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // button11
             // 
             this.button11.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
@@ -479,22 +515,75 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnFailed);
+            this.groupBox2.Controls.Add(this.txtResult);
+            this.groupBox2.Controls.Add(this.btnSuccess);
+            this.groupBox2.Location = new System.Drawing.Point(690, 20);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(323, 360);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            // 
+            // txtResult
+            // 
+            this.txtResult.Location = new System.Drawing.Point(6, 55);
+            this.txtResult.Multiline = true;
+            this.txtResult.Name = "txtResult";
+            this.txtResult.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtResult.Size = new System.Drawing.Size(311, 299);
+            this.txtResult.TabIndex = 8;
+            this.txtResult.Visible = false;
+            // 
+            // btnFailed
+            // 
+            this.btnFailed.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnFailed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFailed.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFailed.ForeColor = System.Drawing.Color.Red;
+            this.btnFailed.Image = global::UseSSBApi.Properties.Resources.Failed;
+            this.btnFailed.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFailed.Location = new System.Drawing.Point(88, 0);
+            this.btnFailed.Name = "btnFailed";
+            this.btnFailed.Size = new System.Drawing.Size(137, 48);
+            this.btnFailed.TabIndex = 9;
+            this.btnFailed.Text = "FAILED";
+            this.btnFailed.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFailed.UseVisualStyleBackColor = true;
+            this.btnFailed.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(690, 6);
+            this.label6.Name = "label6";
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label6.Size = new System.Drawing.Size(57, 16);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Result :";
+            // 
             // UseApi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(691, 394);
+            this.ClientSize = new System.Drawing.Size(1025, 394);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.tabSMSApi);
             this.Controls.Add(this.grpMessage);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "UseApi";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "سهند سامانه برتر";
+            this.Load += new System.EventHandler(this.UseApi_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -506,7 +595,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -526,10 +618,10 @@
         private System.Windows.Forms.GroupBox grpMessage;
         private System.Windows.Forms.TextBox txtLineNumber;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label txtMobile;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblMobile;
+        private System.Windows.Forms.TextBox txtMobile;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.TabControl tabSMSApi;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -548,5 +640,10 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnSuccess;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.Button btnFailed;
+        private System.Windows.Forms.Label label6;
     }
 }
