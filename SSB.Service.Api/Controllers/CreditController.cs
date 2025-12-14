@@ -24,7 +24,7 @@ namespace SSB.Service.SSBApi.Controllers
         #endregion
         #region public methods
         [HttpPost]
-        public IHttpActionResult GetUserCredit()
+        public IHttpActionResult UserCredit()
         {
             try
             {

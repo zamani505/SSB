@@ -23,7 +23,7 @@ namespace SSB.Service.SSBApi.Controllers
         #endregion
         #region public methods
         [HttpPost]
-        public IHttpActionResult GetArrayMessageStatus([FromBody] GetArrayMessageStatusVM getArrayMessageStatusVM)
+        public IHttpActionResult ArrayMessageStatus([FromBody] GetArrayMessageStatusVM getArrayMessageStatusVM)
         {
             if (getArrayMessageStatusVM.Ids.Count() > 100)
                 return Ok(new SMSStatusDto() { Code = SSBErrorCode.COUNT_OF_GETSTATUS.ToString(), Message = " در هربار فقط 100 پیامک فراخوانی میشود" });
@@ -31,13 +31,13 @@ namespace SSB.Service.SSBApi.Controllers
 
         }
         [HttpPost]
-        public IHttpActionResult GetMessageStatus([FromBody] GetMessageStatusVM getMessageStatusVM) {
+        public IHttpActionResult MessageStatus([FromBody] GetMessageStatusVM getMessageStatusVM) {
             if (getMessageStatusVM.Ids.Count() > 100)
                 return Ok(new SMSStatusDto() { Code = SSBErrorCode.COUNT_OF_GETSTATUS.ToString(), Message = " در هربار فقط 100 پیامک فراخوانی میشود" });
             return Ok(SSB_SMSStatus(getMessageStatusVM.Ids));
         }
         [HttpPost]
-        public IHttpActionResult GetQueueMessageStatus([FromBody] GetQueueMessageStatusVM getQueueMessageStatusVM) {
+        public IHttpActionResult QueueMessageStatus([FromBody] GetQueueMessageStatusVM getQueueMessageStatusVM) {
             if (getQueueMessageStatusVM.Ids.Count() > 100)
                 return Ok(new SMSStatusDto() { Code = SSBErrorCode.COUNT_OF_GETSTATUS.ToString(), Message = " در هربار فقط 100 پیامک فراخوانی میشود" });
             return Ok(SSB_SMSStatus(getQueueMessageStatusVM.Ids));

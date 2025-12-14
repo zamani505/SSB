@@ -146,7 +146,8 @@
                 <div class="badge" id="apiname">API: http://SSB/v1/api/Credit/{سرویس دریافت شارز}</div>
                 <div class="badge" id="version">نسخه: 1.0.0</div>
                 <br />
-                <a id="doclink" class="btn" href="https://SSbSMS.ir/v1/docs" target="_blank" rel="noopener">مستندات کامل API</a>
+                <a id="doclink" class="btn" href="/Docs/v1/ApiDoc.pdf" target="_blank" rel="noopener">مستندات کامل API</a>
+                <a id="sampleLink" class="btn" href="" target="_blank" rel="noopener">نمونه کد استفاده از  API</a>
             </div>
 
             <section style="margin-top:16px">
@@ -177,7 +178,7 @@ data '{
                 </div>
             </section>
 
-           
+
 
             <section style="margin-top:12px">
                 <h3>نمونه پاسخ (JSON)</h3>
@@ -200,21 +201,22 @@ data '{
     </div>
 
     <script>
-    function copyCurl(){
-      const text = document.getElementById('curlExample').innerText;
-      navigator.clipboard?.writeText(text).then(()=>{
-        alert('دستور کپی شد');
-      }).catch(()=>{ alert('فشرده‌سازی دستی: لطفا متن را انتخاب و کپی کنید.'); });
-    }
+        function copyCurl() {
+            const text = document.getElementById('curlExample').innerText;
+            navigator.clipboard?.writeText(text).then(() => {
+                alert('دستور کپی شد');
+            }).catch(() => { alert('فشرده‌سازی دستی: لطفا متن را انتخاب و کپی کنید.'); });
+        }
 
-    // توابع کمکی برای تغییر سریع محتوا از کنسول یا اسکریپت
-    function setCompany(name){document.getElementById('company').innerText = name}
-    function setApi(name){document.getElementById('apiname').innerText = 'API: '+name}
-    function setVersion(v){document.getElementById('version').innerText = 'نسخه: '+v}
-    function setDocs(url){const a=document.getElementById('doclink');a.href=url}
+        // توابع کمکی برای تغییر سریع محتوا از کنسول یا اسکریپت
+        function setCompany(name) { document.getElementById('company').innerText = name }
+        function setApi(name) { document.getElementById('apiname').innerText = 'API: ' + name }
+        function setVersion(v) { document.getElementById('version').innerText = 'نسخه: ' + v }
+        function setDocs(url) { const a = document.getElementById('doclink'); a.href = url }
+        function SetSample(url) { const a = document.getElementById('sampleLink'); a.href = url }
 
-    // مثال: اگر خواستید از کنسول تغییر دهید:
-    // setCompany('شرکت من'); setApi('My API'); setVersion('2.3.1'); setDocs('https://docs.myapi.com')
+        // مثال: اگر خواستید از کنسول تغییر دهید:
+        // setCompany('شرکت من'); setApi('My API'); setVersion('2.3.1'); setDocs('https://docs.myapi.com')
     </script>
 </body>
 </html>

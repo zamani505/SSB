@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UseSSBApi.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace UseSSBApi
 {
@@ -22,17 +23,17 @@ namespace UseSSBApi
         {
             InitializeComponent();
         }
-       
-        private T GetClient<T>(object body, string url)where T:class
+
+        private T GetClient<T>(object body, string url) where T : class
         {
             T response;
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(txtBaseUrl.Text+_prefixUrl);
+                client.BaseAddress = new Uri(txtBaseUrl.Text + _prefixUrl);
                 if (!string.IsNullOrEmpty(txtToken.Text))
                     client.DefaultRequestHeaders.Add("SSBToken", txtToken.Text);
                 var content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
-                var resClient = client.PostAsync(url,content).Result;
+                var resClient = client.PostAsync(url, content).Result;
                 resClient.EnsureSuccessStatusCode();
                 response = JsonConvert.DeserializeObject<T>(resClient.Content.ReadAsStringAsync().Result);
             }
@@ -60,11 +61,9 @@ namespace UseSSBApi
 
         }
 
-        private void button14_Click(object sender, EventArgs e)
-        {
 
-        }
-        private void Success() {
+        private void Success()
+        {
             txtResult.Visible = true;
             btnFailed.Visible = false;
             btnSuccess.Visible = true;
@@ -75,7 +74,8 @@ namespace UseSSBApi
             btnFailed.Visible = true;
             btnSuccess.Visible = false;
         }
-        private void SendSMSResult(SMSModel model) {
+        private void SendSMSResult(SMSModel model)
+        {
             if (model.Code != "0")
             {
                 Failed();
@@ -105,16 +105,16 @@ namespace UseSSBApi
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            var body = new { Message = txtMessage.Text, FromNumber = txtLineNumber.Text, ToNumber=txtMobile.Text };
+            var body = new { Message = txtMessage.Text, FromNumber = txtLineNumber.Text, ToNumber = txtMobile.Text };
             var response = GetClient<SMSModel>(body, "SendSMS/SendFromUrl");
             SendSMSResult(response);
         }
 
         private void UseApi_Load(object sender, EventArgs e)
         {
-           
+
         }
-        
+
         private void button2_Click(object sender, EventArgs e)
         {
             var message = new string[] { txtMessage.Text };
@@ -131,7 +131,7 @@ namespace UseSSBApi
             var toNumber = new string[] { txtMobile.Text };
             var fromNumber = new string[] { txtLineNumber.Text };
             var ids = new Guid[] { Guid.NewGuid() };
-            var body = new { Messages = message, SenderNumbers = fromNumber, Mobiles = toNumber, Ids=ids };
+            var body = new { Messages = message, SenderNumbers = fromNumber, Mobiles = toNumber, Ids = ids };
             var response = GetClient<SMSModel>(body, "SendSMS/ArraySendQeueWithId");
             SendSMSResult(response);
         }
@@ -152,11 +152,12 @@ namespace UseSSBApi
 
         private void button16_Click(object sender, EventArgs e)
         {
-            var body = new { Message =new string[] { txtMessage.Text }, FromNumber = txtLineNumber.Text, ToNumber = new string[] { txtMobile.Text } };
+            var body = new { Message = new string[] { txtMessage.Text }, FromNumber = txtLineNumber.Text, ToNumber = new string[] { txtMobile.Text } };
             var response = GetClient<SMSModel2>(body, "SendSMS/ArraySend");
             SendSMSResult2(response);
         }
-        private void RecieveSMSResult(RecieveModel model) {
+        private void RecieveSMSResult(RecieveModel model)
+        {
             if (model.Code != "0")
             {
                 Failed();
@@ -165,13 +166,15 @@ namespace UseSSBApi
             else
             {
                 Success();
+                if (model.Result.Count == 0)
+                    txtResult.Text = "پیام دریافتی یافت نشد!";
                 foreach (var item in model.Result)
                     txtResult.Text += $"SmsTex :{item.RcvSmsText} SmsFrom :{item.RcvSmsfrom} SmsTo :{item.RcvSmsTo}";
             }
         }
         private void button10_Click(object sender, EventArgs e)
         {
-            var body = new { PhNo =  txtLineNumber.Text, StartDate="1404/01/01", EndDate= "1404/12/29" };
+            var body = new { PhNo = txtLineNumber.Text, StartDate = "1404/01/01", EndDate = "1404/12/29" };
             var response = GetClient<RecieveModel>(body, "Recieve/RecieveSMS");
             RecieveSMSResult(response);
         }
@@ -195,6 +198,61 @@ namespace UseSSBApi
             var body = new { Username = txtUsername.Text };
             var response = GetClient<RecieveModel>(body, "Recieve/UnreadMessgeseWithUsername");
             RecieveSMSResult(response);
+        }
+        private void SMSStatusResult(SMSStatusModel model)
+        {
+            if (model.Code != "0")
+            {
+                Failed();
+                txtResult.Text = $"Api error is :{(string.IsNullOrEmpty(model.Message) ? model.Code : model.Message)}";
+            }
+            else
+            {
+                Success();
+                if (model.Result.Count() == 0)
+                    txtResult.Text = "پیامی یافت نشد!";
+                foreach (var item in model.Result)
+                    txtResult.Text += $"Status :{item} ";
+            }
+        }
+        private void button15_Click(object sender, EventArgs e)
+        {
+            var body = new { Ids = new long[] { 1 } };
+            var response = GetClient<SMSStatusModel>(body, "SMSStatus/MessageStatus");
+            SMSStatusResult(response);
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            var body = new { Ids = new long[] { 1 } };
+            var response = GetClient<SMSStatusModel>(body, "SMSStatus/QueueMessageStatus");
+            SMSStatusResult(response);
+        }
+        private void CreditResult(CreditModel model)
+        {
+            if (model.Code != "0")
+            {
+                Failed();
+                txtResult.Text = $"Api error is :{(string.IsNullOrEmpty(model.Message) ? model.Code : model.Message)}";
+            }
+            else
+            {
+                Success();
+                txtResult.Text += $"Credit :{model.Credit} ";
+            }
+        }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            var body = new { Username = "" };
+            var response = GetClient<CreditModel>(body, "Credit/UserCredit");
+            CreditResult(response);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var body = new { SMSFaCount = 1, SMSEnCount=3 };
+            var response = GetClient<CreditModel>(body, "Credit/CheckCredit");
+            CreditResult(response);
         }
     }
 }

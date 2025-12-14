@@ -379,11 +379,11 @@
             // 
             this.button7.Image = global::UseSSBApi.Properties.Resources.UnreadMessage_Username;
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.Location = new System.Drawing.Point(414, 16);
+            this.button7.Location = new System.Drawing.Point(400, 16);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(216, 72);
+            this.button7.Size = new System.Drawing.Size(196, 72);
             this.button7.TabIndex = 8;
-            this.button7.Text = "GetUnreadMessgeseWithUsername";
+            this.button7.Text = "UnreadMessgeseWithUsername";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -394,9 +394,9 @@
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.Location = new System.Drawing.Point(261, 16);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(147, 72);
+            this.button8.Size = new System.Drawing.Size(133, 72);
             this.button8.TabIndex = 7;
-            this.button8.Text = "GetUnreadMessagese";
+            this.button8.Text = "UnreadMessagese";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -442,11 +442,11 @@
             // 
             this.button14.Image = global::UseSSBApi.Properties.Resources.Status_Queue;
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button14.Location = new System.Drawing.Point(155, 16);
+            this.button14.Location = new System.Drawing.Point(135, 16);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(169, 72);
+            this.button14.Size = new System.Drawing.Size(149, 72);
             this.button14.TabIndex = 6;
-            this.button14.Text = "GetQueueMessageStatus";
+            this.button14.Text = "QueueMessageStatus";
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
@@ -457,11 +457,12 @@
             this.button15.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button15.Location = new System.Drawing.Point(14, 16);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(135, 72);
+            this.button15.Size = new System.Drawing.Size(115, 72);
             this.button15.TabIndex = 5;
-            this.button15.Text = "GetMessageStatus";
+            this.button15.Text = "MessageStatus";
             this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // tabPage4
             // 
@@ -480,13 +481,14 @@
             this.button6.FlatAppearance.BorderSize = 2;
             this.button6.Image = global::UseSSBApi.Properties.Resources.Chek_Credit;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(132, 16);
+            this.button6.Location = new System.Drawing.Point(114, 16);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(102, 72);
             this.button6.TabIndex = 8;
             this.button6.Text = "CheckCredit";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button11
             // 
@@ -495,11 +497,12 @@
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button11.Location = new System.Drawing.Point(12, 16);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(114, 72);
+            this.button11.Size = new System.Drawing.Size(95, 72);
             this.button11.TabIndex = 7;
-            this.button11.Text = "GetUserCredit";
+            this.button11.Text = "UserCredit";
             this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // btnSuccess
             // 
