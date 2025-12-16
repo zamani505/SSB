@@ -112,7 +112,9 @@ namespace UseSSBApi
 
         private void UseApi_Load(object sender, EventArgs e)
         {
-
+            //http://localhost:57476/
+            //zamani123
+            //+983000
         }
 
         private void button2_Click(object sender, EventArgs e)
