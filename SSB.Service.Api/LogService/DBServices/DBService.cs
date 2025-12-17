@@ -33,7 +33,7 @@ namespace SSB.Service.SSBApi.LogService
                     Open();
                     _sqlCommand.Connection = _connection;
                     _sqlCommand.CommandType = CommandType.Text;
-                    _sqlCommand.CommandText = $"insert into SMSAuditLog(Username,ServiceName,Request,CreateTime,Ip)Values('{log.Username}','{log.ServiceName}','{log.Request}','{log.CreateTime},{log.Ip}')";
+                    _sqlCommand.CommandText = $"insert into SMSAuditLog(Username,ServiceName,Request,CreateTime,Ip)Values('{log.Username}','{log.ServiceName}','{log.Request}','{log.CreateTime}','{log.Ip}') SELECT CAST(SCOPE_IDENTITY() AS BIGINT)";
                     var result = _sqlCommand.ExecuteScalar();
                     id = result != null ? Convert.ToInt64(result) : -1;
                     Close();

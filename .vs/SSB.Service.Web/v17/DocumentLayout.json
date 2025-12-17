@@ -3,40 +3,28 @@
   "WorkspaceRootPath": "D:\\Zamani\\SSB\\SSB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|D:\\Zamani\\SSB\\SSB\\ssb.service.api\\attribute\\apikeyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\attribute\\apikeyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\cachemanager\\log\\cachelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\cachemanager\\log\\cachelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E3AD595B-DA12-4E96-ABDF-47D56FF21567}|UseSSBApi\\UseSSBApi.csproj|d:\\zamani\\ssb\\ssb\\usessbapi\\useapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3AD595B-DA12-4E96-ABDF-47D56FF21567}|UseSSBApi\\UseSSBApi.csproj|solutionrelative:usessbapi\\useapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\extentions\\ssbextentions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\extentions\\ssbextentions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|D:\\Zamani\\SSB\\SSB\\ssb.service.api\\logservice\\dbmodels\\smsauditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\logservice\\dbmodels\\smsauditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|D:\\Zamani\\SSB\\SSB\\ssb.service.api\\attribute\\apikeyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\attribute\\apikeyhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\logservice\\dbservices\\dbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|D:\\Zamani\\SSB\\SSB\\ssb.service.api\\logservice\\dbservices\\dbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\logservice\\dbservices\\dbservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\constant\\ssbconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\constant\\ssbconstant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|D:\\Zamani\\SSB\\SSB\\ssb.service.api\\cachemanager\\log\\cachelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\cachemanager\\log\\cachelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|d:\\zamani\\ssb\\ssb\\ssb.service.api\\cachemanager\\login\\cachelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\cachemanager\\login\\cachelogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|D:\\Zamani\\SSB\\SSB\\ssb.service.api\\logservice\\dbmodels\\smsauditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{542ACA44-CF1E-45F4-9E7B-B64E879D083E}|SSB.Service.Api\\SSB.Service.SSBApi.csproj|solutionrelative:ssb.service.api\\logservice\\dbmodels\\smsauditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,60 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 15,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WebApiConfig.cs",
-              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\App_Start\\WebApiConfig.cs",
-              "RelativeDocumentMoniker": "SSB.Service.Api\\App_Start\\WebApiConfig.cs",
-              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\App_Start\\WebApiConfig.cs",
-              "RelativeToolTip": "SSB.Service.Api\\App_Start\\WebApiConfig.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T12:45:36.303Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CacheLog.cs",
-              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\CacheManager\\Log\\CacheLog.cs",
-              "RelativeDocumentMoniker": "SSB.Service.Api\\CacheManager\\Log\\CacheLog.cs",
-              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\CacheManager\\Log\\CacheLog.cs",
-              "RelativeToolTip": "SSB.Service.Api\\CacheManager\\Log\\CacheLog.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAMwB8AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T12:31:31.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SSBExtentions.cs",
-              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Extentions\\SSBExtentions.cs",
-              "RelativeDocumentMoniker": "SSB.Service.Api\\Extentions\\SSBExtentions.cs",
-              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Extentions\\SSBExtentions.cs",
-              "RelativeToolTip": "SSB.Service.Api\\Extentions\\SSBExtentions.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAIAwwB4AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T11:53:17.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SSBConstant.cs",
-              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Constant\\SSBConstant.cs",
-              "RelativeDocumentMoniker": "SSB.Service.Api\\Constant\\SSBConstant.cs",
-              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Constant\\SSBConstant.cs",
-              "RelativeToolTip": "SSB.Service.Api\\Constant\\SSBConstant.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T11:08:03.826Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -162,33 +98,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BaseController.cs",
-              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Controllers\\BaseController.cs",
-              "RelativeDocumentMoniker": "SSB.Service.Api\\Controllers\\BaseController.cs",
-              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Controllers\\BaseController.cs",
-              "RelativeToolTip": "SSB.Service.Api\\Controllers\\BaseController.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABsAAABxAAAA",
+              "DocumentIndex": 0,
+              "Title": "UseApi.cs",
+              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\UseSSBApi\\UseApi.cs",
+              "RelativeDocumentMoniker": "UseSSBApi\\UseApi.cs",
+              "ToolTip": "D:\\Zamani\\SSB\\SSB\\UseSSBApi\\UseApi.cs",
+              "RelativeToolTip": "UseSSBApi\\UseApi.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAWwBwAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T11:04:35.245Z",
+              "WhenOpened": "2025-12-17T14:06:51.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CacheLogin.cs",
-              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\CacheManager\\Login\\CacheLogin.cs",
-              "RelativeDocumentMoniker": "SSB.Service.Api\\CacheManager\\Login\\CacheLogin.cs",
-              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\CacheManager\\Login\\CacheLogin.cs",
-              "RelativeToolTip": "SSB.Service.Api\\CacheManager\\Login\\CacheLogin.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAApwDAAAAAfAAAA",
+              "DocumentIndex": 1,
+              "Title": "SSBExtentions.cs",
+              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Extentions\\SSBExtentions.cs",
+              "RelativeDocumentMoniker": "SSB.Service.Api\\Extentions\\SSBExtentions.cs",
+              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Extentions\\SSBExtentions.cs",
+              "RelativeToolTip": "SSB.Service.Api\\Extentions\\SSBExtentions.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAWwEQAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T10:02:39.966Z",
+              "WhenOpened": "2025-12-17T14:06:51.07Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "CacheLog.cs",
+              "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\CacheManager\\Log\\CacheLog.cs",
+              "RelativeDocumentMoniker": "SSB.Service.Api\\CacheManager\\Log\\CacheLog.cs",
+              "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\CacheManager\\Log\\CacheLog.cs",
+              "RelativeToolTip": "SSB.Service.Api\\CacheManager\\Log\\CacheLog.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAMwB8AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T12:31:31.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "SMSAuditLog.cs",
               "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\LogService\\DBModels\\SMSAuditLog.cs",
               "RelativeDocumentMoniker": "SSB.Service.Api\\LogService\\DBModels\\SMSAuditLog.cs",
@@ -196,31 +145,30 @@
               "RelativeToolTip": "SSB.Service.Api\\LogService\\DBModels\\SMSAuditLog.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAD4vxgAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T08:56:48.152Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-17T08:56:48.152Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ApiKeyHandler.cs",
               "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Attribute\\ApiKeyHandler.cs",
               "RelativeDocumentMoniker": "SSB.Service.Api\\Attribute\\ApiKeyHandler.cs",
               "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\Attribute\\ApiKeyHandler.cs",
               "RelativeToolTip": "SSB.Service.Api\\Attribute\\ApiKeyHandler.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAnwGoAAAAcAAAA",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAjwGEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-17T08:27:21.312Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "DBService.cs",
               "DocumentMoniker": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\LogService\\DBServices\\DBService.cs",
               "RelativeDocumentMoniker": "SSB.Service.Api\\LogService\\DBServices\\DBService.cs",
               "ToolTip": "D:\\Zamani\\SSB\\SSB\\SSB.Service.Api\\LogService\\DBServices\\DBService.cs",
               "RelativeToolTip": "SSB.Service.Api\\LogService\\DBServices\\DBService.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAAwAYAAAAaAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAIAwwCsAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-17T08:26:22.218Z",
               "EditorCaption": ""

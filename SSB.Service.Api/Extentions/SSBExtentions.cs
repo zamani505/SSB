@@ -65,21 +65,39 @@ namespace SSB.Service.SSBApi.Extentions
         }
         public static string GetClientIpAddress(this HttpRequestMessage request)
         {
-            if (request == null)
-                throw new ArgumentNullException(nameof(request));
-            string xff = request.Headers.GetValues("X-Forwarded-For").FirstOrDefault();
-            if (!string.IsNullOrWhiteSpace(xff))
+            try
             {
-                string firstIp = xff.Split(',').FirstOrDefault()?.Trim();
-                if (IsValidIpAddress(firstIp))
-                    return firstIp;
+                if (request == null)
+                    return "0.0.0.0";
+                //var exff = request.Headers.a;
+                //if (exff != null)
+                //{
+                //    var xff = request.Headers.GetValues("X-Forwarded-For").FirstOrDefault();
+                //    if (!string.IsNullOrWhiteSpace(xff))
+                //    {
+                //        string firstIp = xff.Split(',').FirstOrDefault()?.Trim();
+                //        if (IsValidIpAddress(firstIp))
+                //            return firstIp;
+                //    }
+                //}
+                //var exRealIp = request.Headers.GetValues("X-Real-IP");
+                //if (exRealIp != null)
+                //{
+                //    string xRealIp = request.Headers.GetValues("X-Real-IP").FirstOrDefault();
+                //    if (!string.IsNullOrWhiteSpace(xRealIp) && IsValidIpAddress(xRealIp))
+                //        return xRealIp;
+                //}
+                //string userHost = request.GetClientIpAddress();
+                //if (!string.IsNullOrWhiteSpace(userHost) && IsValidIpAddress(userHost))
+                //    return userHost;
             }
-            string xRealIp = request.Headers.GetValues("X-Real-IP").FirstOrDefault();
-            if (!string.IsNullOrWhiteSpace(xRealIp) && IsValidIpAddress(xRealIp))
-                return xRealIp;
-            string userHost = request.GetClientIpAddress();
-            if (!string.IsNullOrWhiteSpace(userHost) && IsValidIpAddress(userHost))
-                return userHost;
+            catch (Exception)
+            {
+                
+            }
+           
+           
+           
 
             return "0.0.0.0"; 
         }

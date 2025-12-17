@@ -48,24 +48,28 @@ namespace SSB.Service.SSBApi.Attribute
        HttpRequestMessage request, CancellationToken cancellationToken)
         {
             AddLog(request);
-            if (request.IsRequestLogin())
-                return await base.SendAsync(request, cancellationToken);
             HttpResponseMessage httpResponse = null;
-            #region check token
-            var body = GetBody(HttpStatusCode.Unauthorized, request.RequestUri.AbsolutePath.GetVerbName());
-            if (!request.Headers.Contains(SSBConstant.TOKEN_NAME))
-                httpResponse = request.CreateResponse(HttpStatusCode.Unauthorized,body );
-            var key = request.Headers.GetValues(SSBConstant.TOKEN_NAME).FirstOrDefault();
-            var exist = new CacheLogin().HaveSession(key);
-            if (!exist)
-                httpResponse = request.CreateResponse(HttpStatusCode.Forbidden, body);
-            #endregion
-            if (httpResponse != null)
+            if (!request.IsRequestLogin())
             {
-                UpdateLog(body, request);
-                return httpResponse;
+                #region check token
+                var body = GetBody(HttpStatusCode.Unauthorized, request.RequestUri.AbsolutePath.GetVerbName());
+                if (!request.Headers.Contains(SSBConstant.TOKEN_NAME))
+                    httpResponse = request.CreateResponse(HttpStatusCode.Unauthorized, body);
+                var key = request.Headers.GetValues(SSBConstant.TOKEN_NAME).FirstOrDefault();
+                var exist = new CacheLogin().HaveSession(key);
+                if (!exist)
+                    httpResponse = request.CreateResponse(HttpStatusCode.Forbidden, body);
+                #endregion
+                if (httpResponse != null)
+                {
+                    UpdateLog(body, request);
+                    return httpResponse;
+                }
             }
-            return await base.SendAsync(request, cancellationToken);
+            httpResponse= await base.SendAsync(request, cancellationToken);
+            var responseBody = httpResponse.Content != null ? await httpResponse.Content.ReadAsStringAsync(): "";
+            UpdateLog(responseBody, request);
+            return httpResponse;
         }
         #region private methods
         private void AddLog(HttpRequestMessage request)
@@ -107,7 +111,7 @@ namespace SSB.Service.SSBApi.Attribute
             if (request.IsRequestLogin())
             {
                 var body = request.Body();
-                if (string.IsNullOrEmpty(body))
+                if (!string.IsNullOrEmpty(body))
                 {
                     var loginModel = JsonConvert.DeserializeObject<LoginVM>(body);
                     return loginModel != null ? loginModel.Username : string.Empty;
