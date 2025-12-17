@@ -11,7 +11,7 @@ namespace SSB.Service.SSBApi
     {
         public static void Register(HttpConfiguration config)
         {
-            //  config.MessageHandlers.Add(new ApiKeyHandler());
+             config.MessageHandlers.Add(new ApiKeyHandler());
             var json = config.Formatters.JsonFormatter;
             json.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
 
