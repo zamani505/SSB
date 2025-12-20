@@ -15,11 +15,12 @@ namespace SSB.Service.SSBApi.LogService
         public int? ExcutionTime { get; set; } 
         public string Ip { get; set; }
         public string Exception { get; set; }
+        public string StackTrace { get; set; }
 
         public static SMSAuditLog New(string username, string serviceName, string request,string ip)
             => new SMSAuditLog() { Username=username,ServiceName=serviceName,Request=request,CreateTime=DateTime.Now,Ip=ip};
 
-        public static SMSAuditLog Update(string response, int excutionTime, string exception,long id)
-           => new SMSAuditLog() { Response = response,ExcutionTime = excutionTime, Exception =exception,Id=id };
+        public static SMSAuditLog Update(string response, int excutionTime, long id, string exception="", string stackTrace="")
+           => new SMSAuditLog() { Response = response,ExcutionTime = excutionTime, Exception =exception,Id=id ,StackTrace=stackTrace};
     }
 }

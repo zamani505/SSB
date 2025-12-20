@@ -1,4 +1,5 @@
-﻿using SSB.Service.SSBApi.Constant;
+﻿using Newtonsoft.Json;
+using SSB.Service.SSBApi.Constant;
 using SSB.Service.SSBApi.Models;
 using SSB.Service.SSBApi.Models.GetTarrifOperator;
 using System.Linq;
@@ -32,8 +33,10 @@ namespace SSB.Service.SSBApi.Controllers
             }
             catch (System.Exception ex)
             {
-
-                return Ok(new CreditDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                var resp = Ok(new CreditDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
+                return resp;
+                
             }
         }
         [HttpPost]
@@ -47,7 +50,9 @@ namespace SSB.Service.SSBApi.Controllers
             catch (System.Exception ex)
             {
 
-                return Ok(new CreditDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                var resp = Ok(new CreditDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
+                return resp;
 
             }
         }
@@ -60,7 +65,10 @@ namespace SSB.Service.SSBApi.Controllers
             }
             catch (System.Exception ex)
             {
-                return Ok(new GetTarrifOperatorDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                var resp = Ok(new GetTarrifOperatorDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
+                return resp;
+               
 
             }
         }

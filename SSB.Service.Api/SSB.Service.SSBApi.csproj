@@ -165,6 +165,7 @@
     </Compile>
     <Compile Include="LogService\DBModels\SMSAuditLog.cs" />
     <Compile Include="LogService\DBServices\DBService.cs" />
+    <Compile Include="LogService\Services\LogService.cs" />
     <Compile Include="Models\ArraySendQeueWithId\ArraySendQeueWithIdVM.cs" />
     <Compile Include="Models\ArraySendQeue\ArraySendQeueDto.cs" />
     <Compile Include="Models\ArraySendQeue\ArraySendQeueVM.cs" />

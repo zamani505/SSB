@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Net;
 using System.Net.Http;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace SSB.Service.SSBApi.Extentions
@@ -30,6 +31,9 @@ namespace SSB.Service.SSBApi.Extentions
             var diff = end - start;
             return (int)diff.TotalMilliseconds;
         }
+        public static string RemoveHtmlTag(this string content)
+         => content.Replace("\\r", "").Replace("\\n","").Replace("\\", "");
+        
         public static string GetVerbName(this string verbName)
             => verbName.Substring(verbName.LastIndexOf('/') + 1);
         public static bool IsRequestLogin(this HttpRequestMessage request)

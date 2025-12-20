@@ -1,4 +1,5 @@
-﻿using SSB.Service.SSBApi.Extentions;
+﻿using Newtonsoft.Json;
+using SSB.Service.SSBApi.Extentions;
 using SSB.Service.SSBApi.Models;
 using System;
 using System.Web.Http;
@@ -27,7 +28,10 @@ namespace SSB.Service.SSBApi.Controllers
             }
             catch (Exception ex)
             {
-                return Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                var resp = Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
+                return resp;
+               
             }
         }
         [HttpPost]
@@ -41,10 +45,12 @@ namespace SSB.Service.SSBApi.Controllers
                 var tblRec = _service.RecieveSMSById(recieveSMSByIdVM.Id, recieveSMSByIdVM.PhNo);
                 return Ok(new RecieveDto() { Result = tblRec.ToRecieveSMSModel() });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                return Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                var resp = Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
+                return resp;
             }
 
         }
@@ -60,11 +66,13 @@ namespace SSB.Service.SSBApi.Controllers
                 var tblRec = _service.RecieveUnreadSMS(getUnreadMessgeseVM.ToNumber);
                 return Ok(new RecieveDto() { Result = tblRec.ToRecieveSMSModel() });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                return Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
-                
+                var resp = Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
+                return resp;
+
             }
 
         }
@@ -77,10 +85,12 @@ namespace SSB.Service.SSBApi.Controllers
                 return Ok(new RecieveDto() { Result = tblRec.ToRecieveSMSModel() });
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                return Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                var resp = Ok(new RecieveDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
+                return resp;
 
             }
         }

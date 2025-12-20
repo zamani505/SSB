@@ -1,4 +1,5 @@
-﻿using SSB.Service.SSBApi.Extentions;
+﻿using Newtonsoft.Json;
+using SSB.Service.SSBApi.Extentions;
 using SSB.Service.SSBApi.Models;
 using SSB.Service.SSBApi.Validation;
 using System;
@@ -36,8 +37,10 @@ namespace SSB.Service.SSBApi.Controllers
             }
             catch (Exception)
             {
-
-                return Ok(new LoginDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                var resp = Ok(new LoginDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
+                return resp;
+                
             }
             
         }

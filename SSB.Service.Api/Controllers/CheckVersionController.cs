@@ -1,4 +1,5 @@
-﻿using SSB.Service.SSBApi.Extentions;
+﻿using Newtonsoft.Json;
+using SSB.Service.SSBApi.Extentions;
 using SSB.Service.SSBApi.Models;
 using System;
 using System.Web.Http;
@@ -27,10 +28,13 @@ namespace SSB.Service.SSBApi.Controllers
                 return Ok(new CheckVersionDto() { Result=new CheckVersionDtoModel() { Version=vr,LineNumbers=ln} });
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                var resp = Ok(new CheckVersionDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
+                return resp;
 
-                return Ok(new CheckVersionDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
+                
             }
         }
         #endregion

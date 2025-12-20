@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SSB.Service.SSBApi.Extentions;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -33,7 +34,7 @@ namespace SSB.Service.SSBApi.LogService
                     Open();
                     _sqlCommand.Connection = _connection;
                     _sqlCommand.CommandType = CommandType.Text;
-                    _sqlCommand.CommandText = $"insert into SMSAuditLog(Username,ServiceName,Request,CreateTime,Ip)Values('{log.Username}','{log.ServiceName}','{log.Request}','{log.CreateTime}','{log.Ip}') SELECT CAST(SCOPE_IDENTITY() AS BIGINT)";
+                    _sqlCommand.CommandText = $"insert into SMSAuditLog(Username,ServiceName,Request,CreateTime,Ip)Values('{log.Username}','{log.ServiceName}','{log.Request.RemoveHtmlTag()}','{log.CreateTime}','{log.Ip}') SELECT CAST(SCOPE_IDENTITY() AS BIGINT)";
                     var result = _sqlCommand.ExecuteScalar();
                     id = result != null ? Convert.ToInt64(result) : -1;
                     Close();
@@ -52,7 +53,7 @@ namespace SSB.Service.SSBApi.LogService
                     Open();
                     _sqlCommand.Connection = _connection;
                     _sqlCommand.CommandType = CommandType.Text;
-                    _sqlCommand.CommandText = $"update SMSAuditLog set Response='{log.Response}',ExcutionTime={log.ExcutionTime},Exception='{log.Exception}' where Id={log.Id}";
+                    _sqlCommand.CommandText = $"update SMSAuditLog set Response='{log.Response.RemoveHtmlTag()}',ExcutionTime={log.ExcutionTime},Exception='{log.Exception}' where Id={log.Id}";
                     _sqlCommand.ExecuteScalar();
                     Close();
                 }

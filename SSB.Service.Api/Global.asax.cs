@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -37,7 +38,8 @@ namespace SSB.Service.SSBApi
 
         protected void Application_Error(object sender, EventArgs e)
         {
-
+            
+            //HttpContext.Current.Request
         }
 
         protected void Session_End(object sender, EventArgs e)
