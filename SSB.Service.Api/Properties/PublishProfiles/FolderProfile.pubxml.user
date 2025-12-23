@@ -4,7 +4,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <History>True|2025-12-23T09:15:18.3346648Z;True|2025-12-23T12:45:14.3629276+03:30;True|2025-12-23T10:51:33.3643815+03:30;True|2025-12-23T10:01:58.8183760+03:30;True|2025-12-23T10:01:54.8838913+03:30;False|2025-12-23T10:01:37.4750224+03:30;False|2025-12-23T10:00:57.8305356+03:30;True|2025-12-16T12:55:53.8358027+03:30;True|2025-12-10T11:18:53.4543200+03:30;False|2025-12-10T11:15:48.3485328+03:30;</History>
+    <History>True|2025-12-23T11:38:56.1999633Z;True|2025-12-23T15:08:48.6292777+03:30;True|2025-12-23T12:45:18.3346648+03:30;True|2025-12-23T12:45:14.3629276+03:30;True|2025-12-23T10:51:33.3643815+03:30;True|2025-12-23T10:01:58.8183760+03:30;True|2025-12-23T10:01:54.8838913+03:30;False|2025-12-23T10:01:37.4750224+03:30;False|2025-12-23T10:00:57.8305356+03:30;True|2025-12-16T12:55:53.8358027+03:30;True|2025-12-10T11:18:53.4543200+03:30;False|2025-12-10T11:15:48.3485328+03:30;</History>
     <LastFailureDetails />
     <_PublishTargetUrl>E:\publish\SSB</_PublishTargetUrl>
   </PropertyGroup>
@@ -184,28 +184,28 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/06/2025 11:15:21</publishTime>
     </File>
     <File Include="bin/SSB.Service.Api.dll">
-      <publishTime>12/23/2025 12:45:13</publishTime>
+      <publishTime>12/23/2025 15:08:08</publishTime>
     </File>
     <File Include="bin/SSB.Service.Api.pdb">
-      <publishTime>12/23/2025 12:45:13</publishTime>
+      <publishTime>12/23/2025 15:08:08</publishTime>
     </File>
     <File Include="bin/SSB.Service.Core.dll">
-      <publishTime>12/16/2025 13:07:11</publishTime>
+      <publishTime>12/23/2025 15:08:05</publishTime>
     </File>
     <File Include="bin/SSB.Service.Core.dll.config">
       <publishTime>12/06/2025 11:15:21</publishTime>
     </File>
     <File Include="bin/SSB.Service.Core.pdb">
-      <publishTime>12/16/2025 13:07:11</publishTime>
+      <publishTime>12/23/2025 15:08:05</publishTime>
     </File>
     <File Include="bin/SSB.Service.Web.dll">
-      <publishTime>12/16/2025 13:07:12</publishTime>
+      <publishTime>12/23/2025 15:08:05</publishTime>
     </File>
     <File Include="bin/SSB.Service.Web.dll.config">
       <publishTime>12/06/2025 11:15:21</publishTime>
     </File>
     <File Include="bin/SSB.Service.Web.pdb">
-      <publishTime>12/16/2025 13:07:12</publishTime>
+      <publishTime>12/23/2025 15:08:05</publishTime>
     </File>
     <File Include="bin/SSB.Service.Web.XmlSerializers.dll">
       <publishTime>12/06/2025 11:15:21</publishTime>
@@ -256,7 +256,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/14/2025 15:45:13</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/23/2025 10:51:32</publishTime>
+      <publishTime>12/23/2025 15:08:48</publishTime>
     </File>
   </ItemGroup>
 </Project>
