@@ -13,6 +13,7 @@ using SSB.Service.SSBApi.CacheManager.Log;
 using SSB.Service.SSBApi.LogService;
 
 using Newtonsoft.Json;
+using System.Web;
 
 namespace SSB.Service.SSBApi.Attribute
 {
@@ -70,7 +71,8 @@ namespace SSB.Service.SSBApi.Attribute
                     return httpResponse;
                 }
             }
-            httpResponse= await base.SendAsync(request, cancellationToken);
+            HttpContext.Current.Request.Headers.Add(SSBConstant.LOG_KEY_HEADER, request.Headers.GetValues(SSBConstant.LOG_KEY_HEADER).FirstOrDefault());
+            httpResponse = await base.SendAsync(request, cancellationToken);
             var responseBody = httpResponse.Content != null ? await httpResponse.Content.ReadAsStringAsync(): "";
             _logService.UpdateLog(responseBody, request.Headers.GetValues(SSBConstant.LOG_KEY_HEADER).FirstOrDefault() ?? "");
             

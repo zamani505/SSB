@@ -98,6 +98,8 @@
             this.txtBaseUrl.Name = "txtBaseUrl";
             this.txtBaseUrl.Size = new System.Drawing.Size(308, 21);
             this.txtBaseUrl.TabIndex = 0;
+            this.txtBaseUrl.Tag = "";
+            this.txtBaseUrl.Text = "http://site.sahandsms.com/";
             // 
             // groupBox5
             // 
@@ -170,6 +172,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(146, 21);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "mehryasan123456";
             // 
             // txtUsername
             // 
@@ -177,6 +180,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(146, 21);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "30002760";
             // 
             // grpMessage
             // 
