@@ -35,7 +35,7 @@ namespace SSB.Service.SSBApi.Controllers
                 _cacheLogin.AddSession(token, loginVM.Username);
                 return Ok(new LoginDto() { SSBToken = token });
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 var resp = Ok(new LoginDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" });
                 _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);

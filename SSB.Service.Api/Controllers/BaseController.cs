@@ -31,7 +31,7 @@ namespace SSB.Service.SSBApi.Controllers
             _logService=new LogService.LogService();
             _lineNumberValidation = new LineNumerValidation();
             _request = HttpContext.Current.Request;
-            _cacheKey= _request.Headers.GetValues(SSBConstant.LOG_KEY_HEADER).FirstOrDefault() ?? "");
+            _cacheKey= _request.Headers.GetValues(SSBConstant.LOG_KEY_HEADER).FirstOrDefault() ?? "";
             if (_request.Headers[SSBConstant.TOKEN_NAME] != null)
                 _username = _cacheLogin.GetUsername(HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME]);
         }
