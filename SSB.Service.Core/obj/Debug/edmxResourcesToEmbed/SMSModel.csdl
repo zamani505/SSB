@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-  <EntityContainer Name="SMSModelContainer" annotation:LazyLoadingEnabled="true">
+<Schema Namespace="SMSModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="SMSModelContainer" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
     <EntitySet Name="UsrCredits" EntityType="SMSModel.UsrCredit" />
     <EntitySet Name="Bulk_Request" EntityType="SMSModel.Bulk_Request" />
     <EntitySet Name="Tbl_Customers" EntityType="SMSModel.Tbl_Customers" />
@@ -108,7 +108,7 @@
     <Key>
       <PropertyRef Name="BulkRequestId" />
     </Key>
-    <Property Type="Int32" Name="BulkRequestId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="BulkRequestId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int32" Name="CategoryId" />
     <Property Type="Int32" Name="StartIndex" />
     <Property Type="Int32" Name="RequestCount" />
@@ -123,7 +123,7 @@
     <Key>
       <PropertyRef Name="ICCode" />
     </Key>
-    <Property Type="Int32" Name="ICCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ICCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int32" Name="ICParentID" />
     <Property Type="Int32" Name="IProviencyCode" />
     <Property Type="Int32" Name="ICityCode" />
@@ -150,7 +150,7 @@
     <Key>
       <PropertyRef Name="ILineNumberCode" />
     </Key>
-    <Property Type="Int32" Name="ILineNumberCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ILineNumberCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="String" Name="IUsrId" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="ILineNumber" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="ILineModuleNumber" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -166,7 +166,7 @@
     <Key>
       <PropertyRef Name="AcsRoleCode" />
     </Key>
-    <Property Type="Int32" Name="AcsRoleCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="AcsRoleCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int32" Name="AcsRoleParentId" />
     <Property Type="String" Name="AcsRoleEnName" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="AcsRoleFaName" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -198,7 +198,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="String" Name="LineStartWith" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Type="Double" Name="Rate" Nullable="false" />
     <Property Type="Int32" Name="OperatorId" Nullable="false" />
@@ -221,7 +221,7 @@
     <Property Type="String" Name="RcvSmsDeliveredTime" MaxLength="9" FixedLength="false" Unicode="true" />
     <Property Type="Boolean" Name="RcvSmsReeded" />
     <Property Type="String" Name="UsrId" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="RecieveSMSId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="RecieveSMSId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int32" Name="OperatorId" />
     <Property Type="DateTime" Name="RecieveDate" />
   </EntityType>
@@ -246,7 +246,7 @@
     <Key>
       <PropertyRef Name="IUsrId" />
     </Key>
-    <Property Type="Int32" Name="IUsrAccCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IUsrAccCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int32" Name="IUserParentID" />
     <Property Type="String" Name="IUsrManagerId" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="IUsrCCode" Nullable="false" />
@@ -304,7 +304,7 @@
     <Key>
       <PropertyRef Name="BulkId" />
     </Key>
-    <Property Type="Int32" Name="BulkId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="BulkId" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="Int32" Name="LineNumberCode" />
     <Property Type="String" Name="BulkText" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Type="DateTime" Name="SendDate" />
@@ -405,7 +405,7 @@
     <Key>
       <PropertyRef Name="PaymentCode" />
     </Key>
-    <Property Type="Int32" Name="PaymentCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PaymentCode" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
     <Property Type="String" Name="IUsrId" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="PayTypeCode" />
     <Property Type="Int32" Name="PayCommentCode" />

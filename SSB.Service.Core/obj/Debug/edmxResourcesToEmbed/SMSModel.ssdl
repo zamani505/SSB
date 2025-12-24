@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="SMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+<Schema Namespace="SMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="SMSModelStoreContainer">
-    <EntitySet Name="Bulk_Request" EntityType="SMSModel.Store.Bulk_Request" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Bulks" EntityType="SMSModel.Store.Bulks" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="OperatorTarrifRate" EntityType="SMSModel.Store.OperatorTarrifRate" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tbl_Customers" EntityType="SMSModel.Store.Tbl_Customers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tbl_Extensible" EntityType="SMSModel.Store.tbl_Extensible" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tbl_LineNumber" EntityType="SMSModel.Store.Tbl_LineNumber" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tbl_Payment" EntityType="SMSModel.Store.Tbl_Payment" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tbl_RecieveSms" EntityType="SMSModel.Store.Tbl_RecieveSms" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tbl_SentSMS" EntityType="SMSModel.Store.Tbl_SentSMS" store:Type="Tables" store:Schema="dbo" store:Name="Tbl_SentSMS">
+    <EntitySet Name="Bulk_Request" EntityType="SMSModel.Store.Bulk_Request" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Bulks" EntityType="SMSModel.Store.Bulks" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="OperatorTarrifRate" EntityType="SMSModel.Store.OperatorTarrifRate" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Tbl_Customers" EntityType="SMSModel.Store.Tbl_Customers" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="tbl_Extensible" EntityType="SMSModel.Store.tbl_Extensible" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Tbl_LineNumber" EntityType="SMSModel.Store.Tbl_LineNumber" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Tbl_Payment" EntityType="SMSModel.Store.Tbl_Payment" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Tbl_RecieveSms" EntityType="SMSModel.Store.Tbl_RecieveSms" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Tbl_SentSMS" EntityType="SMSModel.Store.Tbl_SentSMS" store:Type="Tables" store:Schema="dbo" store:Name="Tbl_SentSMS" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [Tbl_SentSMS].[MagfaSmsId] AS [MagfaSmsId], 
       [Tbl_SentSMS].[ISMSText] AS [ISMSText], 
@@ -26,10 +26,10 @@
       [Tbl_SentSMS].[OperatorId] AS [OperatorId]
       FROM [dbo].[Tbl_SentSMS] AS [Tbl_SentSMS]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="Tbl_UserAccount" EntityType="SMSModel.Store.Tbl_UserAccount" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tbl_UserAccountRole" EntityType="SMSModel.Store.Tbl_UserAccountRole" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tbl_UsrCredit" EntityType="SMSModel.Store.Tbl_UsrCredit" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="View_GetUsrInfo" EntityType="SMSModel.Store.View_GetUsrInfo" store:Type="Views" store:Schema="dbo" store:Name="View_GetUsrInfo">
+    <EntitySet Name="Tbl_UserAccount" EntityType="SMSModel.Store.Tbl_UserAccount" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Tbl_UserAccountRole" EntityType="SMSModel.Store.Tbl_UserAccountRole" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Tbl_UsrCredit" EntityType="SMSModel.Store.Tbl_UsrCredit" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="View_GetUsrInfo" EntityType="SMSModel.Store.View_GetUsrInfo" store:Type="Views" store:Schema="dbo" store:Name="View_GetUsrInfo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [View_GetUsrInfo].[IUsrId] AS [IUsrId], 
       [View_GetUsrInfo].[AcsRoleEnName] AS [AcsRoleEnName], 
@@ -46,7 +46,7 @@
       [View_GetUsrInfo].[IUsrAccExpireDate] AS [IUsrAccExpireDate]
       FROM [dbo].[View_GetUsrInfo] AS [View_GetUsrInfo]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="View_Tbl_SentSMS" EntityType="SMSModel.Store.View_Tbl_SentSMS" store:Type="Views" store:Schema="dbo" store:Name="View_Tbl_SentSMS">
+    <EntitySet Name="View_Tbl_SentSMS" EntityType="SMSModel.Store.View_Tbl_SentSMS" store:Type="Views" store:Schema="dbo" store:Name="View_Tbl_SentSMS" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [View_Tbl_SentSMS].[MagfaSmsId] AS [MagfaSmsId], 
       [View_Tbl_SentSMS].[ISMSText] AS [ISMSText], 

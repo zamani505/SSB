@@ -10,4 +10,3 @@ D:\Zamani\SSB\SSB\UseSSBApi\obj\Debug\UseSSBApi.exe
 D:\Zamani\SSB\SSB\UseSSBApi\obj\Debug\UseSSBApi.pdb
 D:\Zamani\SSB\SSB\UseSSBApi\bin\Debug\Newtonsoft.Json.dll
 D:\Zamani\SSB\SSB\UseSSBApi\obj\Debug\UseSSBApi.csproj.Up2Date
-D:\Zamani\SSB\SSB\UseSSBApi\obj\Debug\UseSSBApi.Form1.resources

@@ -649,3 +649,39 @@ username iszamani
 ------------12/24/2025 3:37:18 PM
 after cache in addlog
 ------------
+------------12/24/2025 5:04:07 PM
+befor call newlog
+------------
+------------12/24/2025 5:04:07 PM
+after call newlog id is76
+------------
+------------12/24/2025 5:04:07 PM
+username iszamani
+------------
+------------12/24/2025 5:04:07 PM
+after cache in addlog
+------------
+------------12/24/2025 5:14:31 PM
+befor call newlog
+------------
+------------12/24/2025 5:14:31 PM
+after call newlog id is77
+------------
+------------12/24/2025 5:14:31 PM
+username iszamani
+------------
+------------12/24/2025 5:14:31 PM
+after cache in addlog
+------------
+------------12/24/2025 5:15:54 PM
+befor call newlog
+------------
+------------12/24/2025 5:15:54 PM
+after call newlog id is78
+------------
+------------12/24/2025 5:15:54 PM
+username iszamani
+------------
+------------12/24/2025 5:15:54 PM
+after cache in addlog
+------------

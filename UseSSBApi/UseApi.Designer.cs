@@ -69,6 +69,8 @@
             this.btnFailed = new System.Windows.Forms.Button();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtMessageId = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.grpMessage.SuspendLayout();
@@ -430,6 +432,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Controls.Add(this.txtMessageId);
             this.tabPage3.Controls.Add(this.button14);
             this.tabPage3.Controls.Add(this.button15);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
@@ -571,6 +575,24 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Result :";
             // 
+            // txtMessageId
+            // 
+            this.txtMessageId.Location = new System.Drawing.Point(387, 43);
+            this.txtMessageId.Name = "txtMessageId";
+            this.txtMessageId.Size = new System.Drawing.Size(146, 21);
+            this.txtMessageId.TabIndex = 7;
+            this.txtMessageId.TextChanged += new System.EventHandler(this.txtMessageId_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(323, 49);
+            this.label7.Name = "label7";
+            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "MessageId :";
+            // 
             // UseApi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -601,6 +623,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -652,5 +675,7 @@
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btnFailed;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtMessageId;
     }
 }

@@ -177,7 +177,7 @@ namespace UseSSBApi
         }
         private void button10_Click(object sender, EventArgs e)
         {
-            var body = new { PhNo = txtLineNumber.Text, StartDate = "1404/01/01", EndDate = "1404/12/29" };
+            var body = new { PhNo = txtLineNumber.Text, StartDate = "2025/01/01", EndDate = "2026/03/29" };
             var response = GetClient<RecieveModel>(body, "Recieve/RecieveSMS");
             RecieveSMSResult(response);
         }
@@ -220,14 +220,25 @@ namespace UseSSBApi
         }
         private void button15_Click(object sender, EventArgs e)
         {
-            var body = new { Ids = new long[] { 1 } };
+            if (string.IsNullOrEmpty(txtMessageId.Text)) {
+                MessageBox.Show("Please enter message id");
+                txtMessageId.BackColor = Color.Wheat;
+                return;
+            }
+            var body = new { Ids = new long[] { long.Parse(txtMessageId.Text) } };
             var response = GetClient<SMSStatusModel>(body, "SMSStatus/MessageStatus");
             SMSStatusResult(response);
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            var body = new { Ids = new long[] { 1 } };
+            if (string.IsNullOrEmpty(txtMessageId.Text))
+            {
+                MessageBox.Show("Please enter message id");
+                txtMessageId.BackColor = Color.Wheat;
+                return;
+            }
+            var body = new { Ids = new string[] { txtMessageId.Text } };
             var response = GetClient<SMSStatusModel>(body, "SMSStatus/QueueMessageStatus");
             SMSStatusResult(response);
         }
@@ -256,6 +267,11 @@ namespace UseSSBApi
             var body = new { SMSFaCount = 1, SMSEnCount=3 };
             var response = GetClient<CreditModel>(body, "Credit/CheckCredit");
             CreditResult(response);
+        }
+
+        private void txtMessageId_TextChanged(object sender, EventArgs e)
+        {
+            txtMessageId.BackColor = Color.White;
         }
     }
 }
