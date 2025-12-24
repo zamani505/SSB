@@ -24,13 +24,13 @@ namespace SSB.Service.SSBApi.Attribute
         private static readonly Dictionary<string, Type> VerbTypes = new Dictionary<string, Type>
         {
             { "send", typeof(SendSMSDto) },
-            { "sendwithcheckinId", typeof(SendSMSDto) },
+            { "sendwithcheckinid", typeof(SendSMSDto) },
             { "arraysend", typeof(SendSMSDto) },
-            { "sendwithUdh", typeof(SendSMSDto) },
-            { "sendfromUrl", typeof(SMSDto) },
-            { "sendpostUrl", typeof(SMSDto) },
-            { "arraysendQeue", typeof(SMSDto) },
-            { "arraysendQeueWithId", typeof(SMSDto) },
+            { "sendwithudh", typeof(SendSMSDto) },
+            { "sendfromurl", typeof(SMSDto) },
+            { "sendposturl", typeof(SMSDto) },
+            { "arraysendqeue", typeof(SMSDto) },
+            { "arraysendqeuewithid", typeof(SMSDto) },
             { "sendqeue", typeof(SMSDto) },
 
         };
@@ -84,7 +84,7 @@ namespace SSB.Service.SSBApi.Attribute
         
         private object GetBody(HttpStatusCode statusCode, string verbName)
         {
-            VerbTypes.TryGetValue(verbName, out Type targetType);
+            VerbTypes.TryGetValue(verbName.ToLower(), out Type targetType);
             object instance = Activator.CreateInstance(targetType);
             if (statusCode == HttpStatusCode.Unauthorized)
                 targetType.GetProperty("Message").SetValue(instance, SSBConstant.UNAUTHORIZED_MESSAGE);

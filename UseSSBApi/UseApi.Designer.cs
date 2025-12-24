@@ -99,7 +99,7 @@
             this.txtBaseUrl.Size = new System.Drawing.Size(308, 21);
             this.txtBaseUrl.TabIndex = 0;
             this.txtBaseUrl.Tag = "";
-            this.txtBaseUrl.Text = "http://172.16.21.23:6161/";
+            this.txtBaseUrl.Text = "http://localhost:57476/";
             // 
             // groupBox5
             // 
@@ -217,6 +217,7 @@
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessage.Size = new System.Drawing.Size(249, 45);
             this.txtMessage.TabIndex = 10;
+            this.txtMessage.Text = "تست";
             this.txtMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMessage.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -235,6 +236,7 @@
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(146, 21);
             this.txtMobile.TabIndex = 8;
+            this.txtMobile.Text = "09127698738";
             // 
             // label4
             // 
@@ -251,6 +253,7 @@
             this.txtLineNumber.Name = "txtLineNumber";
             this.txtLineNumber.Size = new System.Drawing.Size(146, 21);
             this.txtLineNumber.TabIndex = 0;
+            this.txtLineNumber.Text = "+983000";
             // 
             // tabSMSApi
             // 

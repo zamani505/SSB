@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
+using WebGrease;
 
 namespace SSB.Service.SSBApi.CacheManager.Login
 {
@@ -10,6 +12,8 @@ namespace SSB.Service.SSBApi.CacheManager.Login
     {
         #region props
         public static Dictionary<string, TokenModel> _cache = new Dictionary<string, TokenModel>();
+
+ 
         #endregion
         #region ctors
         public CacheLogin()
@@ -24,7 +28,7 @@ namespace SSB.Service.SSBApi.CacheManager.Login
             if (session.Value != null)
             {
                 TokenModel tokenModel = session.Value;
-                if (tokenModel.ExpireDate <= DateTime.Now)
+                if (tokenModel.ExpireDate > DateTime.Now)
                     return true;
                 else
                     RemoveSession(token);
@@ -65,6 +69,41 @@ namespace SSB.Service.SSBApi.CacheManager.Login
                
             }
            
+        }
+
+        public ICacheSection BeginSection(WebGreaseSectionKey webGreaseSectionKey, bool autoLoad = true)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CleanUp()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EndSection(ICacheSection cacheSection)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetAbsoluteCacheFilePath(string category, string fileName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SetContext(IWebGreaseContext newContext)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string StoreInCache(string cacheCategory, ContentItem contentItem)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void LockedFileCacheAction(string lockFileContent, Action action)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
