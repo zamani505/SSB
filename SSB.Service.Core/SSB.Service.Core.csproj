@@ -273,11 +273,14 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Web References\MagfaService\DeliveryStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\MagfaService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\MagfaService\SOAPSmsQueue.wsdl" />
+    <None Include="Web References\MagfaService\server.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -300,10 +303,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>SSB_Service_Core_com_sahandsms_PaymentWebService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://5.160.8.139/services/urn:SOAPSmsQueue%3fwsdl">
+    <WebReferenceUrl Include="https://sms.magfa.com/api/soap/sms/v1/server%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\MagfaService\</RelPath>
-      <UpdateFromURL>http://5.160.8.139/services/urn:SOAPSmsQueue%3fwsdl</UpdateFromURL>
+      <UpdateFromURL>https://sms.magfa.com/api/soap/sms/v1/server%3fwsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

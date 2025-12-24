@@ -6,7 +6,7 @@
       <Value Profile="(Default)">https://pgws.bpm.bankmellat.ir/pgwchannel/services/pgw</Value>
     </Setting>
     <Setting Name="SSB_Service_Core_MagfaService_SoapSmsQueuableImplementationService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://5.160.8.139/services/urn:SOAPSmsQueue</Value>
+      <Value Profile="(Default)">https://sms.magfa.com/api/soap/sms/v1/server</Value>
     </Setting>
     <Setting Name="SSB_Service_Core_com_sahandsms_PaymentWebService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://www.sahandsms.com/OnlineCharge/paymentwebservice.asmx</Value>

@@ -4,7 +4,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <History>True|2025-12-24T10:58:49.3457467Z;True|2025-12-24T14:28:45.5388091+03:30;True|2025-12-24T13:15:50.5512187+03:30;True|2025-12-24T13:15:44.7064621+03:30;True|2025-12-24T13:15:39.2435742+03:30;True|2025-12-24T11:41:17.2688643+03:30;True|2025-12-24T11:41:12.4921352+03:30;True|2025-12-24T11:25:30.5731416+03:30;True|2025-12-24T11:25:24.6630596+03:30;True|2025-12-24T11:25:19.7566569+03:30;True|2025-12-23T18:47:07.7749156+03:30;True|2025-12-23T18:40:00.7439976+03:30;True|2025-12-23T18:32:36.0881484+03:30;True|2025-12-23T18:32:33.2504053+03:30;True|2025-12-23T18:17:38.8964395+03:30;True|2025-12-23T17:59:21.5105041+03:30;True|2025-12-23T17:59:17.1937169+03:30;True|2025-12-23T16:45:49.9461372+03:30;True|2025-12-23T16:45:41.2575030+03:30;True|2025-12-23T15:08:56.1999633+03:30;True|2025-12-23T15:08:48.6292777+03:30;True|2025-12-23T12:45:18.3346648+03:30;True|2025-12-23T12:45:14.3629276+03:30;True|2025-12-23T10:51:33.3643815+03:30;True|2025-12-23T10:01:58.8183760+03:30;True|2025-12-23T10:01:54.8838913+03:30;False|2025-12-23T10:01:37.4750224+03:30;False|2025-12-23T10:00:57.8305356+03:30;True|2025-12-16T12:55:53.8358027+03:30;True|2025-12-10T11:18:53.4543200+03:30;False|2025-12-10T11:15:48.3485328+03:30;</History>
+    <History>True|2025-12-24T12:11:39.8290881Z;True|2025-12-24T15:40:25.9355871+03:30;True|2025-12-24T15:40:21.6488445+03:30;True|2025-12-24T15:40:16.3236751+03:30;True|2025-12-24T14:28:49.3457467+03:30;True|2025-12-24T14:28:45.5388091+03:30;True|2025-12-24T13:15:50.5512187+03:30;True|2025-12-24T13:15:44.7064621+03:30;True|2025-12-24T13:15:39.2435742+03:30;True|2025-12-24T11:41:17.2688643+03:30;True|2025-12-24T11:41:12.4921352+03:30;True|2025-12-24T11:25:30.5731416+03:30;True|2025-12-24T11:25:24.6630596+03:30;True|2025-12-24T11:25:19.7566569+03:30;True|2025-12-23T18:47:07.7749156+03:30;True|2025-12-23T18:40:00.7439976+03:30;True|2025-12-23T18:32:36.0881484+03:30;True|2025-12-23T18:32:33.2504053+03:30;True|2025-12-23T18:17:38.8964395+03:30;True|2025-12-23T17:59:21.5105041+03:30;True|2025-12-23T17:59:17.1937169+03:30;True|2025-12-23T16:45:49.9461372+03:30;True|2025-12-23T16:45:41.2575030+03:30;True|2025-12-23T15:08:56.1999633+03:30;True|2025-12-23T15:08:48.6292777+03:30;True|2025-12-23T12:45:18.3346648+03:30;True|2025-12-23T12:45:14.3629276+03:30;True|2025-12-23T10:51:33.3643815+03:30;True|2025-12-23T10:01:58.8183760+03:30;True|2025-12-23T10:01:54.8838913+03:30;False|2025-12-23T10:01:37.4750224+03:30;False|2025-12-23T10:00:57.8305356+03:30;True|2025-12-16T12:55:53.8358027+03:30;True|2025-12-10T11:18:53.4543200+03:30;False|2025-12-10T11:15:48.3485328+03:30;</History>
     <LastFailureDetails />
     <_PublishTargetUrl>E:\publish\SSB</_PublishTargetUrl>
   </PropertyGroup>
@@ -184,28 +184,28 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/06/2025 11:15:21</publishTime>
     </File>
     <File Include="bin/SSB.Service.Api.dll">
-      <publishTime>12/24/2025 14:28:44</publishTime>
+      <publishTime>12/24/2025 15:40:00</publishTime>
     </File>
     <File Include="bin/SSB.Service.Api.pdb">
-      <publishTime>12/24/2025 14:28:44</publishTime>
+      <publishTime>12/24/2025 15:40:00</publishTime>
     </File>
     <File Include="bin/SSB.Service.Core.dll">
-      <publishTime>12/23/2025 18:46:54</publishTime>
+      <publishTime>12/24/2025 15:39:58</publishTime>
     </File>
     <File Include="bin/SSB.Service.Core.dll.config">
-      <publishTime>12/06/2025 11:15:21</publishTime>
+      <publishTime>12/24/2025 15:30:42</publishTime>
     </File>
     <File Include="bin/SSB.Service.Core.pdb">
-      <publishTime>12/23/2025 18:46:54</publishTime>
+      <publishTime>12/24/2025 15:39:58</publishTime>
     </File>
     <File Include="bin/SSB.Service.Web.dll">
-      <publishTime>12/23/2025 18:46:54</publishTime>
+      <publishTime>12/24/2025 15:39:58</publishTime>
     </File>
     <File Include="bin/SSB.Service.Web.dll.config">
       <publishTime>12/06/2025 11:15:21</publishTime>
     </File>
     <File Include="bin/SSB.Service.Web.pdb">
-      <publishTime>12/23/2025 18:46:54</publishTime>
+      <publishTime>12/24/2025 15:39:58</publishTime>
     </File>
     <File Include="bin/SSB.Service.Web.XmlSerializers.dll">
       <publishTime>12/06/2025 11:15:21</publishTime>
@@ -256,7 +256,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/14/2025 15:45:13</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>12/24/2025 14:28:45</publishTime>
+      <publishTime>12/24/2025 15:40:15</publishTime>
     </File>
   </ItemGroup>
 </Project>

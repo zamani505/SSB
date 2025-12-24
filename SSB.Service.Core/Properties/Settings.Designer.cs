@@ -36,7 +36,7 @@ namespace SSB.Service.Core.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://5.160.8.139/services/urn:SOAPSmsQueue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://sms.magfa.com/api/soap/sms/v1/server")]
         public string SSB_Service_Core_MagfaService_SoapSmsQueuableImplementationService {
             get {
                 return ((string)(this["SSB_Service_Core_MagfaService_SoapSmsQueuableImplementationService"]));

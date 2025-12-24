@@ -23,18 +23,27 @@ namespace SSB.Service.Core.MagfaService {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="TSOAPSoapBinding", Namespace="http://magfa.com/soap/SOAPSmsQueue")]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(CustomerReturnIncomingFormat))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(DeliveryStatus))]
     public partial class SoapSmsQueuableImplementationService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback getMessageStatusesOperationCompleted;
         
         private System.Threading.SendOrPostCallback getMessageStatusOperationCompleted;
         
-        private System.Threading.SendOrPostCallback enqueueOperationCompleted;
+        private System.Threading.SendOrPostCallback getMessageIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getAllMessagesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getMessagesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback enqueueWithGatewayOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getCreditOperationCompleted;
         
         private System.Threading.SendOrPostCallback getRealMessageStatusesOperationCompleted;
         
@@ -42,15 +51,9 @@ namespace SSB.Service.Core.MagfaService {
         
         private System.Threading.SendOrPostCallback getMessagesWithNumberOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getMessageIdOperationCompleted;
+        private System.Threading.SendOrPostCallback getDetailedStatusesOperationCompleted;
         
-        private System.Threading.SendOrPostCallback getCreditOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getAllMessagesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback getMessagesOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback enqueueWithGatewayOperationCompleted;
+        private System.Threading.SendOrPostCallback enqueueOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -97,7 +100,19 @@ namespace SSB.Service.Core.MagfaService {
         public event getMessageStatusCompletedEventHandler getMessageStatusCompleted;
         
         /// <remarks/>
-        public event enqueueCompletedEventHandler enqueueCompleted;
+        public event getMessageIdCompletedEventHandler getMessageIdCompleted;
+        
+        /// <remarks/>
+        public event getAllMessagesCompletedEventHandler getAllMessagesCompleted;
+        
+        /// <remarks/>
+        public event getMessagesCompletedEventHandler getMessagesCompleted;
+        
+        /// <remarks/>
+        public event enqueueWithGatewayCompletedEventHandler enqueueWithGatewayCompleted;
+        
+        /// <remarks/>
+        public event getCreditCompletedEventHandler getCreditCompleted;
         
         /// <remarks/>
         public event getRealMessageStatusesCompletedEventHandler getRealMessageStatusesCompleted;
@@ -109,19 +124,10 @@ namespace SSB.Service.Core.MagfaService {
         public event getMessagesWithNumberCompletedEventHandler getMessagesWithNumberCompleted;
         
         /// <remarks/>
-        public event getMessageIdCompletedEventHandler getMessageIdCompleted;
+        public event getDetailedStatusesCompletedEventHandler getDetailedStatusesCompleted;
         
         /// <remarks/>
-        public event getCreditCompletedEventHandler getCreditCompleted;
-        
-        /// <remarks/>
-        public event getAllMessagesCompletedEventHandler getAllMessagesCompleted;
-        
-        /// <remarks/>
-        public event getMessagesCompletedEventHandler getMessagesCompleted;
-        
-        /// <remarks/>
-        public event enqueueWithGatewayCompletedEventHandler enqueueWithGatewayCompleted;
+        public event enqueueCompletedEventHandler enqueueCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
@@ -185,150 +191,6 @@ namespace SSB.Service.Core.MagfaService {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
-        [return: System.Xml.Serialization.SoapElementAttribute("enqueueReturn")]
-        public long[] enqueue(string domain, string[] messageBodies, string[] recipientNumbers, string[] senderNumbers, int[] encodings, string[] udhs, int[] messageClasses, int[] priorities, long[] checkingMessageIds) {
-            object[] results = this.Invoke("enqueue", new object[] {
-                        domain,
-                        messageBodies,
-                        recipientNumbers,
-                        senderNumbers,
-                        encodings,
-                        udhs,
-                        messageClasses,
-                        priorities,
-                        checkingMessageIds});
-            return ((long[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void enqueueAsync(string domain, string[] messageBodies, string[] recipientNumbers, string[] senderNumbers, int[] encodings, string[] udhs, int[] messageClasses, int[] priorities, long[] checkingMessageIds) {
-            this.enqueueAsync(domain, messageBodies, recipientNumbers, senderNumbers, encodings, udhs, messageClasses, priorities, checkingMessageIds, null);
-        }
-        
-        /// <remarks/>
-        public void enqueueAsync(string domain, string[] messageBodies, string[] recipientNumbers, string[] senderNumbers, int[] encodings, string[] udhs, int[] messageClasses, int[] priorities, long[] checkingMessageIds, object userState) {
-            if ((this.enqueueOperationCompleted == null)) {
-                this.enqueueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnenqueueOperationCompleted);
-            }
-            this.InvokeAsync("enqueue", new object[] {
-                        domain,
-                        messageBodies,
-                        recipientNumbers,
-                        senderNumbers,
-                        encodings,
-                        udhs,
-                        messageClasses,
-                        priorities,
-                        checkingMessageIds}, this.enqueueOperationCompleted, userState);
-        }
-        
-        private void OnenqueueOperationCompleted(object arg) {
-            if ((this.enqueueCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.enqueueCompleted(this, new enqueueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getRealMessageStatusesReturn")]
-        public int[] getRealMessageStatuses(long[] messagesId) {
-            object[] results = this.Invoke("getRealMessageStatuses", new object[] {
-                        messagesId});
-            return ((int[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getRealMessageStatusesAsync(long[] messagesId) {
-            this.getRealMessageStatusesAsync(messagesId, null);
-        }
-        
-        /// <remarks/>
-        public void getRealMessageStatusesAsync(long[] messagesId, object userState) {
-            if ((this.getRealMessageStatusesOperationCompleted == null)) {
-                this.getRealMessageStatusesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetRealMessageStatusesOperationCompleted);
-            }
-            this.InvokeAsync("getRealMessageStatuses", new object[] {
-                        messagesId}, this.getRealMessageStatusesOperationCompleted, userState);
-        }
-        
-        private void OngetRealMessageStatusesOperationCompleted(object arg) {
-            if ((this.getRealMessageStatusesCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getRealMessageStatusesCompleted(this, new getRealMessageStatusesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getAllMessagesWithNumberReturn")]
-        public object[] getAllMessagesWithNumber(string domain, int numberOfMessages, string destNumber) {
-            object[] results = this.Invoke("getAllMessagesWithNumber", new object[] {
-                        domain,
-                        numberOfMessages,
-                        destNumber});
-            return ((object[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getAllMessagesWithNumberAsync(string domain, int numberOfMessages, string destNumber) {
-            this.getAllMessagesWithNumberAsync(domain, numberOfMessages, destNumber, null);
-        }
-        
-        /// <remarks/>
-        public void getAllMessagesWithNumberAsync(string domain, int numberOfMessages, string destNumber, object userState) {
-            if ((this.getAllMessagesWithNumberOperationCompleted == null)) {
-                this.getAllMessagesWithNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAllMessagesWithNumberOperationCompleted);
-            }
-            this.InvokeAsync("getAllMessagesWithNumber", new object[] {
-                        domain,
-                        numberOfMessages,
-                        destNumber}, this.getAllMessagesWithNumberOperationCompleted, userState);
-        }
-        
-        private void OngetAllMessagesWithNumberOperationCompleted(object arg) {
-            if ((this.getAllMessagesWithNumberCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getAllMessagesWithNumberCompleted(this, new getAllMessagesWithNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getMessagesWithNumberReturn")]
-        public object[] getMessagesWithNumber(string domain, int numberOfMessages, string destNumber) {
-            object[] results = this.Invoke("getMessagesWithNumber", new object[] {
-                        domain,
-                        numberOfMessages,
-                        destNumber});
-            return ((object[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getMessagesWithNumberAsync(string domain, int numberOfMessages, string destNumber) {
-            this.getMessagesWithNumberAsync(domain, numberOfMessages, destNumber, null);
-        }
-        
-        /// <remarks/>
-        public void getMessagesWithNumberAsync(string domain, int numberOfMessages, string destNumber, object userState) {
-            if ((this.getMessagesWithNumberOperationCompleted == null)) {
-                this.getMessagesWithNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetMessagesWithNumberOperationCompleted);
-            }
-            this.InvokeAsync("getMessagesWithNumber", new object[] {
-                        domain,
-                        numberOfMessages,
-                        destNumber}, this.getMessagesWithNumberOperationCompleted, userState);
-        }
-        
-        private void OngetMessagesWithNumberOperationCompleted(object arg) {
-            if ((this.getMessagesWithNumberCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getMessagesWithNumberCompleted(this, new getMessagesWithNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
         [return: System.Xml.Serialization.SoapElementAttribute("getMessageIdReturn")]
         public long getMessageId(string domain, long checkingMessageId) {
             object[] results = this.Invoke("getMessageId", new object[] {
@@ -356,36 +218,6 @@ namespace SSB.Service.Core.MagfaService {
             if ((this.getMessageIdCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getMessageIdCompleted(this, new getMessageIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
-        [return: System.Xml.Serialization.SoapElementAttribute("getCreditReturn")]
-        public float getCredit(string domain) {
-            object[] results = this.Invoke("getCredit", new object[] {
-                        domain});
-            return ((float)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void getCreditAsync(string domain) {
-            this.getCreditAsync(domain, null);
-        }
-        
-        /// <remarks/>
-        public void getCreditAsync(string domain, object userState) {
-            if ((this.getCreditOperationCompleted == null)) {
-                this.getCreditOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCreditOperationCompleted);
-            }
-            this.InvokeAsync("getCredit", new object[] {
-                        domain}, this.getCreditOperationCompleted, userState);
-        }
-        
-        private void OngetCreditOperationCompleted(object arg) {
-            if ((this.getCreditCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.getCreditCompleted(this, new getCreditCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -502,6 +334,212 @@ namespace SSB.Service.Core.MagfaService {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getCreditReturn")]
+        public float getCredit(string domain) {
+            object[] results = this.Invoke("getCredit", new object[] {
+                        domain});
+            return ((float)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getCreditAsync(string domain) {
+            this.getCreditAsync(domain, null);
+        }
+        
+        /// <remarks/>
+        public void getCreditAsync(string domain, object userState) {
+            if ((this.getCreditOperationCompleted == null)) {
+                this.getCreditOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetCreditOperationCompleted);
+            }
+            this.InvokeAsync("getCredit", new object[] {
+                        domain}, this.getCreditOperationCompleted, userState);
+        }
+        
+        private void OngetCreditOperationCompleted(object arg) {
+            if ((this.getCreditCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getCreditCompleted(this, new getCreditCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getRealMessageStatusesReturn")]
+        public int[] getRealMessageStatuses(long[] messagesId) {
+            object[] results = this.Invoke("getRealMessageStatuses", new object[] {
+                        messagesId});
+            return ((int[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getRealMessageStatusesAsync(long[] messagesId) {
+            this.getRealMessageStatusesAsync(messagesId, null);
+        }
+        
+        /// <remarks/>
+        public void getRealMessageStatusesAsync(long[] messagesId, object userState) {
+            if ((this.getRealMessageStatusesOperationCompleted == null)) {
+                this.getRealMessageStatusesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetRealMessageStatusesOperationCompleted);
+            }
+            this.InvokeAsync("getRealMessageStatuses", new object[] {
+                        messagesId}, this.getRealMessageStatusesOperationCompleted, userState);
+        }
+        
+        private void OngetRealMessageStatusesOperationCompleted(object arg) {
+            if ((this.getRealMessageStatusesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getRealMessageStatusesCompleted(this, new getRealMessageStatusesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getAllMessagesWithNumberReturn")]
+        public object[] getAllMessagesWithNumber(string domain, int numberOfMessages, string destNumber) {
+            object[] results = this.Invoke("getAllMessagesWithNumber", new object[] {
+                        domain,
+                        numberOfMessages,
+                        destNumber});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getAllMessagesWithNumberAsync(string domain, int numberOfMessages, string destNumber) {
+            this.getAllMessagesWithNumberAsync(domain, numberOfMessages, destNumber, null);
+        }
+        
+        /// <remarks/>
+        public void getAllMessagesWithNumberAsync(string domain, int numberOfMessages, string destNumber, object userState) {
+            if ((this.getAllMessagesWithNumberOperationCompleted == null)) {
+                this.getAllMessagesWithNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetAllMessagesWithNumberOperationCompleted);
+            }
+            this.InvokeAsync("getAllMessagesWithNumber", new object[] {
+                        domain,
+                        numberOfMessages,
+                        destNumber}, this.getAllMessagesWithNumberOperationCompleted, userState);
+        }
+        
+        private void OngetAllMessagesWithNumberOperationCompleted(object arg) {
+            if ((this.getAllMessagesWithNumberCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getAllMessagesWithNumberCompleted(this, new getAllMessagesWithNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getMessagesWithNumberReturn")]
+        public object[] getMessagesWithNumber(string domain, int numberOfMessages, string destNumber) {
+            object[] results = this.Invoke("getMessagesWithNumber", new object[] {
+                        domain,
+                        numberOfMessages,
+                        destNumber});
+            return ((object[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getMessagesWithNumberAsync(string domain, int numberOfMessages, string destNumber) {
+            this.getMessagesWithNumberAsync(domain, numberOfMessages, destNumber, null);
+        }
+        
+        /// <remarks/>
+        public void getMessagesWithNumberAsync(string domain, int numberOfMessages, string destNumber, object userState) {
+            if ((this.getMessagesWithNumberOperationCompleted == null)) {
+                this.getMessagesWithNumberOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetMessagesWithNumberOperationCompleted);
+            }
+            this.InvokeAsync("getMessagesWithNumber", new object[] {
+                        domain,
+                        numberOfMessages,
+                        destNumber}, this.getMessagesWithNumberOperationCompleted, userState);
+        }
+        
+        private void OngetMessagesWithNumberOperationCompleted(object arg) {
+            if ((this.getMessagesWithNumberCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getMessagesWithNumberCompleted(this, new getMessagesWithNumberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
+        [return: System.Xml.Serialization.SoapElementAttribute("getDetailedStatusesReturn")]
+        public DeliveryStatus[] getDetailedStatuses(string domain, long[] messagesId) {
+            object[] results = this.Invoke("getDetailedStatuses", new object[] {
+                        domain,
+                        messagesId});
+            return ((DeliveryStatus[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getDetailedStatusesAsync(string domain, long[] messagesId) {
+            this.getDetailedStatusesAsync(domain, messagesId, null);
+        }
+        
+        /// <remarks/>
+        public void getDetailedStatusesAsync(string domain, long[] messagesId, object userState) {
+            if ((this.getDetailedStatusesOperationCompleted == null)) {
+                this.getDetailedStatusesOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetDetailedStatusesOperationCompleted);
+            }
+            this.InvokeAsync("getDetailedStatuses", new object[] {
+                        domain,
+                        messagesId}, this.getDetailedStatusesOperationCompleted, userState);
+        }
+        
+        private void OngetDetailedStatusesOperationCompleted(object arg) {
+            if ((this.getDetailedStatusesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getDetailedStatusesCompleted(this, new getDetailedStatusesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://magfa.com/soap/SOAPSmsQueue", ResponseNamespace="http://magfa.com/soap/SOAPSmsQueue")]
+        [return: System.Xml.Serialization.SoapElementAttribute("enqueueReturn")]
+        public long[] enqueue(string domain, string[] messageBodies, string[] recipientNumbers, string[] senderNumbers, int[] encodings, string[] udhs, int[] messageClasses, int[] priorities, long[] checkingMessageIds) {
+            object[] results = this.Invoke("enqueue", new object[] {
+                        domain,
+                        messageBodies,
+                        recipientNumbers,
+                        senderNumbers,
+                        encodings,
+                        udhs,
+                        messageClasses,
+                        priorities,
+                        checkingMessageIds});
+            return ((long[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void enqueueAsync(string domain, string[] messageBodies, string[] recipientNumbers, string[] senderNumbers, int[] encodings, string[] udhs, int[] messageClasses, int[] priorities, long[] checkingMessageIds) {
+            this.enqueueAsync(domain, messageBodies, recipientNumbers, senderNumbers, encodings, udhs, messageClasses, priorities, checkingMessageIds, null);
+        }
+        
+        /// <remarks/>
+        public void enqueueAsync(string domain, string[] messageBodies, string[] recipientNumbers, string[] senderNumbers, int[] encodings, string[] udhs, int[] messageClasses, int[] priorities, long[] checkingMessageIds, object userState) {
+            if ((this.enqueueOperationCompleted == null)) {
+                this.enqueueOperationCompleted = new System.Threading.SendOrPostCallback(this.OnenqueueOperationCompleted);
+            }
+            this.InvokeAsync("enqueue", new object[] {
+                        domain,
+                        messageBodies,
+                        recipientNumbers,
+                        senderNumbers,
+                        encodings,
+                        udhs,
+                        messageClasses,
+                        priorities,
+                        checkingMessageIds}, this.enqueueOperationCompleted, userState);
+        }
+        
+        private void OnenqueueOperationCompleted(object arg) {
+            if ((this.enqueueCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.enqueueCompleted(this, new enqueueCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -522,11 +560,11 @@ namespace SSB.Service.Core.MagfaService {
     
     /// <remarks/>
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(DatedCustomerReturnIncomingFormat))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:SOAPSmsQueue")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="server")]
     public partial class CustomerReturnIncomingFormat {
         
         private string bodyField;
@@ -583,11 +621,11 @@ namespace SSB.Service.Core.MagfaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:SOAPSmsQueue")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="server")]
     public partial class DatedCustomerReturnIncomingFormat : CustomerReturnIncomingFormat {
         
         private string dateField;
@@ -605,11 +643,70 @@ namespace SSB.Service.Core.MagfaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.9032.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="server")]
+    public partial class DeliveryStatus {
+        
+        private string dateField;
+        
+        private long midField;
+        
+        private string smscField;
+        
+        private int statusField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string date {
+            get {
+                return this.dateField;
+            }
+            set {
+                this.dateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public long mid {
+            get {
+                return this.midField;
+            }
+            set {
+                this.midField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public string smsc {
+            get {
+                return this.smscField;
+            }
+            set {
+                this.smscField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void getMessageStatusesCompletedEventHandler(object sender, getMessageStatusesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getMessageStatusesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -631,11 +728,11 @@ namespace SSB.Service.Core.MagfaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void getMessageStatusCompletedEventHandler(object sender, getMessageStatusCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getMessageStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -657,115 +754,11 @@ namespace SSB.Service.Core.MagfaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void enqueueCompletedEventHandler(object sender, enqueueCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class enqueueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal enqueueCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public long[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((long[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void getRealMessageStatusesCompletedEventHandler(object sender, getRealMessageStatusesCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getRealMessageStatusesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getRealMessageStatusesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public int[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((int[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void getAllMessagesWithNumberCompletedEventHandler(object sender, getAllMessagesWithNumberCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getAllMessagesWithNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getAllMessagesWithNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public object[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((object[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void getMessagesWithNumberCompletedEventHandler(object sender, getMessagesWithNumberCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getMessagesWithNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getMessagesWithNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public object[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((object[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void getMessageIdCompletedEventHandler(object sender, getMessageIdCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getMessageIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -787,37 +780,11 @@ namespace SSB.Service.Core.MagfaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void getCreditCompletedEventHandler(object sender, getCreditCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class getCreditCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal getCreditCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public float Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((float)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void getAllMessagesCompletedEventHandler(object sender, getAllMessagesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getAllMessagesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -839,11 +806,11 @@ namespace SSB.Service.Core.MagfaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void getMessagesCompletedEventHandler(object sender, getMessagesCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getMessagesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -865,11 +832,11 @@ namespace SSB.Service.Core.MagfaService {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void enqueueWithGatewayCompletedEventHandler(object sender, enqueueWithGatewayCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class enqueueWithGatewayCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -877,6 +844,162 @@ namespace SSB.Service.Core.MagfaService {
         private object[] results;
         
         internal enqueueWithGatewayCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public long[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((long[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void getCreditCompletedEventHandler(object sender, getCreditCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getCreditCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getCreditCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public float Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((float)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void getRealMessageStatusesCompletedEventHandler(object sender, getRealMessageStatusesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getRealMessageStatusesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getRealMessageStatusesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void getAllMessagesWithNumberCompletedEventHandler(object sender, getAllMessagesWithNumberCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getAllMessagesWithNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getAllMessagesWithNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void getMessagesWithNumberCompletedEventHandler(object sender, getMessagesWithNumberCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getMessagesWithNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getMessagesWithNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public object[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((object[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void getDetailedStatusesCompletedEventHandler(object sender, getDetailedStatusesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getDetailedStatusesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getDetailedStatusesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public DeliveryStatus[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((DeliveryStatus[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void enqueueCompletedEventHandler(object sender, enqueueCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class enqueueCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal enqueueCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

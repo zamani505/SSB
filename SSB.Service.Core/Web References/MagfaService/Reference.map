@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<DiscoveryClientResultsFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://5.160.8.139/services/urn:SOAPSmsQueue?wsdl" filename="SOAPSmsQueue.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://sms.magfa.com/api/soap/sms/v1/server?wsdl" filename="server.wsdl" />
   </Results>
 </DiscoveryClientResultsFile>
