@@ -23,7 +23,7 @@ namespace SSB.Service.SSBApi.LogService.Services
         {
             context.BeginRequest += (s, e) =>
             {
-              var username=  ReqLog(HttpContext.Current.Request);
+                var username = ReqLog(HttpContext.Current.Request);
                 var response = HttpContext.Current.Response;
                 var filter = new ResponseCaptureStream(response.Filter);
                 response.Filter = filter;
@@ -61,7 +61,7 @@ namespace SSB.Service.SSBApi.LogService.Services
 
             byte[] bytes = ms.ToArray();
             body = Encoding.UTF8.GetString(bytes);
-            
+
 
             request.InputStream.Position = 0;
 
@@ -71,13 +71,28 @@ namespace SSB.Service.SSBApi.LogService.Services
             {
                 var loginModel = JsonConvert.DeserializeObject<LoginVM>(body);
                 username = loginModel.Username;
-               
-                   
+
+
             }
             else
-                username = new CacheLogin().GetUsername(request.Headers[SSBConstant.TOKEN_NAME]);
+            {
+                try
+                {
+                    if (request.Headers[SSBConstant.TOKEN_NAME] != null)
+                    {
+                        username = new CacheLogin().GetUsername(request.Headers[SSBConstant.TOKEN_NAME]);
+                        new LogService().AddLog(username, verbName, body, "0.0.0.0");
+                    }
 
-            new LogService().AddLog(username, verbName, body, "0.0.0.0");
+                }
+                catch (System.Exception)
+                {
+
+
+                }
+            }
+
+           
             return username;
         }
         #endregion
