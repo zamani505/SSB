@@ -155,7 +155,7 @@ namespace UseSSBApi
 
         private void button16_Click(object sender, EventArgs e)
         {
-            var body = new { Message = new string[] { txtMessage.Text }, FromNumber = txtLineNumber.Text, ToNumber = new string[] { txtMobile.Text } };
+            var body = new { Messages = new string[] { txtMessage.Text }, FromNumber = txtLineNumber.Text, ToNumbers = new string[] { txtMobile.Text } };
             var response = GetClient<SMSModel2>(body, "SendSMS/ArraySend");
             SendSMSResult2(response);
         }

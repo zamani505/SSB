@@ -397,3 +397,207 @@ username iszamani
 ------------12/24/2025 1:14:41 PM
 after cache in addlog
 ------------
+------------12/24/2025 2:07:27 PM
+befor call newlog
+------------
+------------12/24/2025 2:07:27 PM
+after call newlog id is55
+------------
+------------12/24/2025 2:07:27 PM
+username iszamani
+------------
+------------12/24/2025 2:07:27 PM
+after cache in addlog
+------------
+------------12/24/2025 2:07:42 PM
+befor call newlog
+------------
+------------12/24/2025 2:07:42 PM
+after call newlog id is56
+------------
+------------12/24/2025 2:07:42 PM
+username iszamani
+------------
+------------12/24/2025 2:07:42 PM
+after cache in addlog
+------------
+------------12/24/2025 2:09:19 PM
+befor call newlog
+------------
+------------12/24/2025 2:09:19 PM
+after call newlog id is57
+------------
+------------12/24/2025 2:09:19 PM
+username iszamani
+------------
+------------12/24/2025 2:09:19 PM
+after cache in addlog
+------------
+------------12/24/2025 2:11:48 PM
+befor call newlog
+------------
+------------12/24/2025 2:11:48 PM
+after call newlog id is58
+------------
+------------12/24/2025 2:11:48 PM
+username iszamani
+------------
+------------12/24/2025 2:11:48 PM
+after cache in addlog
+------------
+------------12/24/2025 2:12:44 PM
+befor call newlog
+------------
+------------12/24/2025 2:12:44 PM
+after call newlog id is59
+------------
+------------12/24/2025 2:12:44 PM
+username iszamani
+------------
+------------12/24/2025 2:12:44 PM
+after cache in addlog
+------------
+------------12/24/2025 2:12:49 PM
+befor call newlog
+------------
+------------12/24/2025 2:12:49 PM
+after call newlog id is60
+------------
+------------12/24/2025 2:12:49 PM
+username iszamani
+------------
+------------12/24/2025 2:12:49 PM
+after cache in addlog
+------------
+------------12/24/2025 2:18:37 PM
+befor call newlog
+------------
+------------12/24/2025 2:18:37 PM
+after call newlog id is61
+------------
+------------12/24/2025 2:18:37 PM
+username iszamani
+------------
+------------12/24/2025 2:18:37 PM
+after cache in addlog
+------------
+------------12/24/2025 2:18:41 PM
+befor call newlog
+------------
+------------12/24/2025 2:18:41 PM
+after call newlog id is62
+------------
+------------12/24/2025 2:18:41 PM
+username iszamani
+------------
+------------12/24/2025 2:18:41 PM
+after cache in addlog
+------------
+------------12/24/2025 2:19:37 PM
+befor call newlog
+------------
+------------12/24/2025 2:19:37 PM
+after call newlog id is63
+------------
+------------12/24/2025 2:19:37 PM
+username iszamani
+------------
+------------12/24/2025 2:19:37 PM
+after cache in addlog
+------------
+------------12/24/2025 2:19:41 PM
+befor call newlog
+------------
+------------12/24/2025 2:19:41 PM
+after call newlog id is64
+------------
+------------12/24/2025 2:19:41 PM
+username iszamani
+------------
+------------12/24/2025 2:19:41 PM
+after cache in addlog
+------------
+------------12/24/2025 2:20:40 PM
+befor call newlog
+------------
+------------12/24/2025 2:20:40 PM
+after call newlog id is65
+------------
+------------12/24/2025 2:20:40 PM
+username iszamani
+------------
+------------12/24/2025 2:20:40 PM
+after cache in addlog
+------------
+------------12/24/2025 2:20:46 PM
+befor call newlog
+------------
+------------12/24/2025 2:20:46 PM
+after call newlog id is66
+------------
+------------12/24/2025 2:20:46 PM
+username iszamani
+------------
+------------12/24/2025 2:20:46 PM
+after cache in addlog
+------------
+------------12/24/2025 2:26:16 PM
+befor call newlog
+------------
+------------12/24/2025 2:26:16 PM
+after call newlog id is67
+------------
+------------12/24/2025 2:26:16 PM
+username iszamani
+------------
+------------12/24/2025 2:26:16 PM
+after cache in addlog
+------------
+------------12/24/2025 2:26:23 PM
+befor call newlog
+------------
+------------12/24/2025 2:26:23 PM
+after call newlog id is68
+------------
+------------12/24/2025 2:26:23 PM
+username iszamani
+------------
+------------12/24/2025 2:26:23 PM
+after cache in addlog
+------------
+------------12/24/2025 2:27:14 PM
+befor call newlog
+------------
+------------12/24/2025 2:27:14 PM
+after call newlog id is69
+------------
+------------12/24/2025 2:27:14 PM
+username iszamani
+------------
+------------12/24/2025 2:27:14 PM
+after cache in addlog
+------------
+------------12/24/2025 2:27:29 PM
+befor call newlog
+------------
+------------12/24/2025 2:27:29 PM
+after call newlog id is70
+------------
+------------12/24/2025 2:27:29 PM
+username iszamani
+------------
+------------12/24/2025 2:27:29 PM
+after cache in addlog
+------------
+------------12/24/2025 2:27:52 PM
+befor call newlog
+------------
+------------12/24/2025 2:27:52 PM
+after call newlog id is71
+------------
+------------12/24/2025 2:27:52 PM
+username iszamani
+------------
+------------12/24/2025 2:27:52 PM
+after cache in addlog
+------------

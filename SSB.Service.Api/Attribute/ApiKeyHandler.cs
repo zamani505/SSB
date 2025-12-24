@@ -32,6 +32,15 @@ namespace SSB.Service.SSBApi.Attribute
             { "arraysendqeue", typeof(SMSDto) },
             { "arraysendqeuewithid", typeof(SMSDto) },
             { "sendqeue", typeof(SMSDto) },
+            { "recievesms", typeof(RecieveDto) },
+            { "recievesmsbyid", typeof(RecieveDto) },
+            { "unreadmessgese", typeof(RecieveDto) },
+            { "unreadmessgesewithusername", typeof(RecieveDto) },
+            { "usercredit", typeof(CreditDto) },
+            { "checkcredit", typeof(CreditDto) },
+            { "arraymessagestatus", typeof(SMSStatusDto) },
+            { "messagestatus", typeof(SMSStatusDto) },
+            { "queuemessagestatus", typeof(SMSStatusDto) },
 
         };
         private readonly CacheLog _cacheLog;
