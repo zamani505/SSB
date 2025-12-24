@@ -1,0 +1,13 @@
+D:\Zamani\SSB\SSB\UseSSBApi\bin\Release\UseSSBApi.exe.config
+D:\Zamani\SSB\SSB\UseSSBApi\bin\Release\UseSSBApi.exe
+D:\Zamani\SSB\SSB\UseSSBApi\bin\Release\UseSSBApi.pdb
+D:\Zamani\SSB\SSB\UseSSBApi\bin\Release\Newtonsoft.Json.dll
+D:\Zamani\SSB\SSB\UseSSBApi\obj\Release\UseSSBApi.csproj.AssemblyReference.cache
+D:\Zamani\SSB\SSB\UseSSBApi\obj\Release\UseSSBApi.Form1.resources
+D:\Zamani\SSB\SSB\UseSSBApi\obj\Release\UseSSBApi.Properties.Resources.resources
+D:\Zamani\SSB\SSB\UseSSBApi\obj\Release\UseSSBApi.UseApi.resources
+D:\Zamani\SSB\SSB\UseSSBApi\obj\Release\UseSSBApi.csproj.GenerateResource.cache
+D:\Zamani\SSB\SSB\UseSSBApi\obj\Release\UseSSBApi.csproj.CoreCompileInputs.cache
+D:\Zamani\SSB\SSB\UseSSBApi\obj\Release\UseSSBApi.csproj.Up2Date
+D:\Zamani\SSB\SSB\UseSSBApi\obj\Release\UseSSBApi.exe
+D:\Zamani\SSB\SSB\UseSSBApi\obj\Release\UseSSBApi.pdb

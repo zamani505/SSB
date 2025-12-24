@@ -14,7 +14,10 @@ namespace SSB.Service.SSBApi.CacheManager.Log
         #endregion
         #region public methods
         public void Add(string key, LogModel value)
-            => _cache.Add(key, value);
+        {
+            Remove(key);
+            _cache.Add(key, value);
+        }
        
         public LogModel Get(string key)
         {

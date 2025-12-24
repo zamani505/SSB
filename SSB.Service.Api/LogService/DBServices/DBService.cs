@@ -42,6 +42,27 @@ namespace SSB.Service.SSBApi.LogService
             }
             return id;
         }
+        public long GetId(string username)
+        {
+            long id = 0;
+            using (_sqlCommand = new SqlCommand())
+            {
+                using (_connection = new SqlConnection(_connectionString))
+                {
+                    Open();
+                    _sqlCommand.Connection = _connection;
+                    _sqlCommand.CommandType = CommandType.Text;
+                    _sqlCommand.CommandText = $"select top 1 Id from SMSAuditLog where Username='{username}' order by id desc";
+                   SqlDataAdapter adapter = new SqlDataAdapter(_sqlCommand);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                        id = long.Parse(dt.Rows[0]["Id"].ToString());
+                    Close();
+                }
+            }
+            return id;
+        }
         public void UpdateLog(SMSAuditLog log)
         {
             if (_auditLog == 0) return ;
@@ -54,6 +75,23 @@ namespace SSB.Service.SSBApi.LogService
                     _sqlCommand.Connection = _connection;
                     _sqlCommand.CommandType = CommandType.Text;
                     _sqlCommand.CommandText = $"update SMSAuditLog set Response='{log.Response.RemoveHtmlTag()}',ExcutionTime={log.ExcutionTime},Exception='{log.Exception}' where Id={log.Id}";
+                    _sqlCommand.ExecuteScalar();
+                    Close();
+                }
+            }
+        }
+        public void UpdateLogFirst(SMSAuditLog log)
+        {
+            if (_auditLog == 0) return;
+            if (_auditLogRespnse == 0) log.Response = "";
+            using (_sqlCommand = new SqlCommand())
+            {
+                using (_connection = new SqlConnection(_connectionString))
+                {
+                    Open();
+                    _sqlCommand.Connection = _connection;
+                    _sqlCommand.CommandType = CommandType.Text;
+                    _sqlCommand.CommandText = $"update SMSAuditLog set Username='{log.Username}',ServiceName='{log.ServiceName}',Request='{log.Request}',Ip='{log.Ip}' where Id={log.Id}";
                     _sqlCommand.ExecuteScalar();
                     Close();
                 }

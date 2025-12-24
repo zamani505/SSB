@@ -30,7 +30,7 @@ namespace UseSSBApi
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(txtBaseUrl.Text + _prefixUrl);
-                client.Timeout = TimeSpan.FromSeconds(500);
+                client.Timeout = TimeSpan.FromSeconds(120);
                 if (!string.IsNullOrEmpty(txtToken.Text))
                     client.DefaultRequestHeaders.Add("SSBToken", txtToken.Text);
                 var content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");

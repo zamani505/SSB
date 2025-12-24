@@ -4,6 +4,7 @@ using SSB.Service.SSBApi.Models;
 using SSB.Service.SSBApi.Validation;
 using System;
 using System.Linq;
+using System.Web;
 using System.Web.Http;
 using static SSB.Service.SSBApi.Constant.SSBConstant;
 using HttpPostAttribute = System.Web.Mvc.HttpPostAttribute;
@@ -13,11 +14,13 @@ namespace SSB.Service.SSBApi.Controllers
     public class SendSMSController : BaseController
     {
         #region props
+        private readonly LogService.LogService _logService;
         #endregion
         #region ctors
 
         public SendSMSController()
         {
+            _logService=new LogService.LogService();
         }
         #endregion
         #region public methods
@@ -28,9 +31,12 @@ namespace SSB.Service.SSBApi.Controllers
         {
             try
             {
+                _cacheKey = loginVM.Username;
+               
                 var validate = new LoginValidation().Validate(loginVM.Username, loginVM.Password);
                 if (!string.IsNullOrEmpty(validate))
                     return Ok(new LoginDto() { Message = validate });
+                
                 var token = loginVM.Username.CreateToken(loginVM.Password);
                 _cacheLogin.AddSession(token, loginVM.Username);
                 return Ok(new LoginDto() { SSBToken = token });

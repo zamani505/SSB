@@ -21,22 +21,30 @@ namespace SSB.Service.SSBApi.Controllers
         public readonly string _username;
         protected LogService.LogService _logService;
         protected HttpRequest _request;
-        protected readonly string _cacheKey = "";
+        protected  string _cacheKey = "";
         #endregion
         #region ctors
         public BaseController()
         {
             _cacheLogin = new CacheLogin();
             _service = new SMSService();
-            _logService=new LogService.LogService();
+            _logService = new LogService.LogService();
             _lineNumberValidation = new LineNumerValidation();
             _request = HttpContext.Current.Request;
-            _cacheKey= _request.Headers.GetValues(SSBConstant.LOG_KEY_HEADER).FirstOrDefault() ?? "";
+          
             if (_request.Headers[SSBConstant.TOKEN_NAME] != null)
+            {
                 _username = _cacheLogin.GetUsername(HttpContext.Current.Request.Headers[SSBConstant.TOKEN_NAME]);
+                _cacheKey = _username;
+            }
         }
         #endregion
         #region protected methods
+
+        protected void LogUpdate(object body, Exception ex = null)
+        => _logService.UpdateLog(body, _cacheKey, ex);
+        
+        
         protected SMSDto SendSMSQueueWithId(Guid[] ids, string[] messages, string[] mobiles, string[] senderNumbers, string username)
         {
             try
@@ -45,7 +53,7 @@ namespace SSB.Service.SSBApi.Controllers
             }
             catch (Exception ex)
             {
-                var resp= new SMSDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
+                var resp = new SMSDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
                 _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
                 return resp;
             }
@@ -103,7 +111,7 @@ namespace SSB.Service.SSBApi.Controllers
                 var resp = new SendSMSDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
                 _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
                 return resp;
-               
+
             }
         }
         protected SendSMSDto SSB_SendSMSArrayToMagfa(string[] messages, int[] encodings, string[] mobiles, string[] origs, string[] udh, int[] messageClass, int[] priorities, long[] checkingIds, string username)
@@ -137,7 +145,7 @@ namespace SSB.Service.SSBApi.Controllers
                 var resp = new SMSStatusDto() { Code = SSBErrorCode.EXCEPTION.ToString(), Message = "متاسفانه مشکلی بوجود آمده است" };
                 _logService.UpdateLog(JsonConvert.SerializeObject(resp), _cacheKey, ex);
                 return resp;
-                
+
             }
         }
         protected SMSStatusDto SSB_SMSStatus(string[] messageIds)

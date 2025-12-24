@@ -1,5 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using SSB.Service.SSBApi.CacheManager.Login;
+using SSB.Service.SSBApi.Constant;
+using SSB.Service.SSBApi.Extentions;
+using SSB.Service.SSBApi.LogService;
+using SSB.Service.SSBApi.Models;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
@@ -28,9 +35,14 @@ namespace SSB.Service.SSBApi
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
+           
+
 
         }
+        protected void Application_EndRequest(object sender, EventArgs e) 
+        {
 
+        }
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
 
@@ -38,7 +50,7 @@ namespace SSB.Service.SSBApi
 
         protected void Application_Error(object sender, EventArgs e)
         {
-            
+
             //HttpContext.Current.Request
         }
 

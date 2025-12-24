@@ -14,6 +14,7 @@ using SSB.Service.SSBApi.LogService;
 
 using Newtonsoft.Json;
 using System.Web;
+using SSB.Service.SSBApi.Controllers;
 
 namespace SSB.Service.SSBApi.Attribute
 {
@@ -46,16 +47,19 @@ namespace SSB.Service.SSBApi.Attribute
             _cacheLogin = new CacheLogin();
             _dBService = new DBService();
             _logService=new LogService.LogService();
+            //var id = _logService.AddLog("", "", "", "");
+           
         }
         #endregion
         protected override async Task<HttpResponseMessage> SendAsync(
        HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            request=_logService.AddLog(request);
+
            
             HttpResponseMessage httpResponse = null;
             if (!request.IsRequestLogin())
             {
+               
                 #region check token
                 var body = GetBody(HttpStatusCode.Unauthorized, request.RequestUri.AbsolutePath.GetVerbName());
                 if (!request.Headers.Contains(SSBConstant.TOKEN_NAME))
@@ -71,11 +75,8 @@ namespace SSB.Service.SSBApi.Attribute
                     return httpResponse;
                 }
             }
-            HttpContext.Current.Request.Headers.Add(SSBConstant.LOG_KEY_HEADER, request.Headers.GetValues(SSBConstant.LOG_KEY_HEADER).FirstOrDefault());
             httpResponse = await base.SendAsync(request, cancellationToken);
             var responseBody = httpResponse.Content != null ? await httpResponse.Content.ReadAsStringAsync(): "";
-            _logService.UpdateLog(responseBody, request.Headers.GetValues(SSBConstant.LOG_KEY_HEADER).FirstOrDefault() ?? "");
-            
             return httpResponse;
         }
         #region private methods
