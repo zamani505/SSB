@@ -59,6 +59,8 @@
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtMessageId = new System.Windows.Forms.TextBox();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -69,8 +71,6 @@
             this.btnFailed = new System.Windows.Forms.Button();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtMessageId = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.grpMessage.SuspendLayout();
@@ -101,7 +101,6 @@
             this.txtBaseUrl.Size = new System.Drawing.Size(308, 21);
             this.txtBaseUrl.TabIndex = 0;
             this.txtBaseUrl.Tag = "";
-            this.txtBaseUrl.Text = "http://localhost:57476/";
             // 
             // groupBox5
             // 
@@ -174,7 +173,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(146, 21);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "zamani123";
             // 
             // txtUsername
             // 
@@ -182,7 +180,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(146, 21);
             this.txtUsername.TabIndex = 0;
-            this.txtUsername.Text = "zamani";
             // 
             // grpMessage
             // 
@@ -219,7 +216,6 @@
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessage.Size = new System.Drawing.Size(249, 45);
             this.txtMessage.TabIndex = 10;
-            this.txtMessage.Text = "تست";
             this.txtMessage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMessage.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -238,7 +234,6 @@
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(146, 21);
             this.txtMobile.TabIndex = 8;
-            this.txtMobile.Text = "09127698738";
             // 
             // label4
             // 
@@ -255,7 +250,6 @@
             this.txtLineNumber.Name = "txtLineNumber";
             this.txtLineNumber.Size = new System.Drawing.Size(146, 21);
             this.txtLineNumber.TabIndex = 0;
-            this.txtLineNumber.Text = "+983000";
             // 
             // tabSMSApi
             // 
@@ -443,6 +437,24 @@
             this.tabPage3.Text = "StatusSMSApi";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(323, 49);
+            this.label7.Name = "label7";
+            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "MessageId :";
+            // 
+            // txtMessageId
+            // 
+            this.txtMessageId.Location = new System.Drawing.Point(387, 43);
+            this.txtMessageId.Name = "txtMessageId";
+            this.txtMessageId.Size = new System.Drawing.Size(146, 21);
+            this.txtMessageId.TabIndex = 7;
+            this.txtMessageId.TextChanged += new System.EventHandler(this.txtMessageId_TextChanged);
+            // 
             // button14
             // 
             this.button14.Image = global::UseSSBApi.Properties.Resources.Status_Queue;
@@ -574,24 +586,6 @@
             this.label6.Size = new System.Drawing.Size(57, 16);
             this.label6.TabIndex = 12;
             this.label6.Text = "Result :";
-            // 
-            // txtMessageId
-            // 
-            this.txtMessageId.Location = new System.Drawing.Point(387, 43);
-            this.txtMessageId.Name = "txtMessageId";
-            this.txtMessageId.Size = new System.Drawing.Size(146, 21);
-            this.txtMessageId.TabIndex = 7;
-            this.txtMessageId.TextChanged += new System.EventHandler(this.txtMessageId_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(323, 49);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "MessageId :";
             // 
             // UseApi
             // 
